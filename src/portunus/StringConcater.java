@@ -15,5 +15,11 @@ public class StringConcater {
     private String Username;
     private String[] SecQuestions;
     private String[] SecAnswers;
+    
+    public StringConcater()
+    {
+        Ident = "";
+        Password = "";
+    }
     // COMMIT MY CHANGES
 }

@@ -39,7 +39,7 @@ public class StringConcater {
     public String Concat()
     {
         String concatedString; 
-        concatedString = ident + "***" + password + "***" + username + "***";
+        concatedString = ident + "***" + password + "**|" + username;
         // for now, three asteriks in sequence shall divide each morsel of info
         // unlikely to appear in any password but will still need check for this at user entry.
         // if anyone has a better idea please send it my way -Maxwell
@@ -47,11 +47,11 @@ public class StringConcater {
         // the string -Maxwell
         for(String question: secQuestions)
         {
-            concatedString += question + "***";
+            concatedString += "*|*" + question ;
         }
         for(String answer: secAnswers)
         {
-            concatedString += answer + "***";
+            concatedString += "*||" + answer ;
         }
         // Important to note that questions and answers are placed in separate sections of the thing
         // rather than a sequence of question followed by answer -Maxwell
@@ -105,5 +105,5 @@ public class StringConcater {
     {
         secAnswers.add(question);
     }
-    //
+    // TODO: add function to get all strings in one function call.
 }

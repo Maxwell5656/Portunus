@@ -43,6 +43,8 @@ public class StringConcater {
         // for now, three asteriks in sequence shall divide each morsel of info
         // unlikely to appear in any password but will still need check for this at user entry.
         // if anyone has a better idea please send it my way -Maxwell
+        // TODO: Create unique 3 character identifiers for each part of the string to aid in parsing
+        // the string -Maxwell
         for(String question: secQuestions)
         {
             concatedString += question + "***";

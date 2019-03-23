@@ -37,8 +37,6 @@ Collaboratiors:
     }
     
     public void parseString(String info)
-    //this function needs to be fixed. It always gives an index out of bounds exception upon testing
-    //-Maxwell
     {
         String newIdent = "";
         String newPassword = "";
@@ -47,19 +45,19 @@ Collaboratiors:
         // these will be copied into StringParser's values once these have been filled
         
         int idx = 0;
-        while((info.charAt(idx) != '*')&&(idx < info.length()))
+        while((idx < info.length())&&(info.charAt(idx) != '*'))
         {   
             newIdent = newIdent + info.charAt(idx);
             idx++;
         }
-        while(idx < info.length()-1)
+        while(idx < info.length())
         {
             String key = info.substring(idx, idx+3);
             idx += 3;
             switch(key)
             {
                 case "***":
-                    while((info.charAt(idx) != '*')&&(idx < info.length()-1))
+                    while((idx < info.length())&&(info.charAt(idx) != '*'))
                         {   
                             newPassword = newPassword + info.charAt(idx);
                             idx++;
@@ -67,7 +65,7 @@ Collaboratiors:
                     //this.getFieldFrom(info, newPassword, idx);
                 break;
                 case "**|":
-                    while((info.charAt(idx) != '*')&&(idx < info.length()-1))
+                    while((idx < info.length())&&(info.charAt(idx) != '*'))
                         {   
                             newUsername = newUsername + info.charAt(idx);
                             idx++;
@@ -77,7 +75,7 @@ Collaboratiors:
                 case "*|*":
                     //this.getFieldFrom(info, secQorA, idx);
                     secQorA = "";
-                    while((info.charAt(idx) != '*')&&(idx < info.length()-1))
+                    while((idx < info.length())&&(info.charAt(idx) != '*'))
                         {   
                             secQorA = secQorA + info.charAt(idx);
                             idx++;
@@ -87,7 +85,7 @@ Collaboratiors:
                 case "*||":
                     //this.getFieldFrom(info, secQorA, idx);
                     secQorA = "";
-                    while((info.charAt(idx) != '*')&&(idx < info.length()-1))
+                    while((idx < info.length())&&(info.charAt(idx) != '*'))
                         {   
                             secQorA = secQorA + info.charAt(idx);
                             idx++;
@@ -103,11 +101,12 @@ Collaboratiors:
         }
     }
     private void getFieldFrom(String getFrom, String insertTo, int idx)
+            //TODO: Get this function working.
             //This function won't work unless we use pass by reference in the int, and we need to figure that out more
             //-Maxwell
     {
         String copyString = "";
-        while((getFrom.charAt(idx) != '*')&&(idx < getFrom.length()))
+        while((idx < getFrom.length())&&(getFrom.charAt(idx) != '*'))
         {   
             copyString = copyString + getFrom.charAt(idx);
             idx++;

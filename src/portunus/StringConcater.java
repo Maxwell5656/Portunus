@@ -11,8 +11,9 @@ import java.util.ArrayList;
  */
 public class StringConcater {
     private String ident; // This is how the unencrypted user info objects will be identified
+    // I think this will be a 4 character string of numbers and letters, with middle squaring and proper 
+    // Collision protection this will give a hash table of 5476 -Maxwell
     
-    // Peter Piker Picked Pickled Pickels
     // this variable in each user info object will be unique (hopefully)
     // variable ident may not be needed as we construct the hashing function -Maxwell
     private String password;

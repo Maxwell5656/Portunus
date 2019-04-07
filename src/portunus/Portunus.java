@@ -16,6 +16,9 @@ public class Portunus {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Storage storTest = new Storage("StorageFileTest.txt");
+        storTest.TestWrite("Get the flan in the face\n");
+        storTest.closeFiles();
     }
     
 }

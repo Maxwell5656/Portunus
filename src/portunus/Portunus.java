@@ -19,10 +19,20 @@ public class Portunus {
         Storage storTest = new Storage("StorageFileTest.txt");
         //storTest.TestWrite("Get the flan in the face\n");
         //storTest.closeFiles();
-        for (int i = 0; i<100; i++)
+        storTest.setData("15 Step", 0);
+        storTest.setData("BodySnatchers", 1);
+        storTest.setData("Nude", 2);
+        storTest.setData("Weird Fishes/Arpeggi", 3);
+        storTest.setData("All I Need", 4);
+        storTest.setData("Faust Arp", 5);
+        storTest.setData("Reckoner", 6);
+        storTest.setData("House of Cards", 7);
+        storTest.setData("Jigsaw Falling Into Place", 8);
+        storTest.setData("Videotape", 9);
+        
+        for(int i = 0; i<10; i++)
         {
-            storTest.saveAllData();
+            System.out.println(storTest.getStringByIdx(i));
         }
     }
-    
 }

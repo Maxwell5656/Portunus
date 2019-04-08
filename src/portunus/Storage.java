@@ -11,12 +11,24 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.Files;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.Key;
 
 import java.util.ArrayList;
+import java.util.Base64;
+import java.util.Base64.Encoder;
 
+import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
+import static javax.crypto.Cipher.DECRYPT_MODE;
+import javax.crypto.KeyGenerator;
+import static javax.crypto.Cipher.ENCRYPT_MODE;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
+
 /**
  *
  * @author Maxwell
@@ -29,6 +41,9 @@ public class Storage {
     private final Path storageFilePath; //this tells how the class will get to the file.
     private static final int SIZE = 10; //This will be the size of the Hash Table.
     private ArrayList<String> hashTable;
+    private Cipher cipher;
+    private SecretKeySpec key;
+    private final byte[] keyGen = "1234567812345678".getBytes(); // this is a test value for now.
     
     public Storage(String fileName)
     // Note this is designed for files stored in User.dir. This location can be found in Help->About in Netbeans -Maxwell
@@ -50,6 +65,17 @@ public class Storage {
             this.saveAllData();
         }
         // Note: this if statement appears to write too many additional lines.
+        try
+        {
+            cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+        }
+        catch(Exception e)
+        {
+            System.out.println("Error: Portunus could not find the required encryption algorithm. See Storage.java.");
+            e.printStackTrace(System.out);
+        }
+        // Cipher will use Advanced Encryption System
+        key = new SecretKeySpec(keyGen, "AES");
     }
     public void TestWrite(String Line) // this is just a function to test the writing capabilities
     {
@@ -59,8 +85,12 @@ public class Storage {
     // sets the value at the given idx to newLine, then saves to the file
     // 
     {
-        hashTable.set(idx, newLine);
+        hashTable.set(idx, this.encryptString(newLine));
         this.saveAllData();
+    }
+    public String getStringByIdx(int idx)
+    {
+        return this.decryptString(hashTable.get(idx));
     }
     public void loadAllData() // gets the contents of the storage file;
     {
@@ -90,6 +120,73 @@ public class Storage {
     public void closeFiles()
     {
         //depreciated
+    }
+    private String encryptString(String line)
+    // encrypts the string. Note it is private to guard against attackers -Maxwell
+    {
+        byte[] toEncrypt = line.getBytes();
+        try
+        {
+            cipher.init(ENCRYPT_MODE, key, new IvParameterSpec(new byte[16]));
+            toEncrypt = cipher.doFinal(toEncrypt);
+        }
+        catch(InvalidKeyException e)
+        {
+            System.out.println("Error: Invalid key for encryption");
+            e.printStackTrace(System.out);
+        }
+        catch(IllegalBlockSizeException e)
+        {
+            System.out.println("Error: Invalid Block Size");
+            e.printStackTrace(System.out);
+        }
+        catch(BadPaddingException e)
+        {
+            System.out.println("Error: Your Padding Sucks"); //TODO: actually know what bad padding is
+            e.printStackTrace(System.out);
+        }
+        catch(InvalidAlgorithmParameterException e)
+        {
+            System.out.println("I don't even know right now, come up with something later");
+            e.printStackTrace(System.out);
+        }
+        String encrypted = new String(toEncrypt);
+        encrypted = encrypted.replaceAll("(?:\\r\\n|\\n\\r|\\n|\\r)", "");
+        // I got this from stackOverflow("https://stackoverflow.com/questions/10282566/avoiding-line-breaks-in-encrypted-and-encoded-url-string/20587169")
+        // Hopefully it works -Maxwell
+        return encrypted;
+    }
+    private String decryptString(String line)
+    {
+        line = line.replaceAll("", "\n");
+        byte[] toDecrypt = line.getBytes();
+        try
+        {
+            cipher.init(DECRYPT_MODE, key, new IvParameterSpec(new byte[16]));
+            toDecrypt = cipher.doFinal(toDecrypt);
+        }
+        catch(InvalidKeyException e)
+        {
+            System.out.println("Error: Invalid key for encryption");
+            e.printStackTrace(System.out);
+        }
+        catch(IllegalBlockSizeException e)
+        {
+            System.out.println("Error: Invalid Block Size");
+            e.printStackTrace(System.out);
+        }
+        catch(BadPaddingException e)
+        {
+            System.out.println("Error: Your Padding Sucks"); //TODO: actually know what bad padding is
+            e.printStackTrace(System.out);
+        }
+        catch(InvalidAlgorithmParameterException e)
+        {
+            System.out.println("I don't even know right now, come up with something later");
+            e.printStackTrace(System.out);
+        }
+        String decrypted = new String(toDecrypt);
+        return decrypted;
     }
 }
 // And the rain drops

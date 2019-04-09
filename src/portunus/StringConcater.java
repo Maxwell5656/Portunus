@@ -11,9 +11,6 @@ import java.util.ArrayList;
  */
 public class StringConcater {
     private String ident; // This is how the unencrypted user info objects will be identified
-    // Acc
-    // Peter Piker Picked Pickled Pickels
-    // this variable in each user info object will be unique.
     //I believe this will be a random 4-character arrangement of letters, maybe letters and numbers if it's not too hard on the hash function;
     // -Maxwell
     private String password;

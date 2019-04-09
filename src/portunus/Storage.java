@@ -12,13 +12,18 @@ import java.nio.file.Paths;
 import java.nio.file.Files;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.Key;
+import java.security.MessageDigest;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Base64;
 import java.util.Base64.Encoder;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -35,17 +40,15 @@ import javax.crypto.spec.SecretKeySpec;
  */
 public class Storage {
     //TODO: Make Storage Class
-    //private BufferedReader fileIn;
-    //private File storageFile;
-    //private BufferedWriter fileOut;
+    //I had a lot of help from this site when coding this class https://howtodoinjava.com/security/java-aes-encryption-example/
     private final Path storageFilePath; //this tells how the class will get to the file.
     private static final int SIZE = 10; //This will be the size of the Hash Table.
     private ArrayList<String> hashTable;
     private Cipher cipher;
     private SecretKeySpec key;
-    private final byte[] keyGen = "1234567812345678".getBytes(); // this is a test value for now.
+    private byte[] keyGen; // this is a test value for now.
     
-    public Storage(String fileName)
+    public Storage(String fileName, String key)
     // Note this is designed for files stored in User.dir. This location can be found in Help->About in Netbeans -Maxwell
     {
         String fileLocation = System.getProperty("user.dir") + "\\" + fileName;
@@ -74,8 +77,26 @@ public class Storage {
             System.out.println("Error: Portunus could not find the required encryption algorithm. See Storage.java.");
             e.printStackTrace(System.out);
         }
+       
         // Cipher will use Advanced Encryption System
-        key = new SecretKeySpec(keyGen, "AES");
+        this.setKey(key);
+    }
+    private void setKey(String toKey)
+    {
+        keyGen = null;
+        MessageDigest sha = null;
+        try
+        {
+            keyGen = toKey.getBytes("UTF-8");
+            sha = MessageDigest.getInstance("SHA-1");
+            keyGen = sha.digest(keyGen);
+            keyGen = Arrays.copyOf(keyGen, 16);
+            key = new SecretKeySpec(keyGen, "AES"); 
+        }
+        catch(Exception e)
+        {
+            
+        }
     }
     public void TestWrite(String Line) // this is just a function to test the writing capabilities
     {
@@ -105,6 +126,12 @@ public class Storage {
             e.printStackTrace(System.out);
         }
     }
+    public void eraseEntry(int idx)
+            // This will be used for the delete use case
+    {
+        hashTable.set(idx, "");
+        this.saveAllData();
+    }
     public void saveAllData()
     {
         try
@@ -124,11 +151,20 @@ public class Storage {
     private String encryptString(String line)
     // encrypts the string. Note it is private to guard against attackers -Maxwell
     {
-        byte[] toEncrypt = line.getBytes();
+        byte[] toEncrypt = null;
+        try
+        {
+            toEncrypt = line.getBytes("UTF-8");
+        }
+        catch(Exception e)
+        {
+            
+        }
         try
         {
             cipher.init(ENCRYPT_MODE, key, new IvParameterSpec(new byte[16]));
             toEncrypt = cipher.doFinal(toEncrypt);
+            
         }
         catch(InvalidKeyException e)
         {
@@ -150,20 +186,37 @@ public class Storage {
             System.out.println("I don't even know right now, come up with something later");
             e.printStackTrace(System.out);
         }
-        String encrypted = new String(toEncrypt);
-        encrypted = encrypted.replaceAll("(?:\\r\\n|\\n\\r|\\n|\\r)", "");
+        //encrypted = encrypted.replaceAll("(?:\\r\\n|\\n\\r|\\n|\\r)", "");
         // I got this from stackOverflow("https://stackoverflow.com/questions/10282566/avoiding-line-breaks-in-encrypted-and-encoded-url-string/20587169")
         // Hopefully it works -Maxwell
+        
+        String encrypted = null;
+        try
+        {
+            encrypted = Base64.getEncoder().encodeToString(toEncrypt);
+        }
+        catch(Exception e)
+        {
+            //TODO add something later
+        }
         return encrypted;
     }
     private String decryptString(String line)
     {
-        line = line.replaceAll("", "\n");
-        byte[] toDecrypt = line.getBytes();
+        //line = line.replaceAll("", "\n");
+        byte[] toDecrypt = null;
+        try
+        {
+            toDecrypt = line.getBytes("UTF-8");
+        }
+        catch(Exception e)
+        {
+            
+        }
         try
         {
             cipher.init(DECRYPT_MODE, key, new IvParameterSpec(new byte[16]));
-            toDecrypt = cipher.doFinal(toDecrypt);
+            toDecrypt = cipher.doFinal(Base64.getDecoder().decode(toDecrypt));
         }
         catch(InvalidKeyException e)
         {
@@ -185,7 +238,12 @@ public class Storage {
             System.out.println("I don't even know right now, come up with something later");
             e.printStackTrace(System.out);
         }
-        String decrypted = new String(toDecrypt);
+        String decrypted = null;
+        try {
+            decrypted = new String(toDecrypt, "UTF-8");
+        } catch (UnsupportedEncodingException ex) {
+            Logger.getLogger(Storage.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return decrypted;
     }
 }

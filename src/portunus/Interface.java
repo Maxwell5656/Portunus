@@ -44,9 +44,9 @@ public class Interface extends javax.swing.JFrame {
         LoginOutBtn = new javax.swing.JButton();
         ChangingPanel = new javax.swing.JPanel();
         PasswordsPan = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         SettingsPan = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        jColorChooser1 = new javax.swing.JColorChooser();
+        ColorOptionsLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -130,7 +130,7 @@ public class Interface extends javax.swing.JFrame {
             .addGroup(LoginScreenLayout.createSequentialGroup()
                 .addGap(303, 303, 303)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(306, Short.MAX_VALUE))
+                .addContainerGap(301, Short.MAX_VALUE))
         );
         LoginScreenLayout.setVerticalGroup(
             LoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,11 +156,6 @@ public class Interface extends javax.swing.JFrame {
         PasswordsBtn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         PasswordsBtn.setText("Passwords");
         PasswordsBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
-        PasswordsBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                PasswordsBtnMouseClicked(evt);
-            }
-        });
         PasswordsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PasswordsBtnActionPerformed(evt);
@@ -179,6 +174,11 @@ public class Interface extends javax.swing.JFrame {
         LoginOutBtn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         LoginOutBtn.setText("Log In/out");
         LoginOutBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
+        LoginOutBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginOutBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout NavMenu1Layout = new javax.swing.GroupLayout(NavMenu1);
         NavMenu1.setLayout(NavMenu1Layout);
@@ -212,46 +212,45 @@ public class Interface extends javax.swing.JFrame {
 
         PasswordsPan.setBackground(new java.awt.Color(153, 153, 153));
 
-        jLabel1.setText("Passwords");
-
         javax.swing.GroupLayout PasswordsPanLayout = new javax.swing.GroupLayout(PasswordsPan);
         PasswordsPan.setLayout(PasswordsPanLayout);
         PasswordsPanLayout.setHorizontalGroup(
             PasswordsPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PasswordsPanLayout.createSequentialGroup()
-                .addGap(194, 194, 194)
-                .addComponent(jLabel1)
-                .addContainerGap(403, Short.MAX_VALUE))
+            .addGap(0, 658, Short.MAX_VALUE)
         );
         PasswordsPanLayout.setVerticalGroup(
             PasswordsPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PasswordsPanLayout.createSequentialGroup()
-                .addGap(207, 207, 207)
-                .addComponent(jLabel1)
-                .addContainerGap(359, Short.MAX_VALUE))
+            .addGap(0, 582, Short.MAX_VALUE)
         );
 
         ChangingPanel.add(PasswordsPan, "card2");
 
         SettingsPan.setBackground(new java.awt.Color(153, 153, 153));
 
-        jLabel2.setText("Settings");
+        ColorOptionsLabel.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
+        ColorOptionsLabel.setText("Change Color:");
 
         javax.swing.GroupLayout SettingsPanLayout = new javax.swing.GroupLayout(SettingsPan);
         SettingsPan.setLayout(SettingsPanLayout);
         SettingsPanLayout.setHorizontalGroup(
             SettingsPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SettingsPanLayout.createSequentialGroup()
+                .addContainerGap(114, Short.MAX_VALUE)
+                .addComponent(jColorChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(100, 100, 100))
             .addGroup(SettingsPanLayout.createSequentialGroup()
-                .addGap(235, 235, 235)
-                .addComponent(jLabel2)
-                .addContainerGap(377, Short.MAX_VALUE))
+                .addGap(163, 163, 163)
+                .addComponent(ColorOptionsLabel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         SettingsPanLayout.setVerticalGroup(
             SettingsPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SettingsPanLayout.createSequentialGroup()
-                .addGap(260, 260, 260)
-                .addComponent(jLabel2)
-                .addContainerGap(306, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SettingsPanLayout.createSequentialGroup()
+                .addContainerGap(103, Short.MAX_VALUE)
+                .addComponent(ColorOptionsLabel)
+                .addGap(18, 18, 18)
+                .addComponent(jColorChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(146, 146, 146))
         );
 
         ChangingPanel.add(SettingsPan, "card3");
@@ -296,23 +295,27 @@ public class Interface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PasswordsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordsBtnActionPerformed
+        ChangingPanel.getLayout();
         PasswordsPan.setVisible(true);
         SettingsPan.setVisible(false);
     }//GEN-LAST:event_PasswordsBtnActionPerformed
 
-    private void PasswordsBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PasswordsBtnMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PasswordsBtnMouseClicked
-
     private void SettingsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsBtnActionPerformed
+        ChangingPanel.getLayout();
         SettingsPan.setVisible(true);
         PasswordsPan.setVisible(false);
     }//GEN-LAST:event_SettingsBtnActionPerformed
 
     private void LoginPgBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginPgBtnActionPerformed
+        
         NavigationScreen.setVisible(true);
         LoginScreen.setVisible(false);
     }//GEN-LAST:event_LoginPgBtnActionPerformed
+
+    private void LoginOutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginOutBtnActionPerformed
+        LoginScreen.setVisible(true);
+        NavigationScreen.setVisible(false);
+    }//GEN-LAST:event_LoginOutBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -354,6 +357,7 @@ public class Interface extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BGPanel;
     private javax.swing.JPanel ChangingPanel;
+    private javax.swing.JLabel ColorOptionsLabel;
     private javax.swing.JButton LoginOutBtn;
     private javax.swing.JButton LoginPgBtn;
     private javax.swing.JPanel LoginScreen;
@@ -364,8 +368,7 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel PortunusLogo1;
     private javax.swing.JButton SettingsBtn;
     private javax.swing.JPanel SettingsPan;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JColorChooser jColorChooser1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

@@ -38,16 +38,8 @@ public class InfoUnit {
         this.ident = ident;
         this.username = username;
         this.password = password;
-        secQuestions = new ArrayList<>();
-        secAnswers = new ArrayList<>();
-        for(String question: secQuestions)
-        {
-            this.secQuestions.add(question);
-        }
-        for(String answer: secAnswers)
-        {
-            this.secQuestions.add(answer);
-        }
+        this.secQuestions = secQuestions;
+        this.secAnswers = secAnswers;
     }
     public void setIdent(String ident)
     {
@@ -83,7 +75,7 @@ public class InfoUnit {
     }
     public void addSecAnswer(String secAnswer)
     {
-        this.secQuestions.add(secAnswer);
+        this.secAnswers.add(secAnswer);
     }
     public String getSecAnswer(int idx)
     {
@@ -91,20 +83,42 @@ public class InfoUnit {
     }
     public ArrayList<String> getAllSecAnswers()
     {
-        ArrayList<String> secAnswerCopy = new ArrayList<>();
-        for(String answer: this.secAnswers)
+        if(!this.secAnswers.isEmpty())
         {
-            secAnswerCopy.add(answer);
+            ArrayList<String> secAnswerCopy = new ArrayList<>();
+            for(String answer: this.secAnswers)
+            {
+                secAnswerCopy.add(answer);
+            }
+            return secAnswerCopy;
         }
-        return secAnswerCopy;
+        return null; // will have to check for null value
     }
     public ArrayList<String> getAllSecQuestions()
     {
-        ArrayList<String> secQuestionCopy = new ArrayList<>();
-        for(String question: this.secQuestions)
+        if(!this.secQuestions.isEmpty())
         {
-            secQuestionCopy.add(question);
+            ArrayList<String> secQuestionCopy = new ArrayList<>();
+            for(String question: this.secQuestions)
+            {
+                secQuestionCopy.add(question);
+            }
+            return secQuestionCopy;
         }
-        return secQuestionCopy;
+        return null;
+    }
+    public void setAll(String ident, String username, String password, ArrayList<String> secQuestions, ArrayList<String> secAnswers)
+    {
+        this.setIdent(ident);
+        this.setUsername(username);
+        this.setPassword(password);
+        for (String question: secQuestions)
+        {
+            this.addSecQuestion(question);
+        }
+        for (String answer: secAnswers)
+        {
+            this.addSecAnswer(answer);
+        }
     }
 }

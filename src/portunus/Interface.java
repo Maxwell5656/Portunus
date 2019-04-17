@@ -179,7 +179,7 @@ public class Interface extends javax.swing.JFrame {
         NavMenu1.setBackground(new java.awt.Color(51, 204, 255));
         NavMenu1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 4, true));
 
-        PortunusLogo1.setIcon(new javax.swing.ImageIcon("C:\\Users\\sgoug\\Desktop\\CS 321\\PortunusLogo15.png")); // NOI18N
+        PortunusLogo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/portunus/PortunusLogo15.png"))); // NOI18N
 
         PasswordsBtn.setBackground(new java.awt.Color(0, 0, 0));
         PasswordsBtn.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
@@ -545,7 +545,7 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_SettingsBtnActionPerformed
 
     private void LoginPgBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginPgBtnActionPerformed
-                NavigationScreen.setVisible(true);
+        NavigationScreen.setVisible(true);
         LoginScreen.setVisible(false);
     }//GEN-LAST:event_LoginPgBtnActionPerformed
 

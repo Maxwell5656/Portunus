@@ -303,7 +303,7 @@
                 <Component class="javax.swing.JLabel" name="PortunusLogo1">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\sgoug\Desktop\CS 321\PortunusLogo15.png"/>
+                      <Image iconType="3" name="/portunus/PortunusLogo15.png"/>
                     </Property>
                   </Properties>
                 </Component>

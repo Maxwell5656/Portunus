@@ -534,7 +534,7 @@ public class Interface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PasswordsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordsBtnActionPerformed
-        PasswordsBtn.addActionListener();
+        //PasswordsBtn.addActionListener();
         PasswordsPan.setVisible(true);
         SettingsPan.setVisible(false);
     }//GEN-LAST:event_PasswordsBtnActionPerformed

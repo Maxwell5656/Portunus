@@ -9,6 +9,7 @@ import java.util.ArrayList;
  *
  * @author Maxwell
  */
+//TODO: Add WebsiteName to StringConcater
 public class StringConcater {
     private String ident; // This is how the unencrypted user info objects will be identified
     //I believe this will be a random 4-character arrangement of letters, maybe letters and numbers if it's not too hard on the hash function;
@@ -104,6 +105,20 @@ public class StringConcater {
     public void addSecAnswer(String question)
     {
         secAnswers.add(question);
+    }
+    public void setAll(String ident, String username, String password, ArrayList<String> secQuestions, ArrayList<String> secAnswers)
+    {
+        this.setIdent(ident);
+        this.setPassword(password);
+        this.setUsername(username);
+        for(String question: secQuestions)
+        {
+            this.addSecQuestion(question);
+        }
+        for(String answer: secAnswers)
+        {
+            this.addSecAnswer(answer);
+        }
     }
     // TODO: add function to get all strings in one function call.
 }

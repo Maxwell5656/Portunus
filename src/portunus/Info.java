@@ -16,12 +16,15 @@ public class Info {
     private ArrayList<InfoUnit> infoUnits;
     private Random identMaker;
     private final String identValues; // this will contain all possible characters for the ident of each array unit
+    private InfoEvent lastEvent; //logs events. everytime this happens, should notify observers;
+    private ArrayList<Observer> observers; // will notify all of updates.
     
     public Info()
     {
         infoUnits = new ArrayList<>();
         identMaker = new Random();
         identValues = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; // consists of caps values of all 27 roman letters
+        observers = new ArrayList<>();
     }
     
     public InfoUnit findIdent(String Ident)
@@ -46,27 +49,30 @@ public class Info {
         return newIdent;
     }
     
-    public String createInfoUnit()
+    public void createInfoUnit()
             // note how all three return strings. This is so that the view can bookkeep easier 
             // by storing the ident in its objects -Maxwell
     {
+        String newIdent = this.forgeIdent();
         InfoUnit newUnit = new InfoUnit(this.forgeIdent());
         infoUnits.add(newUnit);
-        return newUnit.getIdent();
+        this.logEvent(InfoChange.ITEM_CREATED, newIdent);
     }
     
-    public String createInfoUnit(String username, String password)
+    public void createInfoUnit(String username, String password)
     {
-        InfoUnit newUnit = new InfoUnit(this.forgeIdent(), username, password);
+        String newIdent = this.forgeIdent();
+        InfoUnit newUnit = new InfoUnit(newIdent, username, password);
         infoUnits.add(newUnit);
-        return newUnit.getIdent();
+        this.logEvent(InfoChange.ITEM_CREATED, newIdent);
     }
     
-    public String createInfoUnit(String username, String password, ArrayList<String> secQuestions, ArrayList<String> secAnswers)
+    public void createInfoUnit(String username, String password, ArrayList<String> secQuestions, ArrayList<String> secAnswers)
     {
+        String newIdent = this.forgeIdent();
         InfoUnit newUnit = new InfoUnit(this.forgeIdent(), username, password, secQuestions, secAnswers);
         infoUnits.add(newUnit);
-        return newUnit.getIdent();
+        this.logEvent(InfoChange.ITEM_CREATED, newIdent);
     }
     public boolean deleteInfoUnit(String ident)
             // returns true if object was successfully removed
@@ -75,6 +81,7 @@ public class Info {
        if(item != null)
        {
            this.infoUnits.remove(item);
+           this.logEvent(InfoChange.ITEM_DELETED, ident);
            return true;
        }
        return false;
@@ -89,6 +96,7 @@ public class Info {
        if(item != null) 
        {
            item.setPassword(password);
+           this.logEvent(InfoChange.ITEM_CHANGED, ident);
            return true;
        }
        return false;
@@ -105,6 +113,7 @@ public class Info {
         if (item != null) 
         {
             item.setUsername(username);
+            this.logEvent(InfoChange.ITEM_CHANGED, ident);
             return true;
         }
         return false;
@@ -121,6 +130,7 @@ public class Info {
         if(item != null)
         {
             item.addSecQuestion(secQuestion);
+            this.logEvent(InfoChange.ITEM_CHANGED, ident);
             return true;
         }
         return false;
@@ -138,6 +148,7 @@ public class Info {
         if(item != null)
         {
             item.addSecAnswer(secAnswer);
+            this.logEvent(InfoChange.ITEM_CHANGED, ident);
             return true;
         }
         return false;
@@ -162,5 +173,22 @@ public class Info {
         InfoUnit item = this.findIdent(ident);
         if (item != null) return item.getAllSecQuestions();
         return null;
+    }
+    public void addObserver(Observer toAdd)
+    {
+        observers.add(toAdd);
+    }
+    private void logEvent(InfoChange event, String ident)
+    //Sets an event according to change
+    {
+        this.lastEvent = new InfoEvent(event, ident);
+        for(Observer observer: observers)
+        {
+            observer.logAndMakeChanges();
+        }
+    }
+    public InfoEvent getEvent()
+    {
+        return this.lastEvent;
     }
 }

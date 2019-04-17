@@ -10,5 +10,7 @@ package portunus;
  * @author Maxwell
  */
 public interface Observer {
-    public void makeChanges();
+    public void logAndMakeChanges();
+    // this will get an event object and then make changes based on that event object. The event object will
+    // have to be stored in the observed class first because java is a butt -Maxwell
 }

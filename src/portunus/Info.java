@@ -54,7 +54,7 @@ public class Info {
             // by storing the ident in its objects -Maxwell
     {
         String newIdent = this.forgeIdent();
-        InfoUnit newUnit = new InfoUnit(this.forgeIdent());
+        InfoUnit newUnit = new InfoUnit(newIdent);
         infoUnits.add(newUnit);
         this.logEvent(InfoChange.ITEM_CREATED, newIdent);
     }
@@ -70,7 +70,7 @@ public class Info {
     public void createInfoUnit(String username, String password, ArrayList<String> secQuestions, ArrayList<String> secAnswers)
     {
         String newIdent = this.forgeIdent();
-        InfoUnit newUnit = new InfoUnit(this.forgeIdent(), username, password, secQuestions, secAnswers);
+        InfoUnit newUnit = new InfoUnit(newIdent, username, password, secQuestions, secAnswers);
         infoUnits.add(newUnit);
         this.logEvent(InfoChange.ITEM_CREATED, newIdent);
     }
@@ -79,9 +79,10 @@ public class Info {
     {
        InfoUnit item = this.findIdent(ident);
        if(item != null)
+           // if the item to delete exists
        {
            this.infoUnits.remove(item);
-           this.logEvent(InfoChange.ITEM_DELETED, ident);
+           this.logDeleteEvent(item);
            return true;
        }
        return false;
@@ -182,6 +183,17 @@ public class Info {
     //Sets an event according to change
     {
         this.lastEvent = new InfoEvent(event, ident);
+        for(Observer observer: observers)
+        {
+            observer.logAndMakeChanges();
+        }
+    }
+    
+    private void logDeleteEvent(InfoUnit toDelete)
+    //Sets an event according to change
+    //This alternate version will log an event spelling a deleted object
+    {
+        this.lastEvent = new InfoEvent(toDelete);
         for(Observer observer: observers)
         {
             observer.logAndMakeChanges();

@@ -83,29 +83,21 @@ public class InfoUnit {
     }
     public ArrayList<String> getAllSecAnswers()
     {
-        if(!this.secAnswers.isEmpty())
+        ArrayList<String> secAnswerCopy = new ArrayList<>();
+        for(String answer: this.secAnswers)
         {
-            ArrayList<String> secAnswerCopy = new ArrayList<>();
-            for(String answer: this.secAnswers)
-            {
-                secAnswerCopy.add(answer);
-            }
-            return secAnswerCopy;
+            secAnswerCopy.add(answer);
         }
-        return null; // will have to check for null value
+        return secAnswerCopy;
     }
     public ArrayList<String> getAllSecQuestions()
     {
-        if(!this.secQuestions.isEmpty())
+        ArrayList<String> secQuestionCopy = new ArrayList<>();
+        for(String question: this.secQuestions)
         {
-            ArrayList<String> secQuestionCopy = new ArrayList<>();
-            for(String question: this.secQuestions)
-            {
-                secQuestionCopy.add(question);
-            }
-            return secQuestionCopy;
+            secQuestionCopy.add(question);
         }
-        return null;
+        return secQuestionCopy;
     }
     public void setAll(String ident, String username, String password, ArrayList<String> secQuestions, ArrayList<String> secAnswers)
     {

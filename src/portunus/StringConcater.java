@@ -37,7 +37,7 @@ public class StringConcater {
         secAnswers = new ArrayList<>();
     }
     
-    public String Concat()
+    public String concat()
     {
         String concatedString; 
         concatedString = ident + "***" + password + "**|" + username;
@@ -111,14 +111,20 @@ public class StringConcater {
         this.setIdent(ident);
         this.setPassword(password);
         this.setUsername(username);
-        for(String question: secQuestions)
-        {
-            this.addSecQuestion(question);
-        }
-        for(String answer: secAnswers)
-        {
-            this.addSecAnswer(answer);
-        }
+        //if(!secQuestions.isEmpty())
+        //{
+            for(String question: secQuestions)
+            {
+                this.addSecQuestion(question);
+            }
+        //}
+        //if(!secAnswers.isEmpty())
+        //{
+            for(String answer: secAnswers)
+            {
+                this.addSecAnswer(answer);
+            }
+        //}
     }
     // TODO: add function to get all strings in one function call.
 }

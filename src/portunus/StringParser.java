@@ -160,12 +160,12 @@ Collaboratiors:
         secAnswers.add(question);
     }
     /*Bottom two functions return entire array for Info class*/
-    public ArrayList<String> getSecQuestionList()
+    public ArrayList<String> getAllSecQuestions()
     {
         return secQuestions;
     }
     
-    public ArrayList<String> getSecAnswerList()
+    public ArrayList<String> getAllSecAnswerList()
     {
         return secAnswers;
     }

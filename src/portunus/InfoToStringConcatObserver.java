@@ -17,7 +17,7 @@ public class InfoToStringConcatObserver implements Observer {
     // this class will notify StringConcater of changes to Info, hence the name;
     private StringConcater concat;
     private Info info; // pointers to Info and StringConcater so that all required functions can be called
-    private InfoEvent event;
+    public InfoEvent event;
     
     
     public InfoToStringConcatObserver(StringConcater concat, Info info)
@@ -38,16 +38,19 @@ public class InfoToStringConcatObserver implements Observer {
             // until InfoToViewObserver is implemented then this will likely be same as other.
             {
                 this.sendToConcat();
+                break;
             }
             case ITEM_CHANGED:
             {
                 this.sendToConcat();
+                break;
                 //The only difference this will likely have with ITEM_CREATED case is how
                 //the notification to view is handled
             }
             case ITEM_DELETED:
             {
                 this.sendToConcat();
+                break;
                 //TODO: add some kind of message to Concater that this is for deletion
             }
             default:
@@ -57,10 +60,12 @@ public class InfoToStringConcatObserver implements Observer {
     private void sendToConcat()
     {
         String newIdent = this.event.ident;
-        this.concat.setAll(newIdent, info.getUsername(newIdent), info.getPassword(newIdent), info.getAllSecQuestions(newIdent), info.getAllSecAnswers(newIdent));
+        if (this.event.getEvent() != InfoChange.ITEM_DELETED) this.concat.setAll(newIdent, info.getUsername(newIdent), info.getPassword(newIdent), info.getAllSecQuestions(newIdent), info.getAllSecAnswers(newIdent));
+        else this.concat.setAll(event.getDeleted().getIdent(), event.getDeleted().getUsername(), event.getDeleted().getPassword(), event.getDeleted().getAllSecQuestions(), event.getDeleted().getAllSecAnswers());
         //this really long line should set everything there is needed for concat
         //depending on how exactly this works this might be an empty entry.
-        this.concat.Concat();
+        String concated = this.concat.concat(); // in the future this will instead notify an observer of StringConcat to return .concat() to Storage
+        System.out.println(concated + "\n"); // this is for testing purposes
         // eventually this will notify storage to store
     }
 }

@@ -5,6 +5,7 @@
  */
 package portunus;
 
+import java.lang.reflect.Array;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -40,6 +41,13 @@ public class HashingFunction
     {
         //iterates over the has table and returns the entries of the table 
         return name.get(key);
+    }
+    //function that takes a concurrent hash map and spits out a collection/arraylist
+    public String[] toArray(ConcurrentHashMap name)
+    {
+        //Converts a concurrent hash map object into a set object and then into an array of strings
+       String[] infoArray =  (String[]) name.entrySet().toArray();
+        return infoArray;
     }
     
 }

@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.Base64.Encoder;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -43,7 +44,7 @@ public class Storage {
     //I had a lot of help from this site when coding this class https://howtodoinjava.com/security/java-aes-encryption-example/
     private final Path storageFilePath; //this tells how the class will get to the file.
     private static final int SIZE = 10; //This will be the size of the Hash Table.
-    private ArrayList<String> hashTable;
+    private ConcurrentHashMap hashTable;
     private Cipher cipher;
     private SecretKeySpec key;
     private byte[] keyGen; // this is a test value for now.
@@ -53,21 +54,7 @@ public class Storage {
     {
         String fileLocation = System.getProperty("user.dir") + "\\" + fileName;
         storageFilePath = Paths.get(fileLocation); // tracks the location of this file
-        this.loadAllData();
-        System.out.println(hashTable.size());
-        if(hashTable.size() < SIZE) //if the file is smaller than the size, then add elements as needed.
-            // if the file is larger than size, this shouldn't be much of a problem, as nothing will likely hash to those larger values
-            // -Maxwell
-        {
-            for(int i = hashTable.size(); i<SIZE; i++)
-            {
-                System.out.println(hashTable.size());
-                hashTable.add(""); // initializes to a bunch of empty strings
-                // note that the Files.write function automatically appends a newline character to each string in the file.
-            }
-            this.saveAllData();
-        }
-        // Note: this if statement appears to write too many additional lines.
+        hashTable = HashingFunction.createTable();
         try
         {
             cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
@@ -80,6 +67,7 @@ public class Storage {
        
         // Cipher will use Advanced Encryption System
         this.setKey(key);
+        this.loadAllData();
     }
     private void setKey(String toKey)
     {
@@ -95,30 +83,33 @@ public class Storage {
         }
         catch(Exception e)
         {
-            
+            System.out.println("KEY SCREW UP");
         }
     }
-    public void TestWrite(String Line) // this is just a function to test the writing capabilities
-    {
-        //depreciated
-    }
-    public void setData(String newLine, int idx)
-    // sets the value at the given idx to newLine, then saves to the file
+    public void setData(String newLine)
+    // Adds newLine to the hashmap, then saves to the file
     // 
     {
-        hashTable.set(idx, this.encryptString(newLine));
+        HashingFunction.addToHash(hashTable, newLine);
         this.saveAllData();
     }
-    public String getStringByIdx(int idx)
+    public String getStringByIdent(String ident)
     {
-        return this.decryptString(hashTable.get(idx));
+        return HashingFunction.returnHash(hashTable, ident.hashCode());
     }
     public void loadAllData() // gets the contents of the storage file;
     {
         try
         {
-            hashTable = new ArrayList<>(Files.readAllLines(storageFilePath));
-    
+            ArrayList<String> toHashTable = new ArrayList<>(Files.readAllLines(storageFilePath));
+            for(String item: toHashTable)
+            {
+                if(item.length() >= 4)
+                // if the string is longer than 4 characters than it will be one of our strings
+                {
+                    HashingFunction.addToHash(hashTable, this.decryptString(item));
+                }
+            }
         }
         catch(IOException e)
         {
@@ -126,27 +117,37 @@ public class Storage {
             e.printStackTrace(System.out);
         }
     }
-    public void eraseEntry(int idx)
+    public void eraseEntry(String toDelete)
             // This will be used for the delete use case
     {
-        hashTable.set(idx, "");
+        HashingFunction.removeEntry(hashTable, toDelete);
         this.saveAllData();
+    }
+    public void overWriteEntry(String newline)
+    // this bypasses the collision detection of the hash function, ensuring that the entry is overwritten
+    {
+        String ident = IdentGet.getIdent(newline); // this is the ident to overwrite
+        HashingFunction.removeEntry(hashTable, this.getStringByIdent(ident));
+        this.setData(newline);
     }
     public void saveAllData()
     {
         try
         {
-            Files.write(storageFilePath, hashTable);
+            ArrayList<String> toEncrypt = HashingFunction.toArray(hashTable);
+            ArrayList<String> toStore = new ArrayList<>();
+            for(String item: toEncrypt)
+            {
+                toStore.add(this.encryptString(item));
+                //now encrypts during file save
+            }
+            Files.write(storageFilePath, toStore);
         }
         catch(IOException e)
         {
             System.out.println("Error: IO Exception has occured. Please contact your administrator."); // TODO: come up with better message
             e.printStackTrace(System.out);
         }
-    }
-    public void closeFiles()
-    {
-        //depreciated
     }
     private String encryptString(String line)
     // encrypts the string. Note it is private to guard against attackers -Maxwell
@@ -186,9 +187,6 @@ public class Storage {
             System.out.println("I don't even know right now, come up with something later");
             e.printStackTrace(System.out);
         }
-        //encrypted = encrypted.replaceAll("(?:\\r\\n|\\n\\r|\\n|\\r)", "");
-        // I got this from stackOverflow("https://stackoverflow.com/questions/10282566/avoiding-line-breaks-in-encrypted-and-encoded-url-string/20587169")
-        // Hopefully it works -Maxwell
         
         String encrypted = null;
         try
@@ -197,7 +195,8 @@ public class Storage {
         }
         catch(Exception e)
         {
-            //TODO add something later
+            System.out.println("ERROR: " + e.getLocalizedMessage());
+            e.printStackTrace(System.out);
         }
         return encrypted;
     }
@@ -247,4 +246,4 @@ public class Storage {
         return decrypted;
     }
 }
-// And the rain drops
+// And the rain drops [x47]

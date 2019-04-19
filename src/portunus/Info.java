@@ -67,10 +67,10 @@ public class Info {
         this.logEvent(InfoChange.ITEM_CREATED, newIdent);
     }
     
-    public void createInfoUnit(String username, String password, ArrayList<String> secQuestions, ArrayList<String> secAnswers)
+    public void createInfoUnit(String username, String siteName, String password, ArrayList<String> secQuestions, ArrayList<String> secAnswers)
     {
         String newIdent = this.forgeIdent();
-        InfoUnit newUnit = new InfoUnit(newIdent, username, password, secQuestions, secAnswers);
+        InfoUnit newUnit = new InfoUnit(newIdent, siteName, username, password, secQuestions, secAnswers);
         infoUnits.add(newUnit);
         this.logEvent(InfoChange.ITEM_CREATED, newIdent);
     }
@@ -90,7 +90,24 @@ public class Info {
     
     // note that all these get/set functions have means of checking if the action was performed.
     // sets use boolean values whereas gets use null pointers to tell if something has gone wrong.
-    // Be sure to incorporate this into resulting code -Maxwell 
+    // Be sure to incorporate this into resulting code -Maxwell
+    public boolean setSiteName(String siteName, String ident)
+    {
+        InfoUnit item = this.findIdent(ident);
+        if (item != null) 
+        {
+            item.setSiteName(siteName);
+            this.logEvent(InfoChange.ITEM_CHANGED, ident);
+            return true;
+        }
+        return false;
+    }
+    public String getSiteName(String ident)
+    {
+        InfoUnit item = this.findIdent(ident);
+        if(item != null) return item.getSiteName();
+        return null;
+    }
     public boolean setPassword(String password, String ident)
     {
        InfoUnit item = this.findIdent(ident);

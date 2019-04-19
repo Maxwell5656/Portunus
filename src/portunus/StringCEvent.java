@@ -10,5 +10,13 @@ package portunus;
  * @author Maxwell
  */
 public class StringCEvent {
-    
+    private InfoChange infoChange;
+    public StringCEvent(InfoChange infoEvent)
+    {
+        this.infoChange = infoEvent;
+    }
+    public InfoChange getInfoChange()
+    {
+        return infoChange;
+    }
 }

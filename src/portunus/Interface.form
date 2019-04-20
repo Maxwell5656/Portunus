@@ -21,7 +21,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,4,38,0,0,3,-10"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,4,43,0,0,3,-10"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
@@ -53,7 +53,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
                   <Component id="LoginAccPan" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="394" max="32767" attributes="0"/>
+                  <EmptySpace pref="385" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -75,29 +75,21 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <Component id="jPasswordField1" alignment="0" min="-2" pref="293" max="-2" attributes="0"/>
+                          <Component id="jTextField1" min="-2" pref="293" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
+                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jPasswordField1" alignment="0" min="-2" pref="293" max="-2" attributes="0"/>
-                                  <Component id="jTextField1" min="-2" pref="293" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
-                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                                      <Component id="LoginPgBtn" min="-2" pref="183" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                              <Component id="LoginPgBtn" min="-2" pref="183" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="0" pref="57" max="32767" attributes="0"/>
@@ -106,6 +98,11 @@
                       <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                       <Component id="CreateNewAccBtn" min="-2" pref="226" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -153,7 +150,7 @@
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Agency FB" size="18" style="1"/>
+                  <Font name="Agency FB" size="24" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Password"/>
               </Properties>
@@ -188,7 +185,7 @@
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Agency FB" size="18" style="1"/>
+                  <Font name="Agency FB" size="24" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Username"/>
               </Properties>
@@ -196,7 +193,7 @@
             <Component class="javax.swing.JButton" name="CreateNewAccBtn">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="99" red="99" type="rgb"/>
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Agency FB" size="24" style="1"/>
@@ -243,7 +240,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
                   <Component id="NewAccPan" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="446" max="32767" attributes="0"/>
+                  <EmptySpace pref="437" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -347,7 +344,7 @@
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Agency FB" size="18" style="1"/>
+                  <Font name="Agency FB" size="24" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Password"/>
               </Properties>
@@ -382,7 +379,7 @@
             <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Agency FB" size="18" style="1"/>
+                  <Font name="Agency FB" size="24" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Username"/>
               </Properties>
@@ -600,7 +597,7 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="jScrollPane1" max="32767" attributes="0"/>
@@ -608,7 +605,7 @@
                                   </Group>
                                   <Component id="ShowAccBtn" min="-2" pref="101" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="65" max="32767" attributes="0"/>
+                              <EmptySpace pref="45" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -642,7 +639,7 @@
                               </Border>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Agency FB" size="18" style="1"/>
+                              <Font name="Agency FB" size="24" style="1"/>
                             </Property>
                             <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                               <StringArray count="2">
@@ -693,61 +690,102 @@
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="NewAccSQField" min="-2" pref="210" max="-2" attributes="0"/>
-                                              <EmptySpace pref="140" max="32767" attributes="0"/>
-                                              <Component id="AddAcountBtn" min="-2" pref="139" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                              <Component id="AddAccountBtn" min="-2" pref="139" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="NewAccNameField" min="-2" pref="227" max="-2" attributes="0"/>
+                                                  <Component id="NewAccNameLbl" min="-2" max="-2" attributes="0"/>
                                                   <Component id="NewAccPWLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="NewAccUNLbl" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="NewAccNameLbl" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="NewAccNameField" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="NewAccUNField" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="NewAccPWField" alignment="0" min="-2" pref="210" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="NewAccSQLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="NewAccUNLbl" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="NewAccUNField" max="32767" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="NewSQAnswerLbl1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                                      <Component id="NewSQAnswerLbl2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="NewAccSQLbl2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="NewAccSQAnswerField5" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
+                                                      <Component id="NewAccSQLbl3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="NewAccSQAnswerField6" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
+                                                      <Component id="NewSQAnswerLbl3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="NewAccSQAnswerField4" alignment="1" min="-2" pref="227" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="NewAccSQLbl1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                      <Component id="NewAccSQField6" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="NewAccSQField5" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="NewAccSQField4" alignment="0" min="-2" pref="470" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="NewAccPWField" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="0" pref="65" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                      <Component id="NewAccNameLbl" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="NewAccNameField" min="-2" pref="30" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="NewAccUNLbl" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                      <Component id="NewAccUNField" min="-2" pref="32" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="NewAccNameLbl" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="NewAccUNLbl" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="NewAccUNField" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                                                  <Component id="NewAccNameField" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
                                       <Component id="NewAccPWLbl" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="NewAccPWField" min="-2" pref="31" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="51" pref="436" max="32767" attributes="0"/>
-                                              <Component id="AddAcountBtn" min="-2" pref="45" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="NewAccSQLbl" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="NewAccSQField" min="-2" pref="31" max="-2" attributes="0"/>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                                      <Component id="NewAccSQLbl1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="NewAccSQField4" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="NewSQAnswerLbl1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="NewAccSQAnswerField4" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="NewAccSQLbl2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="NewAccSQField5" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="NewSQAnswerLbl2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="NewAccSQAnswerField5" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="NewAccSQLbl3" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="NewAccSQField6" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="NewSQAnswerLbl3" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="NewAccSQAnswerField6" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="AddAccountBtn" min="-2" pref="45" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="17" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -757,7 +795,7 @@
                               <Properties>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                                    <LineBorder thickness="2"/>
+                                    <LineBorder thickness="3"/>
                                   </Border>
                                 </Property>
                               </Properties>
@@ -774,7 +812,7 @@
                               <Properties>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                                    <LineBorder thickness="2"/>
+                                    <LineBorder thickness="3"/>
                                   </Border>
                                 </Property>
                               </Properties>
@@ -791,7 +829,7 @@
                               <Properties>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                                    <LineBorder thickness="2"/>
+                                    <LineBorder thickness="3"/>
                                   </Border>
                                 </Property>
                               </Properties>
@@ -804,7 +842,7 @@
                                 <Property name="text" type="java.lang.String" value="Password:"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JButton" name="AddAcountBtn">
+                            <Component class="javax.swing.JButton" name="AddAccountBtn">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -812,7 +850,7 @@
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Agency FB" size="24" style="1"/>
                                 </Property>
-                                <Property name="text" type="java.lang.String" value="Done!"/>
+                                <Property name="text" type="java.lang.String" value="Done"/>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                                     <LineBorder thickness="3"/>
@@ -820,19 +858,104 @@
                                 </Property>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JLabel" name="NewAccSQLbl">
+                            <Component class="javax.swing.JLabel" name="NewAccSQLbl1">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Agency FB" size="24" style="1"/>
                                 </Property>
-                                <Property name="text" type="java.lang.String" value="Security Question:"/>
+                                <Property name="text" type="java.lang.String" value="Security Question 1:"/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JTextField" name="NewAccSQField">
+                            <Component class="javax.swing.JTextField" name="NewAccSQField4">
                               <Properties>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                                    <LineBorder thickness="2"/>
+                                    <LineBorder thickness="3"/>
+                                  </Border>
+                                </Property>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="NewSQAnswerLbl1">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Agency FB" size="24" style="1"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Answer:"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="NewAccSQAnswerField4">
+                              <Properties>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                                    <LineBorder thickness="3"/>
+                                  </Border>
+                                </Property>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="NewAccSQLbl2">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Agency FB" size="24" style="1"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Security Question 2:"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="NewAccSQField5">
+                              <Properties>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                                    <LineBorder thickness="3"/>
+                                  </Border>
+                                </Property>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="NewSQAnswerLbl2">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Agency FB" size="24" style="1"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Answer:"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="NewAccSQAnswerField5">
+                              <Properties>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                                    <LineBorder thickness="3"/>
+                                  </Border>
+                                </Property>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="NewAccSQLbl3">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Agency FB" size="24" style="1"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Security Question 3:"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="NewAccSQField6">
+                              <Properties>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                                    <LineBorder thickness="3"/>
+                                  </Border>
+                                </Property>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="NewSQAnswerLbl3">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Agency FB" size="24" style="1"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Answer:"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JTextField" name="NewAccSQAnswerField6">
+                              <Properties>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                                    <LineBorder thickness="3"/>
                                   </Border>
                                 </Property>
                               </Properties>
@@ -863,17 +986,32 @@
                                       <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="SQAnswerLbl1" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                          <Component id="AccPWLbl" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="AccUNLbl" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="AccUNField" pref="227" max="32767" attributes="0"/>
+                                                          <Component id="AccPWField" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="AccSQField1" max="32767" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="AccNameHolderField" min="-2" pref="131" max="-2" attributes="0"/>
+                                                  </Group>
                                                   <Group type="102" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
                                                           <Group type="102" attributes="0">
                                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                                  <Component id="SQAnserLbl2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="SQAnswerLbl2" alignment="0" min="-2" max="-2" attributes="0"/>
                                                                   <Component id="AccSQLbl2" alignment="0" min="-2" max="-2" attributes="0"/>
                                                                   <Component id="AccSQAnswerField2" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
                                                                   <Component id="AccSQLbl3" alignment="0" min="-2" max="-2" attributes="0"/>
                                                                   <Component id="AccSQAnswerField3" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
-                                                                  <Component id="SQAnserLbl3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="SQAnswerLbl3" alignment="0" min="-2" max="-2" attributes="0"/>
                                                               </Group>
                                                               <EmptySpace max="32767" attributes="0"/>
                                                           </Group>
@@ -912,23 +1050,8 @@
                                                           <Component id="EditAccbtn" min="-2" pref="96" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
-                                                  <Group type="102" attributes="0">
-                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="AccPWLbl" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="AccUNLbl" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="AccUNField" pref="227" max="32767" attributes="0"/>
-                                                          <Component id="AccPWField" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="AccSQField1" max="32767" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace max="32767" attributes="0"/>
-                                                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
                                               </Group>
-                                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="SQAnserLbl1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -937,17 +1060,12 @@
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                              <Component id="AccUNLbl" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="AccUNLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="AccNameHolderField" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="UNCopyBtn" max="32767" attributes="0"/>
                                           <Component id="AccUNField" pref="35" max="32767" attributes="0"/>
@@ -972,7 +1090,7 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="AccSQField1" min="-2" pref="35" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="SQAnserLbl1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="SQAnswerLbl1" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
                                                   <Component id="AccSQAnswerField1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
@@ -983,7 +1101,7 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="AccSQField2" min="-2" pref="35" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="SQAnserLbl2" min="-2" max="-2" attributes="0"/>
+                                              <Component id="SQAnswerLbl2" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
                                                   <Component id="AccSQAnswerField2" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
@@ -994,13 +1112,13 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="AccSQField3" min="-2" pref="35" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="SQAnserLbl3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="SQAnswerLbl3" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
                                                   <Component id="AccSQAnswerField3" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                                   <Component id="SQCopyBtn3" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace min="0" pref="40" max="32767" attributes="0"/>
+                                              <EmptySpace min="0" pref="39" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -1126,15 +1244,7 @@
                                 </Property>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel1">
-                              <Properties>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Agency FB" size="24" style="1"/>
-                                </Property>
-                                <Property name="text" type="java.lang.String" value="Account Name"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="SQAnserLbl1">
+                            <Component class="javax.swing.JLabel" name="SQAnswerLbl1">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Agency FB" size="24" style="1"/>
@@ -1192,7 +1302,7 @@
                                 </Property>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JLabel" name="SQAnserLbl2">
+                            <Component class="javax.swing.JLabel" name="SQAnswerLbl2">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Agency FB" size="24" style="1"/>
@@ -1234,7 +1344,7 @@
                                 </Property>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JLabel" name="SQAnserLbl3">
+                            <Component class="javax.swing.JLabel" name="SQAnswerLbl3">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Agency FB" size="24" style="1"/>
@@ -1267,6 +1377,19 @@
                                 </Property>
                               </Properties>
                             </Component>
+                            <Component class="javax.swing.JTextField" name="AccNameHolderField">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Agency FB" size="24" style="1"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Account Name"/>
+                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                                    <LineBorder thickness="3"/>
+                                  </Border>
+                                </Property>
+                              </Properties>
+                            </Component>
                           </SubComponents>
                         </Container>
                       </SubComponents>
@@ -1277,7 +1400,7 @@
                           <Color blue="cc" green="cc" red="cc" type="rgb"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Agency FB" size="18" style="1"/>
+                          <Font name="Agency FB" size="24" style="1"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Show"/>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -1313,7 +1436,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
                                           <EmptySpace min="158" pref="158" max="-2" attributes="0"/>
-                                          <Component id="ColorOptionsLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="ColorOptionsLbl" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
@@ -1321,7 +1444,7 @@
                                               <Component id="colorPicker" min="-2" pref="444" max="-2" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                                                  <Component id="FontSizeLabel" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="FontSizeLbl" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="FontSizeSelection" alignment="0" max="32767" attributes="0"/>
                                           </Group>
@@ -1336,16 +1459,16 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                              <Component id="ColorOptionsLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="ColorOptionsLbl" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="colorPicker" min="-2" pref="271" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              <Component id="FontSizeLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="FontSizeLbl" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="FontSizeSelection" min="-2" pref="55" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                               <Component id="SettingsDoneBtn" min="-2" pref="65" max="-2" attributes="0"/>
-                              <EmptySpace pref="415" max="32767" attributes="0"/>
+                              <EmptySpace pref="450" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1369,18 +1492,18 @@
                         </Property>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="ColorOptionsLabel">
+                    <Component class="javax.swing.JLabel" name="ColorOptionsLbl">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Agency FB" size="36" style="1"/>
+                          <Font name="Agency FB" size="24" style="1"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Change Color:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="FontSizeLabel">
+                    <Component class="javax.swing.JLabel" name="FontSizeLbl">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Agency FB" size="36" style="1"/>
+                          <Font name="Agency FB" size="24" style="1"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Font Size:"/>
                       </Properties>

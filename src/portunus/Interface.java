@@ -67,9 +67,19 @@ public class Interface extends javax.swing.JFrame {
         NewAccUNLbl = new javax.swing.JLabel();
         NewAccPWField = new javax.swing.JTextField();
         NewAccPWLbl = new javax.swing.JLabel();
-        AddAcountBtn = new javax.swing.JButton();
-        NewAccSQLbl = new javax.swing.JLabel();
-        NewAccSQField = new javax.swing.JTextField();
+        AddAccountBtn = new javax.swing.JButton();
+        NewAccSQLbl1 = new javax.swing.JLabel();
+        NewAccSQField4 = new javax.swing.JTextField();
+        NewSQAnswerLbl1 = new javax.swing.JLabel();
+        NewAccSQAnswerField4 = new javax.swing.JTextField();
+        NewAccSQLbl2 = new javax.swing.JLabel();
+        NewAccSQField5 = new javax.swing.JTextField();
+        NewSQAnswerLbl2 = new javax.swing.JLabel();
+        NewAccSQAnswerField5 = new javax.swing.JTextField();
+        NewAccSQLbl3 = new javax.swing.JLabel();
+        NewAccSQField6 = new javax.swing.JTextField();
+        NewSQAnswerLbl3 = new javax.swing.JLabel();
+        NewAccSQAnswerField6 = new javax.swing.JTextField();
         ExistingAccountPnl = new javax.swing.JPanel();
         AccUNField = new javax.swing.JTextField();
         AccUNLbl = new javax.swing.JLabel();
@@ -81,25 +91,25 @@ public class Interface extends javax.swing.JFrame {
         PWCopyBtn = new javax.swing.JButton();
         DeleteAccBtn = new javax.swing.JButton();
         EditAccbtn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        SQAnserLbl1 = new javax.swing.JLabel();
+        SQAnswerLbl1 = new javax.swing.JLabel();
         AccSQAnswerField1 = new javax.swing.JTextField();
         SQCopyBtn1 = new javax.swing.JButton();
         SQCopyBtn2 = new javax.swing.JButton();
         AccSQAnswerField2 = new javax.swing.JTextField();
-        SQAnserLbl2 = new javax.swing.JLabel();
+        SQAnswerLbl2 = new javax.swing.JLabel();
         AccSQField2 = new javax.swing.JTextField();
         AccSQLbl2 = new javax.swing.JLabel();
         AccSQLbl3 = new javax.swing.JLabel();
         AccSQField3 = new javax.swing.JTextField();
-        SQAnserLbl3 = new javax.swing.JLabel();
+        SQAnswerLbl3 = new javax.swing.JLabel();
         AccSQAnswerField3 = new javax.swing.JTextField();
         SQCopyBtn3 = new javax.swing.JButton();
+        AccNameHolderField = new javax.swing.JTextField();
         ShowAccBtn = new javax.swing.JButton();
         SettingsPan = new javax.swing.JPanel();
         colorPicker = new javax.swing.JColorChooser();
-        ColorOptionsLabel = new javax.swing.JLabel();
-        FontSizeLabel = new javax.swing.JLabel();
+        ColorOptionsLbl = new javax.swing.JLabel();
+        FontSizeLbl = new javax.swing.JLabel();
         FontSizeSelection = new javax.swing.JComboBox<>();
         SettingsDoneBtn = new javax.swing.JButton();
 
@@ -116,7 +126,7 @@ public class Interface extends javax.swing.JFrame {
 
         jPasswordField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        jLabel3.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel3.setText("Password");
 
         LoginPgBtn.setBackground(new java.awt.Color(204, 204, 204));
@@ -132,10 +142,10 @@ public class Interface extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
         jLabel4.setText("Welcome to Portunus!");
 
-        jLabel5.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel5.setText("Username");
 
-        CreateNewAccBtn.setBackground(new java.awt.Color(153, 153, 153));
+        CreateNewAccBtn.setBackground(new java.awt.Color(204, 204, 204));
         CreateNewAccBtn.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         CreateNewAccBtn.setText("Create New Account");
         CreateNewAccBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -150,29 +160,28 @@ public class Interface extends javax.swing.JFrame {
         LoginAccPanLayout.setHorizontalGroup(
             LoginAccPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LoginAccPanLayout.createSequentialGroup()
+                .addGap(54, 54, 54)
                 .addGroup(LoginAccPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(LoginAccPanLayout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(jLabel4))
+                        .addGap(115, 115, 115)
+                        .addComponent(jLabel5))
                     .addGroup(LoginAccPanLayout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addGroup(LoginAccPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(LoginAccPanLayout.createSequentialGroup()
-                                .addGap(115, 115, 115)
-                                .addComponent(jLabel5))
-                            .addGroup(LoginAccPanLayout.createSequentialGroup()
-                                .addGap(53, 53, 53)
-                                .addComponent(LoginPgBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(LoginAccPanLayout.createSequentialGroup()
-                                .addGap(118, 118, 118)
-                                .addComponent(jLabel3)))))
+                        .addGap(53, 53, 53)
+                        .addComponent(LoginPgBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(LoginAccPanLayout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addComponent(jLabel3)))
                 .addGap(0, 57, Short.MAX_VALUE))
             .addGroup(LoginAccPanLayout.createSequentialGroup()
                 .addGap(86, 86, 86)
                 .addComponent(CreateNewAccBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginAccPanLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(72, 72, 72))
         );
         LoginAccPanLayout.setVerticalGroup(
             LoginAccPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -208,7 +217,7 @@ public class Interface extends javax.swing.JFrame {
             .addGroup(LoginScreenLayout.createSequentialGroup()
                 .addGap(108, 108, 108)
                 .addComponent(LoginAccPan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(394, Short.MAX_VALUE))
+                .addContainerGap(385, Short.MAX_VALUE))
         );
 
         getContentPane().add(LoginScreen, "card3");
@@ -222,7 +231,7 @@ public class Interface extends javax.swing.JFrame {
 
         jPasswordField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        jLabel6.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel6.setText("Password");
 
         CreateAccBtn.setBackground(new java.awt.Color(204, 204, 204));
@@ -238,7 +247,7 @@ public class Interface extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
         jLabel7.setText("Welcome to Portunus!");
 
-        jLabel8.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel8.setText("Username");
 
         jLabel2.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
@@ -309,7 +318,7 @@ public class Interface extends javax.swing.JFrame {
             .addGroup(NewAccountScreenLayout.createSequentialGroup()
                 .addGap(98, 98, 98)
                 .addComponent(NewAccPan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(446, Short.MAX_VALUE))
+                .addContainerGap(437, Short.MAX_VALUE))
         );
 
         getContentPane().add(NewAccountScreen, "card4");
@@ -388,7 +397,7 @@ public class Interface extends javax.swing.JFrame {
         PasswordsPan.setBackground(new java.awt.Color(153, 153, 153));
 
         AccountList.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 4, true));
-        AccountList.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        AccountList.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         AccountList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "New Account", "Existing Account" };
             public int getSize() { return strings.length; }
@@ -404,81 +413,141 @@ public class Interface extends javax.swing.JFrame {
         NewAccountPnl.setBackground(new java.awt.Color(51, 204, 255));
         NewAccountPnl.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        NewAccNameField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        NewAccNameField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         NewAccNameLbl.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         NewAccNameLbl.setText("Account Name:");
 
-        NewAccUNField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        NewAccUNField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         NewAccUNLbl.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         NewAccUNLbl.setText("Username:");
 
-        NewAccPWField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        NewAccPWField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         NewAccPWLbl.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         NewAccPWLbl.setText("Password:");
 
-        AddAcountBtn.setBackground(new java.awt.Color(204, 204, 204));
-        AddAcountBtn.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        AddAcountBtn.setText("Done!");
-        AddAcountBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        AddAccountBtn.setBackground(new java.awt.Color(204, 204, 204));
+        AddAccountBtn.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        AddAccountBtn.setText("Done");
+        AddAccountBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
-        NewAccSQLbl.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        NewAccSQLbl.setText("Security Question:");
+        NewAccSQLbl1.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        NewAccSQLbl1.setText("Security Question 1:");
 
-        NewAccSQField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        NewAccSQField4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+
+        NewSQAnswerLbl1.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        NewSQAnswerLbl1.setText("Answer:");
+
+        NewAccSQAnswerField4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+
+        NewAccSQLbl2.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        NewAccSQLbl2.setText("Security Question 2:");
+
+        NewAccSQField5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+
+        NewSQAnswerLbl2.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        NewSQAnswerLbl2.setText("Answer:");
+
+        NewAccSQAnswerField5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+
+        NewAccSQLbl3.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        NewAccSQLbl3.setText("Security Question 3:");
+
+        NewAccSQField6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+
+        NewSQAnswerLbl3.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        NewSQAnswerLbl3.setText("Answer:");
+
+        NewAccSQAnswerField6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         javax.swing.GroupLayout NewAccountPnlLayout = new javax.swing.GroupLayout(NewAccountPnl);
         NewAccountPnl.setLayout(NewAccountPnlLayout);
         NewAccountPnlLayout.setHorizontalGroup(
             NewAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(NewAccountPnlLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
+                .addGap(43, 43, 43)
                 .addGroup(NewAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(NewAccountPnlLayout.createSequentialGroup()
-                        .addComponent(NewAccSQField, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
-                        .addComponent(AddAcountBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(AddAccountBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33))
                     .addGroup(NewAccountPnlLayout.createSequentialGroup()
                         .addGroup(NewAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NewAccPWLbl)
-                            .addGroup(NewAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(NewAccUNLbl)
-                                .addComponent(NewAccNameLbl)
-                                .addComponent(NewAccNameField)
+                            .addComponent(NewAccNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NewAccNameLbl)
+                            .addComponent(NewAccPWLbl))
+                        .addGap(33, 33, 33)
+                        .addGroup(NewAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NewAccUNLbl)
+                            .addGroup(NewAccountPnlLayout.createSequentialGroup()
                                 .addComponent(NewAccUNField)
-                                .addComponent(NewAccPWField, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(NewAccSQLbl))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addGap(33, 33, 33))))
+                    .addGroup(NewAccountPnlLayout.createSequentialGroup()
+                        .addGroup(NewAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NewSQAnswerLbl1)
+                            .addGroup(NewAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(NewSQAnswerLbl2)
+                                .addComponent(NewAccSQLbl2)
+                                .addComponent(NewAccSQAnswerField5, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(NewAccSQLbl3)
+                                .addComponent(NewAccSQAnswerField6, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(NewSQAnswerLbl3)
+                                .addComponent(NewAccSQAnswerField4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(NewAccSQLbl1)
+                            .addGroup(NewAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(NewAccSQField6, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(NewAccSQField5, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(NewAccSQField4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(NewAccPWField, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 65, Short.MAX_VALUE))))
         );
         NewAccountPnlLayout.setVerticalGroup(
             NewAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(NewAccountPnlLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(NewAccNameLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(NewAccNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(NewAccUNLbl)
-                .addGap(6, 6, 6)
-                .addComponent(NewAccUNField, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
+                .addGap(20, 20, 20)
+                .addGroup(NewAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(NewAccountPnlLayout.createSequentialGroup()
+                        .addComponent(NewAccNameLbl)
+                        .addGap(37, 37, 37))
+                    .addGroup(NewAccountPnlLayout.createSequentialGroup()
+                        .addComponent(NewAccUNLbl)
+                        .addGap(6, 6, 6)
+                        .addGroup(NewAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(NewAccUNField, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NewAccNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addComponent(NewAccPWLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(NewAccPWField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(NewAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(NewAccountPnlLayout.createSequentialGroup()
-                        .addGap(51, 436, Short.MAX_VALUE)
-                        .addComponent(AddAcountBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, NewAccountPnlLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(NewAccSQLbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(NewAccSQField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(18, 18, 18))
+                .addGap(48, 48, 48)
+                .addComponent(NewAccSQLbl1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(NewAccSQField4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(NewSQAnswerLbl1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(NewAccSQAnswerField4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(NewAccSQLbl2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(NewAccSQField5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(NewSQAnswerLbl2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(NewAccSQAnswerField5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(NewAccSQLbl3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(NewAccSQField6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(NewSQAnswerLbl3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(NewAccSQAnswerField6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(AddAccountBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 17, Short.MAX_VALUE))
         );
 
         AccDisplayPan.add(NewAccountPnl, "card2");
@@ -521,11 +590,8 @@ public class Interface extends javax.swing.JFrame {
         EditAccbtn.setText("Edit");
         EditAccbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        jLabel1.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        jLabel1.setText("Account Name");
-
-        SQAnserLbl1.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        SQAnserLbl1.setText("Answer:");
+        SQAnswerLbl1.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        SQAnswerLbl1.setText("Answer:");
 
         AccSQAnswerField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
@@ -541,8 +607,8 @@ public class Interface extends javax.swing.JFrame {
 
         AccSQAnswerField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
-        SQAnserLbl2.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        SQAnserLbl2.setText("Answer:");
+        SQAnswerLbl2.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        SQAnswerLbl2.setText("Answer:");
 
         AccSQField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
@@ -554,8 +620,8 @@ public class Interface extends javax.swing.JFrame {
 
         AccSQField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
-        SQAnserLbl3.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        SQAnserLbl3.setText("Answer:");
+        SQAnswerLbl3.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        SQAnswerLbl3.setText("Answer:");
 
         AccSQAnswerField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
@@ -563,6 +629,10 @@ public class Interface extends javax.swing.JFrame {
         SQCopyBtn3.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
         SQCopyBtn3.setText("Copy");
         SQCopyBtn3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        AccNameHolderField.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        AccNameHolderField.setText("Account Name");
+        AccNameHolderField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         javax.swing.GroupLayout ExistingAccountPnlLayout = new javax.swing.GroupLayout(ExistingAccountPnl);
         ExistingAccountPnl.setLayout(ExistingAccountPnlLayout);
@@ -572,17 +642,29 @@ public class Interface extends javax.swing.JFrame {
                 .addGap(55, 55, 55)
                 .addGroup(ExistingAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ExistingAccountPnlLayout.createSequentialGroup()
-                        .addGroup(ExistingAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(SQAnswerLbl1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ExistingAccountPnlLayout.createSequentialGroup()
+                        .addGroup(ExistingAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(ExistingAccountPnlLayout.createSequentialGroup()
+                                .addGroup(ExistingAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(AccPWLbl)
+                                    .addComponent(AccUNLbl)
+                                    .addComponent(AccUNField, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+                                    .addComponent(AccPWField)
+                                    .addComponent(AccSQField1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(AccNameHolderField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(ExistingAccountPnlLayout.createSequentialGroup()
                                 .addGroup(ExistingAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(ExistingAccountPnlLayout.createSequentialGroup()
                                         .addGroup(ExistingAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(SQAnserLbl2)
+                                            .addComponent(SQAnswerLbl2)
                                             .addComponent(AccSQLbl2)
                                             .addComponent(AccSQAnswerField2, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(AccSQLbl3)
                                             .addComponent(AccSQAnswerField3, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(SQAnserLbl3))
+                                            .addComponent(SQAnswerLbl3))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ExistingAccountPnlLayout.createSequentialGroup()
                                         .addGroup(ExistingAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -607,32 +689,17 @@ public class Interface extends javax.swing.JFrame {
                                         .addGap(61, 61, 61)))
                                 .addGroup(ExistingAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(DeleteAccBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(EditAccbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(ExistingAccountPnlLayout.createSequentialGroup()
-                                .addGroup(ExistingAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(AccPWLbl)
-                                    .addComponent(AccUNLbl)
-                                    .addComponent(AccUNField, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
-                                    .addComponent(AccPWField)
-                                    .addComponent(AccSQField1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel1)))
-                        .addGap(21, 21, 21))
-                    .addGroup(ExistingAccountPnlLayout.createSequentialGroup()
-                        .addComponent(SQAnserLbl1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(EditAccbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(40, 40, 40))))
         );
         ExistingAccountPnlLayout.setVerticalGroup(
             ExistingAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ExistingAccountPnlLayout.createSequentialGroup()
-                .addGroup(ExistingAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ExistingAccountPnlLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(AccUNLbl))
-                    .addGroup(ExistingAccountPnlLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(25, 25, 25)
+                .addGroup(ExistingAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AccUNLbl)
+                    .addComponent(AccNameHolderField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
                 .addGroup(ExistingAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(UNCopyBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(AccUNField, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
@@ -654,7 +721,7 @@ public class Interface extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(AccSQField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(SQAnserLbl1)
+                        .addComponent(SQAnswerLbl1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(ExistingAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(AccSQAnswerField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -664,7 +731,7 @@ public class Interface extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(AccSQField2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(SQAnserLbl2)
+                        .addComponent(SQAnswerLbl2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(ExistingAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(AccSQAnswerField2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -674,19 +741,19 @@ public class Interface extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(AccSQField3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(SQAnserLbl3)
+                        .addComponent(SQAnswerLbl3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(ExistingAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(AccSQAnswerField3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(SQCopyBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 40, Short.MAX_VALUE)))
+                        .addGap(0, 39, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
         AccDisplayPan.add(ExistingAccountPnl, "card3");
 
         ShowAccBtn.setBackground(new java.awt.Color(204, 204, 204));
-        ShowAccBtn.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
+        ShowAccBtn.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         ShowAccBtn.setText("Show");
         ShowAccBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         ShowAccBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -700,13 +767,13 @@ public class Interface extends javax.swing.JFrame {
         PasswordsPanLayout.setHorizontalGroup(
             PasswordsPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PasswordsPanLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(27, 27, 27)
                 .addGroup(PasswordsPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(PasswordsPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jScrollPane1)
                         .addComponent(AccDisplayPan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(ShowAccBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         PasswordsPanLayout.setVerticalGroup(
             PasswordsPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -729,11 +796,11 @@ public class Interface extends javax.swing.JFrame {
         colorPicker.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         colorPicker.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        ColorOptionsLabel.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
-        ColorOptionsLabel.setText("Change Color:");
+        ColorOptionsLbl.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        ColorOptionsLbl.setText("Change Color:");
 
-        FontSizeLabel.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
-        FontSizeLabel.setText("Font Size:");
+        FontSizeLbl.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        FontSizeLbl.setText("Font Size:");
 
         FontSizeSelection.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
         FontSizeSelection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Extra Small", "Small", "Normal", "Large", "Extra Large" }));
@@ -758,14 +825,14 @@ public class Interface extends javax.swing.JFrame {
                     .addGroup(SettingsPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(SettingsPanLayout.createSequentialGroup()
                             .addGap(158, 158, 158)
-                            .addComponent(ColorOptionsLabel))
+                            .addComponent(ColorOptionsLbl))
                         .addGroup(SettingsPanLayout.createSequentialGroup()
                             .addGap(101, 101, 101)
                             .addGroup(SettingsPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(colorPicker, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(SettingsPanLayout.createSequentialGroup()
                                     .addGap(61, 61, 61)
-                                    .addComponent(FontSizeLabel))
+                                    .addComponent(FontSizeLbl))
                                 .addComponent(FontSizeSelection, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(113, Short.MAX_VALUE))
         );
@@ -773,16 +840,16 @@ public class Interface extends javax.swing.JFrame {
             SettingsPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SettingsPanLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(ColorOptionsLabel)
+                .addComponent(ColorOptionsLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(colorPicker, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addComponent(FontSizeLabel)
+                .addComponent(FontSizeLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FontSizeSelection, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(71, 71, 71)
                 .addComponent(SettingsDoneBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(415, Short.MAX_VALUE))
+                .addContainerGap(450, Short.MAX_VALUE))
         );
 
         ChangingPanel.add(SettingsPan, "card3");
@@ -863,30 +930,39 @@ public class Interface extends javax.swing.JFrame {
 
     private void SettingsDoneBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsDoneBtnActionPerformed
         // changing the color
-        Color interfaceColor;
-        interfaceColor = colorPicker.getColor();
-        NavMenu1.setBackground(interfaceColor);
-        NewAccountPnl.setBackground(interfaceColor);
-        ExistingAccountPnl.setBackground(interfaceColor);
-        LoginAccPan.setBackground(interfaceColor);
-        NewAccPan.setBackground(interfaceColor);
+        Decorator alterer = new Decorator();
+        alterer.colorSet(colorPicker, NavMenu1);
+        alterer.colorSet(colorPicker, NewAccountPnl);
+        alterer.colorSet(colorPicker, ExistingAccountPnl);
+        alterer.colorSet(colorPicker, LoginAccPan);
+        alterer.colorSet(colorPicker, NewAccPan);
         
         //changing the font size
-        if(FontSizeSelection.getSelectedItem() == "Extra Small") {
-            FontSizeLabel.setFont(new Font("Agency FB", Font.BOLD, 12));
-        }
-        if(FontSizeSelection.getSelectedItem() == "Small") {
-            FontSizeLabel.setFont(new Font("Agency FB", Font.BOLD, 16));
-        }
-        if(FontSizeSelection.getSelectedItem() == "Normal") {
-            FontSizeLabel.setFont(new Font("Agency FB", Font.BOLD, 24));
-        }
-        if(FontSizeSelection.getSelectedItem() == "Large") {
-            FontSizeLabel.setFont(new Font("Agency FB", Font.BOLD, 30));
-        }
-        if(FontSizeSelection.getSelectedItem() == "Extra Large") {
-            FontSizeLabel.setFont(new Font("Agency FB", Font.BOLD, 40));
-        }
+            //Navigation Panel
+        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), PasswordsBtn);
+        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), SettingsBtn);
+        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), LoginOutBtn);
+        
+            //Settings Page
+        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), ColorOptionsLbl);
+        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), FontSizeLbl);
+        
+            //Passwords Page
+        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), AccountList);
+        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), ShowAccBtn);
+        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), AccNameHolderField);
+        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), NewAccNameLbl);
+        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), ShowAccBtn);
+        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), NewAccUNLbl);
+        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), NewAccPWLbl);
+        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), NewAccSQLbl1);
+        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), NewAccSQLbl2);
+        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), NewAccSQLbl3);
+        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), NewSQAnswerLbl1);
+        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), NewSQAnswerLbl2);
+        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), NewSQAnswerLbl3);
+        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), AddAccountBtn);
+        
     }//GEN-LAST:event_SettingsDoneBtnActionPerformed
 
     private void ShowAccBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowAccBtnActionPerformed
@@ -894,7 +970,7 @@ public class Interface extends javax.swing.JFrame {
             NewAccountPnl.setVisible(true);
             ExistingAccountPnl.setVisible(false);
         }
-        if(AccountList.getSelectedValue().equals("Exisitng Account")) {
+        if(AccountList.getSelectedValue().equals("Existitng Account")) {
             ExistingAccountPnl.setVisible(true);
             NewAccountPnl.setVisible(false);
         }
@@ -939,6 +1015,7 @@ public class Interface extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AccDisplayPan;
+    private javax.swing.JTextField AccNameHolderField;
     private javax.swing.JTextField AccPWField;
     private javax.swing.JLabel AccPWLbl;
     private javax.swing.JTextField AccSQAnswerField1;
@@ -953,16 +1030,16 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JTextField AccUNField;
     private javax.swing.JLabel AccUNLbl;
     private javax.swing.JList<String> AccountList;
-    private javax.swing.JButton AddAcountBtn;
+    private javax.swing.JButton AddAccountBtn;
     private javax.swing.JPanel BGPanel;
     private javax.swing.JPanel ChangingPanel;
-    private javax.swing.JLabel ColorOptionsLabel;
+    private javax.swing.JLabel ColorOptionsLbl;
     private javax.swing.JButton CreateAccBtn;
     private javax.swing.JButton CreateNewAccBtn;
     private javax.swing.JButton DeleteAccBtn;
     private javax.swing.JButton EditAccbtn;
     private javax.swing.JPanel ExistingAccountPnl;
-    private javax.swing.JLabel FontSizeLabel;
+    private javax.swing.JLabel FontSizeLbl;
     private javax.swing.JComboBox<String> FontSizeSelection;
     private javax.swing.JPanel LoginAccPan;
     private javax.swing.JButton LoginOutBtn;
@@ -975,19 +1052,29 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JTextField NewAccPWField;
     private javax.swing.JLabel NewAccPWLbl;
     private javax.swing.JPanel NewAccPan;
-    private javax.swing.JTextField NewAccSQField;
-    private javax.swing.JLabel NewAccSQLbl;
+    private javax.swing.JTextField NewAccSQAnswerField4;
+    private javax.swing.JTextField NewAccSQAnswerField5;
+    private javax.swing.JTextField NewAccSQAnswerField6;
+    private javax.swing.JTextField NewAccSQField4;
+    private javax.swing.JTextField NewAccSQField5;
+    private javax.swing.JTextField NewAccSQField6;
+    private javax.swing.JLabel NewAccSQLbl1;
+    private javax.swing.JLabel NewAccSQLbl2;
+    private javax.swing.JLabel NewAccSQLbl3;
     private javax.swing.JTextField NewAccUNField;
     private javax.swing.JLabel NewAccUNLbl;
     private javax.swing.JPanel NewAccountPnl;
     private javax.swing.JPanel NewAccountScreen;
+    private javax.swing.JLabel NewSQAnswerLbl1;
+    private javax.swing.JLabel NewSQAnswerLbl2;
+    private javax.swing.JLabel NewSQAnswerLbl3;
     private javax.swing.JButton PWCopyBtn;
     private javax.swing.JButton PasswordsBtn;
     private javax.swing.JPanel PasswordsPan;
     private javax.swing.JLabel PortunusLogo1;
-    private javax.swing.JLabel SQAnserLbl1;
-    private javax.swing.JLabel SQAnserLbl2;
-    private javax.swing.JLabel SQAnserLbl3;
+    private javax.swing.JLabel SQAnswerLbl1;
+    private javax.swing.JLabel SQAnswerLbl2;
+    private javax.swing.JLabel SQAnswerLbl3;
     private javax.swing.JButton SQCopyBtn1;
     private javax.swing.JButton SQCopyBtn2;
     private javax.swing.JButton SQCopyBtn3;
@@ -997,7 +1084,6 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JButton ShowAccBtn;
     private javax.swing.JButton UNCopyBtn;
     private javax.swing.JColorChooser colorPicker;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

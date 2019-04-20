@@ -7,6 +7,7 @@ package portunus;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.util.ArrayList;
 
 /**
  *
@@ -434,6 +435,11 @@ public class Interface extends javax.swing.JFrame {
         AddAccountBtn.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         AddAccountBtn.setText("Done");
         AddAccountBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        AddAccountBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddAccountBtnActionPerformed(evt);
+            }
+        });
 
         NewAccSQLbl1.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         NewAccSQLbl1.setText("Security Question 1:");
@@ -1036,6 +1042,33 @@ public class Interface extends javax.swing.JFrame {
             NewAccountPnl.setVisible(false);
         }
     }//GEN-LAST:event_ShowAccBtnActionPerformed
+
+    private void AddAccountBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddAccountBtnActionPerformed
+        String AccName = NewAccNameField.getText();
+        String AccUN = NewAccUNField.getText();
+        String AccPW = NewAccPWField.getText();
+        String AccSQ1 = NewAccSQField4.getText();
+        String AccSQ2 = NewAccSQField5.getText();
+        String AccSQ3 = NewAccSQField6.getText();
+        String AccSQA1 = NewAccSQAnswerField4.getText();
+        String AccSQA2 = NewAccSQAnswerField5.getText();
+        String AccSQA3 = NewAccSQAnswerField6.getText();
+        
+        //Security Question ArrayList
+        ArrayList SQList = new ArrayList();
+        SQList.add(AccSQ1);
+        SQList.add(AccSQ2);
+        SQList.add(AccSQ3);
+        
+        ArrayList SQAList = new ArrayList();
+        SQAList.add(AccSQA1);
+        SQAList.add(AccSQA2);
+        SQAList.add(AccSQA3);
+                
+        //Account name, Username, Password, ArrayList security Q, ArrayList security A 
+        AccountCreator newAcc = new AccountCreator();
+        newAcc.createAccount(AccName, AccUN, AccPW, SQList, SQAList);
+    }//GEN-LAST:event_AddAccountBtnActionPerformed
 
     /**
      * @param args the command line arguments

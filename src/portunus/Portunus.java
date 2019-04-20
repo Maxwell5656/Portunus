@@ -20,6 +20,17 @@ public class Portunus {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       
+        Info info = new Info();
+        Storage store = new Storage("StorageFileTest.txt", "ASSHOLE");
+        StringParser parse = new StringParser();
+        
+        store.addObserver(new StorageToStringParse(store, parse));
+        parse.addObserver(new StringParseToInfo(info, parse));
+        
+        store.loadTableToInfo();
+        /*info.addObserver(new InfoToStringConcat(concat, info));
+        concat.addObserver(new StringConcatToStorage(store, concat));
+        
+        info.createInfoUnit("ASS", "FurAffinity.com", "666666666", new ArrayList<>(), new ArrayList<>());*/
     }
 }

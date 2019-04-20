@@ -74,6 +74,13 @@ public class Info {
         infoUnits.add(newUnit);
         this.logEvent(InfoChange.ITEM_CREATED, newIdent);
     }
+    public void loadFromStorage(String ident, String username, String siteName, String password, ArrayList<String> secQuestions, ArrayList<String> secAnswers)
+            //Same as createInfoUnit but it uses an existing ident and doesn't notify Storage to concat and store
+            //Only to be called by StringParser or similar storage related class -Maxwell
+    {
+        InfoUnit newUnit = new InfoUnit(ident, siteName, username, password, secQuestions, secAnswers);
+        infoUnits.add(newUnit);
+    }
     public boolean deleteInfoUnit(String ident)
             // returns true if object was successfully removed
     {

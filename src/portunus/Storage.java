@@ -49,12 +49,16 @@ public class Storage {
     private SecretKeySpec key;
     private byte[] keyGen; // this is a test value for now.
     
+    private ArrayList<Observer> observers;
+    private StorageEvent lastEvent;
+    
     public Storage(String fileName, String key)
     // Note this is designed for files stored in User.dir. This location can be found in Help->About in Netbeans -Maxwell
     {
         String fileLocation = System.getProperty("user.dir") + "\\" + fileName;
         storageFilePath = Paths.get(fileLocation); // tracks the location of this file
         hashTable = HashingFunction.createTable();
+        this.observers = new ArrayList<>();
         try
         {
             cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
@@ -115,6 +119,16 @@ public class Storage {
         {
             System.out.println("Error: IO Exception has occured. Please contact your administrator."); // TODO: come up with better message
             e.printStackTrace(System.out);
+        }
+    }
+    public void loadTableToInfo()
+    // this will pass each string in the hashtable to StringParser to create corresponding entries in info
+    {
+        ArrayList<String> toLoad = new ArrayList<>(hashTable.values());
+        for(String item: toLoad)
+        {
+            String itemIdent = IdentGet.getIdent(item);
+            this.logEvent(new StorageEvent(storChange.LOADING_TO_INFO, itemIdent));
         }
     }
     public void eraseEntry(String toDelete)
@@ -244,6 +258,22 @@ public class Storage {
             Logger.getLogger(Storage.class.getName()).log(Level.SEVERE, null, ex);
         }
         return decrypted;
+    }
+    public StorageEvent getEvent()
+    {
+        return this.lastEvent;
+    }
+    public void addObserver(Observer O)
+    {
+        this.observers.add(O);
+    }
+    public void logEvent(StorageEvent event)
+    {
+        this.lastEvent = event;
+        for(Observer observer: observers)
+        {
+            observer.logAndMakeChanges();
+        }
     }
 }
 // And the rain drops [x47]

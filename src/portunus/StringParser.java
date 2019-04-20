@@ -27,6 +27,8 @@ Collaboratiors:
     private String username;
     private ArrayList<String> secQuestions;
     private ArrayList<String> secAnswers;
+    private StringPEvent lastEvent;
+    private ArrayList<Observer> observers;
     
     public StringParser() // initialize everything to empty values
     {
@@ -36,6 +38,7 @@ Collaboratiors:
         username = "";
         secQuestions = new ArrayList<>();
         secAnswers = new ArrayList<>();
+        observers = new ArrayList<>();
     }
     
     public void parseString(String info)
@@ -107,8 +110,10 @@ Collaboratiors:
             }    
         }
         this.setIdent(newIdent);
+        this.setSiteName(newSiteName);
         this.setPassword(newPassword);
         this.setUsername(newUsername);
+        this.logEvent(new StringPEvent(storChange.LOADING_TO_INFO));
     }
     private void getFieldFrom(String getFrom, String insertTo, int idx)
             //TODO: Get this function working.
@@ -183,8 +188,24 @@ Collaboratiors:
         return secQuestions;
     }
     
-    public ArrayList<String> getAllSecAnswerList()
+    public ArrayList<String> getAllSecAnswers()
     {
         return secAnswers;
+    }
+    public StringPEvent getEvent()
+    {
+        return this.lastEvent;
+    }
+    public void addObserver(Observer O)
+    {
+        this.observers.add(O);
+    }
+    public void logEvent(StringPEvent event)
+    {
+        this.lastEvent = event;
+        for(Observer observer: observers)
+        {
+            observer.logAndMakeChanges();
+        }
     }
 }

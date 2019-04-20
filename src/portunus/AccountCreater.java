@@ -5,6 +5,8 @@
  */
 package portunus;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Maxwell
@@ -21,5 +23,8 @@ public class AccountCreater {
         this.info = info;
     }
     
-    //public void createAccount()
+    public void createAccount(String accountName, String username, String password, ArrayList<String> secQ, ArrayList<String> secA)
+    {
+        info.createInfoUnit(username, accountName, password, secQ, secA);
+    }
 }

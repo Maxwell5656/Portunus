@@ -13,14 +13,14 @@ import static portunus.InfoChange.ITEM_DELETED;
  *
  * @author Maxwell
  */
-public class InfoToStringConcatObserver implements Observer {
+public class InfoToStringConcat implements Observer {
     // this class will notify StringConcater of changes to Info, hence the name;
     private StringConcater concat;
     private Info info; // pointers to Info and StringConcater so that all required functions can be called
     public InfoEvent event;
     
     
-    public InfoToStringConcatObserver(StringConcater concat, Info info)
+    public InfoToStringConcat(StringConcater concat, Info info)
     // pointers must be provided on startup as part of this object's contract. As otehrwise it would be useless
     //-Maxwell
     {
@@ -60,12 +60,11 @@ public class InfoToStringConcatObserver implements Observer {
     private void sendToConcat()
     {
         String newIdent = this.event.ident;
-        if (this.event.getEvent() != InfoChange.ITEM_DELETED) this.concat.setAll(newIdent, info.getUsername(newIdent), info.getPassword(newIdent), info.getAllSecQuestions(newIdent), info.getAllSecAnswers(newIdent));
-        else this.concat.setAll(event.getDeleted().getIdent(), event.getDeleted().getUsername(), event.getDeleted().getPassword(), event.getDeleted().getAllSecQuestions(), event.getDeleted().getAllSecAnswers());
+        if (this.event.getEvent() != InfoChange.ITEM_DELETED) this.concat.setAll(newIdent, info.getSiteName(newIdent), info.getUsername(newIdent), info.getPassword(newIdent), info.getAllSecQuestions(newIdent), info.getAllSecAnswers(newIdent));
+        else this.concat.setAll(event.getDeleted().getIdent(), event.getDeleted().getSiteName(), event.getDeleted().getUsername(), event.getDeleted().getPassword(), event.getDeleted().getAllSecQuestions(), event.getDeleted().getAllSecAnswers());
         //this really long line should set everything there is needed for concat
         //depending on how exactly this works this might be an empty entry.
-        String concated = this.concat.concat(); // in the future this will instead notify an observer of StringConcat to return .concat() to Storage
-        System.out.println(concated + "\n"); // this is for testing purposes
+        concat.logEvent(new StringCEvent(this.event.getEvent()));
         // eventually this will notify storage to store
     }
 }

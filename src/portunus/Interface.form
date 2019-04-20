@@ -81,7 +81,7 @@
                           <Component id="jTextField1" min="-2" pref="293" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
-                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              <Component id="LoginUNLbl" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
@@ -89,7 +89,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
-                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <Component id="LoginPWLbl" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="0" pref="57" max="32767" attributes="0"/>
@@ -112,11 +112,11 @@
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <Component id="LoginUNLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jTextField1" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LoginPWLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPasswordField1" min="-2" pref="39" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
@@ -133,7 +133,7 @@
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder thickness="2"/>
+                    <LineBorder thickness="3"/>
                   </Border>
                 </Property>
               </Properties>
@@ -142,12 +142,12 @@
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder thickness="2"/>
+                    <LineBorder thickness="3"/>
                   </Border>
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel3">
+            <Component class="javax.swing.JLabel" name="LoginPWLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Agency FB" size="24" style="1"/>
@@ -182,7 +182,7 @@
                 <Property name="text" type="java.lang.String" value="Welcome to Portunus!"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel5">
+            <Component class="javax.swing.JLabel" name="LoginUNLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Agency FB" size="24" style="1"/>
@@ -265,7 +265,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
-                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                              <Component id="CreateNewAccPWLbl" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
@@ -285,15 +285,15 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
-                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                              <Component id="CreateNewAccUNLbl" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
-                              <Component id="CreateAccBtn" min="-2" pref="183" max="-2" attributes="0"/>
+                              <Component id="CreateUserAccBtn" min="-2" pref="183" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <Component id="CreateNewAccWelcomeLbl" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="58" max="32767" attributes="0"/>
@@ -306,17 +306,17 @@
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="CreateNewAccWelcomeLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="38" max="32767" attributes="0"/>
-                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                      <Component id="CreateNewAccUNLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jTextField2" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                      <Component id="CreateNewAccPWLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPasswordField2" min="-2" pref="39" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                      <Component id="CreateAccBtn" min="-2" pref="77" max="-2" attributes="0"/>
+                      <Component id="CreateUserAccBtn" min="-2" pref="77" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -341,7 +341,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel6">
+            <Component class="javax.swing.JLabel" name="CreateNewAccPWLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Agency FB" size="24" style="1"/>
@@ -349,7 +349,7 @@
                 <Property name="text" type="java.lang.String" value="Password"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="CreateAccBtn">
+            <Component class="javax.swing.JButton" name="CreateUserAccBtn">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -365,7 +365,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CreateAccBtnActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CreateUserAccBtnActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
@@ -376,7 +376,7 @@
                 <Property name="text" type="java.lang.String" value="Welcome to Portunus!"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel8">
+            <Component class="javax.swing.JLabel" name="CreateNewAccUNLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Agency FB" size="24" style="1"/>
@@ -384,7 +384,7 @@
                 <Property name="text" type="java.lang.String" value="Username"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel2">
+            <Component class="javax.swing.JLabel" name="CreateNewAccWelcomeLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Agency FB" size="24" style="1"/>
@@ -605,7 +605,7 @@
                                   </Group>
                                   <Component id="ShowAccBtn" min="-2" pref="101" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="45" max="32767" attributes="0"/>
+                              <EmptySpace pref="42" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -730,7 +730,11 @@
                                                       <Component id="NewAccSQField5" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="NewAccSQField4" alignment="0" min="-2" pref="470" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Component id="NewAccPWField" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="NewAccPWField" min="-2" pref="227" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
+                                                      <Component id="IdentityNumLbl" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
                                               </Group>
                                               <EmptySpace min="0" pref="65" max="32767" attributes="0"/>
                                           </Group>
@@ -757,9 +761,17 @@
                                           </Group>
                                       </Group>
                                       <Component id="NewAccPWLbl" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="NewAccPWField" min="-2" pref="31" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="NewAccPWField" min="-2" pref="31" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                              <Component id="IdentityNumLbl" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                                       <Component id="NewAccSQLbl1" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="NewAccSQField4" min="-2" pref="35" max="-2" attributes="0"/>
@@ -960,6 +972,14 @@
                                 </Property>
                               </Properties>
                             </Component>
+                            <Component class="javax.swing.JLabel" name="IdentityNumLbl">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="Identity"/>
+                              </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="IdentityNumLbl.setVisible(false);"/>
+                              </AuxValues>
+                            </Component>
                           </SubComponents>
                         </Container>
                         <Container class="javax.swing.JPanel" name="ExistingAccountPnl">
@@ -1008,15 +1028,23 @@
                                                               <Group type="103" groupAlignment="0" attributes="0">
                                                                   <Component id="SQAnswerLbl2" alignment="0" min="-2" max="-2" attributes="0"/>
                                                                   <Component id="AccSQLbl2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="AccSQAnswerField2" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
                                                                   <Component id="AccSQLbl3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="AccSQAnswerField3" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
                                                                   <Component id="SQAnswerLbl3" alignment="0" min="-2" max="-2" attributes="0"/>
                                                               </Group>
                                                               <EmptySpace max="32767" attributes="0"/>
                                                           </Group>
                                                           <Group type="102" alignment="1" attributes="0">
                                                               <Group type="103" groupAlignment="1" attributes="0">
+                                                                  <Group type="102" attributes="0">
+                                                                      <Component id="AccSQAnswerField3" min="-2" pref="227" max="-2" attributes="0"/>
+                                                                      <EmptySpace max="32767" attributes="0"/>
+                                                                      <Component id="SQCopyBtn3" min="-2" pref="66" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                                  <Group type="102" attributes="0">
+                                                                      <Component id="AccSQAnswerField2" min="-2" pref="227" max="-2" attributes="0"/>
+                                                                      <EmptySpace max="32767" attributes="0"/>
+                                                                      <Component id="SQCopyBtn2" min="-2" pref="66" max="-2" attributes="0"/>
+                                                                  </Group>
                                                                   <Group type="102" attributes="0">
                                                                       <Component id="AccSQLbl1" min="-2" max="-2" attributes="0"/>
                                                                       <EmptySpace max="32767" attributes="0"/>
@@ -1027,19 +1055,16 @@
                                                                   </Group>
                                                                   <Group type="102" alignment="1" attributes="0">
                                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                                          <Component id="AccSQAnswerField1" min="-2" pref="227" max="-2" attributes="0"/>
                                                                           <Component id="AccSQField2" min="-2" pref="227" max="-2" attributes="0"/>
                                                                           <Component id="AccSQField3" min="-2" pref="227" max="-2" attributes="0"/>
                                                                       </Group>
-                                                                      <EmptySpace pref="33" max="32767" attributes="0"/>
-                                                                      <Component id="SQCopyBtn1" min="-2" pref="66" max="-2" attributes="0"/>
+                                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                                                   </Group>
                                                                   <Group type="102" attributes="0">
                                                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                                          <Component id="SQCopyBtn2" alignment="1" min="-2" pref="66" max="-2" attributes="0"/>
-                                                                          <Component id="SQCopyBtn3" min="-2" pref="66" max="-2" attributes="0"/>
-                                                                      </Group>
+                                                                      <Component id="AccSQAnswerField1" min="-2" pref="227" max="-2" attributes="0"/>
+                                                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                                                      <Component id="SQCopyBtn1" min="-2" pref="66" max="-2" attributes="0"/>
                                                                   </Group>
                                                               </Group>
                                                               <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
@@ -1047,7 +1072,11 @@
                                                       </Group>
                                                       <Group type="103" groupAlignment="0" attributes="0">
                                                           <Component id="DeleteAccBtn" min="-2" pref="96" max="-2" attributes="0"/>
-                                                          <Component id="EditAccbtn" min="-2" pref="96" max="-2" attributes="0"/>
+                                                          <Component id="EditAccBtn" min="-2" pref="96" max="-2" attributes="0"/>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                                              <Component id="IdentityNumLbl1" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
                                                       </Group>
                                                   </Group>
                                               </Group>
@@ -1065,60 +1094,77 @@
                                           <Component id="AccUNLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="AccNameHolderField" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="UNCopyBtn" max="32767" attributes="0"/>
-                                          <Component id="AccUNField" pref="35" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                      <Component id="AccPWLbl" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="AccPWField" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                          <Component id="PWCopyBtn" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              <Component id="DeleteAccBtn" min="-2" pref="37" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="EditAccbtn" min="-2" pref="60" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="AccUNField" min="-2" pref="35" max="-2" attributes="0"/>
+                                                  <Component id="UNCopyBtn" min="-2" pref="45" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="AccPWLbl" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="AccSQLbl1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="AccSQField1" min="-2" pref="35" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="SQAnswerLbl1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="AccSQAnswerField1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                                  <Component id="SQCopyBtn1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                              </Group>
+                                              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                                              <Component id="IdentityNumLbl1" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="AccPWField" min="-2" pref="35" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="AccSQLbl2" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="AccSQField2" min="-2" pref="35" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="SQAnswerLbl2" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="AccSQAnswerField2" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                                  <Component id="SQCopyBtn2" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                      <Component id="DeleteAccBtn" min="-2" pref="45" max="-2" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="EditAccBtn" min="-2" pref="60" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="AccSQLbl1" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="AccSQField1" min="-2" pref="35" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="SQAnswerLbl1" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="AccSQAnswerField1" min="-2" pref="35" max="-2" attributes="0"/>
+                                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                              <Component id="AccSQLbl2" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="AccSQField2" min="-2" pref="35" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="SQAnswerLbl2" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Component id="SQCopyBtn1" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="AccSQAnswerField2" min="-2" pref="35" max="-2" attributes="0"/>
+                                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                              <Component id="AccSQLbl3" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="AccSQField3" min="-2" pref="35" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="SQAnswerLbl3" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Component id="SQCopyBtn2" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="AccSQAnswerField3" min="-2" pref="35" max="-2" attributes="0"/>
+                                                          <Component id="SQCopyBtn3" min="-2" pref="45" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace min="0" pref="36" max="32767" attributes="0"/>
+                                                  </Group>
                                               </Group>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="AccSQLbl3" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="AccSQField3" min="-2" pref="35" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="SQAnswerLbl3" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="AccSQAnswerField3" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                                  <Component id="SQCopyBtn3" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="0" pref="39" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="PWCopyBtn" min="-2" pref="45" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -1184,7 +1230,7 @@
                                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                                 </Property>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Agency FB" size="18" style="1"/>
+                                  <Font name="Agency FB" size="24" style="1"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Copy"/>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -1200,7 +1246,7 @@
                                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                                 </Property>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Agency FB" size="18" style="1"/>
+                                  <Font name="Agency FB" size="24" style="1"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Copy"/>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -1216,7 +1262,7 @@
                                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                                 </Property>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Agency FB" size="18" style="1"/>
+                                  <Font name="Agency FB" size="24" style="1"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Delete"/>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -1228,7 +1274,7 @@
                                 </Property>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JButton" name="EditAccbtn">
+                            <Component class="javax.swing.JButton" name="EditAccBtn">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -1267,7 +1313,7 @@
                                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                                 </Property>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Agency FB" size="18" style="1"/>
+                                  <Font name="Agency FB" size="24" style="1"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Copy"/>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -1283,7 +1329,7 @@
                                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                                 </Property>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Agency FB" size="18" style="1"/>
+                                  <Font name="Agency FB" size="24" style="1"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Copy"/>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -1367,7 +1413,7 @@
                                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                                 </Property>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Agency FB" size="18" style="1"/>
+                                  <Font name="Agency FB" size="24" style="1"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Copy"/>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -1389,6 +1435,14 @@
                                   </Border>
                                 </Property>
                               </Properties>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="IdentityNumLbl1">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="Identity"/>
+                              </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="IdentityNumLbl.setVisible(false);"/>
+                              </AuxValues>
                             </Component>
                           </SubComponents>
                         </Container>

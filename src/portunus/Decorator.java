@@ -25,7 +25,11 @@ public class Decorator {
         
     }
     
-    //Font size
+    //-------------------------------------------------------
+    //fontSizeSet(String, JLabel or JButton or JList or JTextField)
+    //uses the input from the font setting combo box to set the 
+    //font size for the text in the object passed to it
+    //-------------------------------------------------------
     
         //for labels
     public void fontSizeSet(String sizeSetting, JLabel text) {

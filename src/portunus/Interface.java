@@ -18,10 +18,20 @@ public class Interface extends javax.swing.JFrame {
     /**
      * Creates new form MainScreenMockUp
      */
-    private AccountCreator accountCreator;
-    public Interface(Info info) {
+    private AccountCreator newAcc;
+    private Info info;
+    public Interface() {
         initComponents();
-        accountCreator = new AccountCreator(this, info);
+    }
+    public void addAccountCreator(AccountCreator newAcc)
+    {
+        this.newAcc = newAcc;
+    }
+    public boolean allInit()
+            // checks if there's a controller for each button
+    {
+        if(newAcc == null) return false;
+        else return true;
     }
 
     /**
@@ -1068,14 +1078,14 @@ public class Interface extends javax.swing.JFrame {
         SQAList.add(AccSQA3);
                 
         //Account name, Username, Password, ArrayList security Q, ArrayList security A 
-        AccountCreator newAcc = new AccountCreator();
+        //AccountCreator newAcc = new AccountCreator();
         newAcc.createAccount(AccName, AccUN, AccPW, SQList, SQAList);
     }//GEN-LAST:event_AddAccountBtnActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public void display(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -1101,12 +1111,15 @@ public class Interface extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Interface().setVisible(true);
-                
-            }
-        });
+        if(this.allInit())
+        {
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new Interface().setVisible(true);
+
+                }
+            });
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

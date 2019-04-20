@@ -13,6 +13,7 @@ import java.util.ArrayList;
  */
 public class InfoUnit {
     public String ident;
+    public String siteName;
     public String username;
     public String password;
     public ArrayList<String> secQuestions;
@@ -33,9 +34,10 @@ public class InfoUnit {
         secQuestions = new ArrayList<>();
         secAnswers = new ArrayList<>();
     }
-    public InfoUnit(String ident, String username, String password, ArrayList<String> secQuestions, ArrayList<String> secAnswers)
+    public InfoUnit(String ident, String siteName, String username, String password, ArrayList<String> secQuestions, ArrayList<String> secAnswers)
     {
         this.ident = ident;
+        this.siteName = siteName;
         this.username = username;
         this.password = password;
         this.secQuestions = secQuestions;
@@ -48,6 +50,14 @@ public class InfoUnit {
     public String getIdent()
     {
         return ident;
+    }
+    public void setSiteName(String siteName)
+    {
+        this.siteName = siteName;
+    }
+    public String getSiteName()
+    {
+        return siteName;
     }
     public void setPassword(String password)
     {

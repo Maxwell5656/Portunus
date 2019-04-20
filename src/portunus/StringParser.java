@@ -22,40 +22,53 @@ Collaboratiors:
 */
 { // TODO: Consider making StringConcater and StringParser subclasses of one class
     private String ident;
+    private String siteName;
     private String password;
     private String username;
     private ArrayList<String> secQuestions;
     private ArrayList<String> secAnswers;
+    private StringPEvent lastEvent;
+    private ArrayList<Observer> observers;
     
     public StringParser() // initialize everything to empty values
     {
         ident = "";
+        siteName = "";
         password = "";
         username = "";
         secQuestions = new ArrayList<>();
         secAnswers = new ArrayList<>();
+        observers = new ArrayList<>();
     }
     
     public void parseString(String info)
     {
         String newIdent = "";
+        String newSiteName = "";
         String newPassword = "";
         String newUsername = "";
         String secQorA = "";
         // these will be copied into StringParser's values once these have been filled
         
         int idx = 0;
-        while((idx < info.length())&&(info.charAt(idx) != '*'))
+        while((idx < info.length())&&((info.charAt(idx) != '*')&&(info.charAt(idx) != '|'))) // get ident first, that is guaranteed to be in front.
         {   
             newIdent = newIdent + info.charAt(idx);
             idx++;
         }
         while(idx < info.length())
         {
-            String key = info.substring(idx, idx+3);
-            idx += 3;
+            String key = info.substring(idx, idx+3); // get substring of the next codifier of parsing
+            idx += 3; // increment by length of key
             switch(key)
             {
+                case "|||":
+                    while((idx < info.length())&&(info.charAt(idx) != '*'))
+                        {   
+                            newSiteName = newSiteName + info.charAt(idx);
+                            idx++;
+                        }
+                break;
                 case "***":
                     while((idx < info.length())&&(info.charAt(idx) != '*'))
                         {   
@@ -94,11 +107,13 @@ Collaboratiors:
                 break;
                 default:
                 break;
-            }
-            this.setIdent(newIdent);
-            this.setPassword(newPassword);
-            this.setUsername(newUsername);
+            }    
         }
+        this.setIdent(newIdent);
+        this.setSiteName(newSiteName);
+        this.setPassword(newPassword);
+        this.setUsername(newUsername);
+        this.logEvent(new StringPEvent(storChange.LOADING_TO_INFO));
     }
     private void getFieldFrom(String getFrom, String insertTo, int idx)
             //TODO: Get this function working.
@@ -123,6 +138,14 @@ Collaboratiors:
         this.ident = ident;
     }
     
+    public String getSiteName()
+    {
+        return siteName;
+    }
+    public void setSiteName(String siteName)
+    {
+        this.siteName = siteName;
+    }
     public String getPassword()
     {
         return password;
@@ -165,8 +188,24 @@ Collaboratiors:
         return secQuestions;
     }
     
-    public ArrayList<String> getAllSecAnswerList()
+    public ArrayList<String> getAllSecAnswers()
     {
         return secAnswers;
+    }
+    public StringPEvent getEvent()
+    {
+        return this.lastEvent;
+    }
+    public void addObserver(Observer O)
+    {
+        this.observers.add(O);
+    }
+    public void logEvent(StringPEvent event)
+    {
+        this.lastEvent = event;
+        for(Observer observer: observers)
+        {
+            observer.logAndMakeChanges();
+        }
     }
 }

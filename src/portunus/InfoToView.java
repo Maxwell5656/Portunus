@@ -13,10 +13,22 @@ public class InfoToView implements Observer{
     //This class is responsible for handling changes the view needs to record, such as new InfoUnits, deleted InfoUnits, etc.
     private Interface view;
     private Info info;
+    private InfoEvent event;
     
     @Override
     public void logAndMakeChanges()
     {
+        this.event = info.getEvent();
+        switch(event.getEvent())
+        {
+            case ITEM_CREATED:
+                //view.createThing(this.event.ident....)
+                break;
+            case ITEM_CHANGED:
+                break;
+            case ITEM_DELETED:
+                //view.deleteThing(this.event.ident....)
+        }
         
     }
 }

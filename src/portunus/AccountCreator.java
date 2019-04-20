@@ -11,13 +11,13 @@ import java.util.ArrayList;
  *
  * @author Maxwell
  */
-public class AccountCreater {
+public class AccountCreator {
     // This controller class acts as intermediary between view (interface) and model (info), creating account on button press
     private Interface view;
     private Info info;
     private String ident;
     
-    public AccountCreater(Interface view, Info info)
+    public AccountCreator(Interface view, Info info)
     {
         this.view = view;
         this.info = info;

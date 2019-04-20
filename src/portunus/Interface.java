@@ -18,8 +18,10 @@ public class Interface extends javax.swing.JFrame {
     /**
      * Creates new form MainScreenMockUp
      */
-    public Interface() {
+    private AccountCreator accountCreator;
+    public Interface(Info info) {
         initComponents();
+        accountCreator = new AccountCreator(this, info);
     }
 
     /**

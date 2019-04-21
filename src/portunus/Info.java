@@ -46,6 +46,13 @@ public class Info {
         {
             newIdent += identValues.charAt(identMaker.nextInt(26));
         }
+        for(InfoUnit unit: infoUnits)
+        {
+            if(unit.getIdent().equals(newIdent))
+            {
+                newIdent = this.forgeIdent();
+            }
+        }
         return newIdent;
     }
     

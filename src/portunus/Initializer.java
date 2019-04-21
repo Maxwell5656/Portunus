@@ -5,6 +5,7 @@
  */
 package portunus;
 
+import java.awt.Color;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
@@ -21,21 +22,15 @@ public class Initializer {
     public static void main(String[] args) {
         // TODO code application logic here
         Info info = new Info();
-        //Interface view = new Interface();
-        //view.addAccountCreator(new AccountCreator(info));
-        //view.display(args, new AccountCreator(infoo));
-        /*java.awt.EventQueue.invokeLater(new Runnable() {
-                public void run() {
-                    view.setVisible(true);
-                    
-                }
-            });*/
+        UserLogin loginer = new UserLogin();
+        loginer.setLoginInfo("pi", "x");
         
-        //Interface.display(view);
+        
         
         // in this code, the interface is created
         // note how the interface creation is inside of run()
         // it seems that this is needed for the buttons to display the correct look and feel of the buttons
+        // could possibly move this into the function call, since all that is needed for info and decorator to connect
         try {
             for (javax.swing.UIManager.LookAndFeelInfo infoo : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(infoo.getName())) {
@@ -61,6 +56,7 @@ public class Initializer {
                     Interface view = new Interface();
                     view.addAccountCreator(new AccountCreator(info));
                     info.addObserver(new InfoToView(info, view));
+                    view.addUserLogin(loginer);
                     view.setVisible(true);
                     
                 }

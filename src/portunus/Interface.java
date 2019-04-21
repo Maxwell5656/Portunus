@@ -21,12 +21,17 @@ public class Interface extends javax.swing.JFrame {
      */
     private AccountCreator newAcc;
     private Info info;
+    private UserLogin login;
     public Interface() {
         initComponents();
     }
     public void addAccountCreator(AccountCreator newAcc)
     {
         this.newAcc = newAcc;
+    }
+    public void addUserLogin(UserLogin login)
+    {
+        this.login = login;
     }
     public void testThis() // this is just to test the capabilities of calling a function's methods
     {
@@ -146,6 +151,11 @@ public class Interface extends javax.swing.JFrame {
         jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         jPasswordField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
 
         LoginPWLbl.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         LoginPWLbl.setText("Password");
@@ -583,7 +593,7 @@ public class Interface extends javax.swing.JFrame {
                 .addComponent(NewAccSQAnswerField6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(AddAccountBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 17, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         IdentityNumLbl.setVisible(false);
@@ -964,9 +974,15 @@ public class Interface extends javax.swing.JFrame {
     private void LoginPgBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginPgBtnActionPerformed
         //right now it will automatically display the Navigation screen when clicked
         //needs to be changed to only work when the right password is entered
-        NavigationScreen.setVisible(true);
-        LoginScreen.setVisible(false);
-        NewAccountScreen.setVisible(false);
+        System.out.println(new String(jPasswordField1.getPassword()));
+        System.out.println(jTextField1.getText());
+        if(this.login.verifyCredentials(jTextField1.getText(), new String(jPasswordField1.getPassword())))
+        {
+            NavigationScreen.setVisible(true);
+            LoginScreen.setVisible(false);
+            NewAccountScreen.setVisible(false);
+        }
+        else System.out.println("Wrong Login Info"); //TODO: add message in GUI that displays
     }//GEN-LAST:event_LoginPgBtnActionPerformed
 
     private void LoginOutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginOutBtnActionPerformed
@@ -1087,6 +1103,10 @@ public class Interface extends javax.swing.JFrame {
         //AccountCreator newAcc = new AccountCreator();
         this.newAcc.createAccount(AccName, AccUN, AccPW, SQList, SQAList);
     }//GEN-LAST:event_AddAccountBtnActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     /**
      * @param args the command line arguments

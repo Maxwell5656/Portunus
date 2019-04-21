@@ -5,6 +5,8 @@
  */
 package portunus;
 
+import javax.swing.JList;
+
 /**
  *
  * @author Maxwell
@@ -15,6 +17,12 @@ public class InfoToView implements Observer{
     private Info info;
     private InfoEvent event;
     
+    public InfoToView(Info info, Interface view)
+    {
+        this.view = view;
+        this.info = info;
+    }
+    
     @Override
     public void logAndMakeChanges()
     {
@@ -23,12 +31,13 @@ public class InfoToView implements Observer{
         {
             case ITEM_CREATED:
                 //view.createThing(this.event.ident....)
+                //System.out.println("This seems to work?");
+                view.testThis();
                 break;
             case ITEM_CHANGED:
                 break;
             case ITEM_DELETED:
                 //view.deleteThing(this.event.ident....)
         }
-        
     }
 }

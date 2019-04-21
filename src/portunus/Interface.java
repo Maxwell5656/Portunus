@@ -6,6 +6,7 @@
 package portunus;
 
 import java.awt.Color;
+import java.awt.EventQueue;
 import java.awt.Font;
 import java.util.ArrayList;
 
@@ -27,12 +28,17 @@ public class Interface extends javax.swing.JFrame {
     {
         this.newAcc = newAcc;
     }
-    public boolean allInit()
+    public void testThis() // this is just to test the capabilities of calling a function's methods
+    {
+        System.out.println("This indeeed does work!");
+         this.NewAccUNField.setText("WORK");
+    }
+    /*public boolean allInit()
             // checks if there's a controller for each button
     {
         if(newAcc == null) return false;
         else return true;
-    }
+    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -1079,13 +1085,19 @@ public class Interface extends javax.swing.JFrame {
                 
         //Account name, Username, Password, ArrayList security Q, ArrayList security A 
         //AccountCreator newAcc = new AccountCreator();
-        newAcc.createAccount(AccName, AccUN, AccPW, SQList, SQAList);
+        this.newAcc.createAccount(AccName, AccUN, AccPW, SQList, SQAList);
     }//GEN-LAST:event_AddAccountBtnActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public void display(String args[]) {
+    public static void display(Interface view) 
+    /* MY SOLUTION:
+        display is now a static function that operates on a view object
+        see how it works in initializer
+            -Maxwell
+    */
+    {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -1111,16 +1123,15 @@ public class Interface extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        if(this.allInit())
-        {
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
-                    new Interface().setVisible(true);
-
+                    view.setVisible(true);
+                    
                 }
             });
-        }
+        
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AccDisplayPan;

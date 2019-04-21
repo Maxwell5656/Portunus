@@ -20,9 +20,18 @@ public class Initializer {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Interface view = new Interface();
         Info info = new Info();
-        view.addAccountCreator(new AccountCreator(view, info));
-        view.display(args);
+        Interface view = new Interface();
+        view.addAccountCreator(new AccountCreator(info));
+        info.addObserver(new InfoToView(info, view));
+        //view.display(args, new AccountCreator(info));
+        /*java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    view.setVisible(true);
+                    
+                }
+            });*/
+        
+        Interface.display(view);
     }
 }

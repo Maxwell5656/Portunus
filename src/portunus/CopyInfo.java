@@ -14,6 +14,13 @@ public class CopyInfo {
     //CopyInfo.copy(String)
     //copies the passed string to the system clipboard
     //-----------------------------------------------------------
+    
+    /**
+     * 
+     * Copies passed string into the clipboard
+     * 
+     * @param info String to be copied
+     */
     public void copy(String info) {
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         

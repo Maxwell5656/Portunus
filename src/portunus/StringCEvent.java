@@ -11,10 +11,22 @@ package portunus;
  */
 public class StringCEvent {
     private InfoChange infoChange;
+    
+    /**
+     * 
+     * Observer skeleton function
+     *  
+     */
     public StringCEvent(InfoChange infoEvent)
     {
         this.infoChange = infoEvent;
     }
+    
+    /**
+     * 
+     * Observer skeleton function
+     *  
+     */
     public InfoChange getInfoChange()
     {
         return infoChange;

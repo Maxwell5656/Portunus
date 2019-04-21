@@ -15,6 +15,11 @@ public class InfoToView implements Observer{
     private Info info;
     private InfoEvent event;
     
+    /**
+     * 
+     * Checks for changes in Info to update view
+     * 
+     */
     @Override
     public void logAndMakeChanges()
     {

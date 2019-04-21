@@ -22,15 +22,33 @@ public class StorageEvent {
     private storChange change; // the type of change
     private String changedIdent; // the ident that changed (applicable only to first three enum types
     
+    /**
+     * 
+     * Detcts if there is a change in the Storage object
+     *  
+     */
     public StorageEvent(storChange change, String ident)
     {
         this.change = change;
         changedIdent = ident;
     }
+    
+    /**
+     * 
+     * Gets the last event from event queue
+     * 
+     */
     public storChange getChange()
     {
         return this.change;
     }
+    
+    /**
+     * 
+     * Gets the ident value of the changed object
+     * 
+     * @return String ident of the object changed
+     */
     public String getIdent()
     {
         return changedIdent;

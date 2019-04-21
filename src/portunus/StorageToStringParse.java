@@ -14,11 +14,23 @@ public class StorageToStringParse implements Observer{
     private StringParser parse;
     private StorageEvent event;
     
+    /**
+     * 
+     * Passes the values from storage to string parser when they're changed
+     * 
+     * @param store Storage object to be parsed
+     * @param parse StringParser used to parse the Storage object
+     */
     public StorageToStringParse(Storage store, StringParser parse)
     {
         this.store = store;
         this.parse = parse;
     }
+    /**
+     * 
+     * Observes changes made
+     * 
+     */
     @Override
     public void logAndMakeChanges()
     {

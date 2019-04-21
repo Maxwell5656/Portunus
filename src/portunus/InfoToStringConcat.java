@@ -19,7 +19,14 @@ public class InfoToStringConcat implements Observer {
     private Info info; // pointers to Info and StringConcater so that all required functions can be called
     public InfoEvent event;
     
-    
+    /**
+     * 
+     * Takes an instance of Info and concatenates all its stored info into a 
+     * specialized String
+     * 
+     * @param concat StringConcater to be updated with information
+     * @param info Info object to be used as the source of info
+     */
     public InfoToStringConcat(StringConcater concat, Info info)
     // pointers must be provided on startup as part of this object's contract. As otehrwise it would be useless
     //-Maxwell
@@ -28,6 +35,11 @@ public class InfoToStringConcat implements Observer {
         this.info = info;
     }
     
+    /**
+     * 
+     * Checks to see if changes have been made 
+     * 
+     */
     @Override
     public void logAndMakeChanges()
     {
@@ -57,6 +69,12 @@ public class InfoToStringConcat implements Observer {
                 System.out.println("ERROR: Invalid InfoEvent\n");
         }
     }
+    
+    /**
+     * 
+     * Sends all the information from a deleted InfoUnit object to be concatenated into a string
+     * 
+     */
     private void sendToConcat()
     {
         String newIdent = this.event.ident;

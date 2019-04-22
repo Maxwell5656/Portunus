@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -19,6 +20,8 @@ public class Interface extends javax.swing.JFrame {
     /**
      * Creates new form MainScreenMockUp
      */
+    DefaultListModel AccountListModel = new DefaultListModel();
+    
     private AccountCreator newAcc;
     private Info info;
     private UserLogin login;
@@ -422,13 +425,10 @@ public class Interface extends javax.swing.JFrame {
 
         AccountList.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 4, true));
         AccountList.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        AccountList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "New Account", "Existing Account" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        AccountList.setModel(AccountListModel);
         AccountList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(AccountList);
+        AccountListModel.addElement("New Account");
 
         AccDisplayPan.setBackground(new java.awt.Color(51, 204, 255));
         AccDisplayPan.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
@@ -532,11 +532,10 @@ public class Interface extends javax.swing.JFrame {
             .addGroup(NewAccountPnlLayout.createSequentialGroup()
                 .addGap(13, 13, 13)
                 .addGroup(NewAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(NewAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(NewAccountPnlLayout.createSequentialGroup()
-                            .addComponent(NewAccNameLbl)
-                            .addGap(37, 37, 37))
-                        .addComponent(NewAccNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(NewAccountPnlLayout.createSequentialGroup()
+                        .addComponent(NewAccNameLbl)
+                        .addGap(37, 37, 37))
+                    .addComponent(NewAccNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(NewAccountPnlLayout.createSequentialGroup()
                         .addComponent(NewAccUNLbl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -864,6 +863,8 @@ public class Interface extends javax.swing.JFrame {
 
         FontSizeSelection.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
         FontSizeSelection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Extra Small", "Small", "Normal", "Large", "Extra Large" }));
+        FontSizeSelection.setSelectedItem("Normal");
+        FontSizeSelection.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         SettingsDoneBtn.setBackground(new java.awt.Color(204, 204, 204));
         SettingsDoneBtn.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
@@ -1094,8 +1095,9 @@ public class Interface extends javax.swing.JFrame {
         SQAList.add(AccSQA3);
                 
         //Account name, Username, Password, ArrayList security Q, ArrayList security A 
-        //AccountCreator newAcc = new AccountCreator();
-        this.newAcc.createAccount(AccName, AccUN, AccPW, SQList, SQAList);
+        
+        this.newAcc.createAccount(AccountListModel, AccName, AccUN, AccPW, SQList, SQAList);
+        
     }//GEN-LAST:event_AddAccountBtnActionPerformed
 
     private void UNCopyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UNCopyBtnActionPerformed

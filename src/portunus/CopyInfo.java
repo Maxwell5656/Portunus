@@ -18,7 +18,7 @@ import javafx.scene.input.ClipboardContent;
 
 public class CopyInfo {
 
-    public void copy() {}
+    public void CopyInfo() {}
 
     
 

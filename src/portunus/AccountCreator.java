@@ -6,6 +6,8 @@
 package portunus;
 
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
 
 /**
  *
@@ -15,15 +17,20 @@ public class AccountCreator {
     // This controller class acts as intermediary between view (interface) and model (info), creating account on button press
     private Info info;
     private String ident;
+    private InfoToView infoToView;
     
     public AccountCreator(Info info)
     {
         this.info = info;
     }
     
-    public void createAccount(String accountName, String username, String password, ArrayList<String> secQ, ArrayList<String> secA)
+    public void createAccount(DefaultListModel listModel, String accountName, String username, String password, ArrayList<String> secQ, ArrayList<String> secA)
     {
+        
         info.createInfoUnit(username, accountName, password, secQ, secA);
+        //The following line won't work and I don't know why
+        //infoToView.createItem(listModel, accountName);
+        listModel.addElement(accountName);
     }
     
     

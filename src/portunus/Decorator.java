@@ -43,10 +43,10 @@ public class Decorator {
             text.setFont(new Font("Agency FB", Font.BOLD, 24));
         }
         if(sizeSetting.equals("Large")) {
-            text.setFont(new Font("Agency FB", Font.BOLD, 36));
+            text.setFont(new Font("Agency FB", Font.BOLD, 34));
         }
         if(sizeSetting.equals("Extra Large")) {
-            text.setFont(new Font("Agency FB", Font.BOLD, 48));
+            text.setFont(new Font("Agency FB", Font.BOLD, 40));
         }
     }
     
@@ -62,10 +62,10 @@ public class Decorator {
             text.setFont(new Font("Agency FB", Font.BOLD, 24));
         }
         if(sizeSetting.equals("Large")) {
-            text.setFont(new Font("Agency FB", Font.BOLD, 36));
+            text.setFont(new Font("Agency FB", Font.BOLD, 34));
         }
         if(sizeSetting.equals("Extra Large")) {
-            text.setFont(new Font("Agency FB", Font.BOLD, 48));
+            text.setFont(new Font("Agency FB", Font.BOLD, 40));
         }
     }
     
@@ -81,10 +81,10 @@ public class Decorator {
             text.setFont(new Font("Agency FB", Font.BOLD, 24));
         }
         if(sizeSetting.equals("Large")) {
-            text.setFont(new Font("Agency FB", Font.BOLD, 36));
+            text.setFont(new Font("Agency FB", Font.BOLD, 34));
         }
         if(sizeSetting.equals("Extra Large")) {
-            text.setFont(new Font("Agency FB", Font.BOLD, 48));
+            text.setFont(new Font("Agency FB", Font.BOLD, 40));
         }
     }
         
@@ -100,10 +100,10 @@ public class Decorator {
             text.setFont(new Font("Agency FB", Font.BOLD, 24));
         }
         if(sizeSetting.equals("Large")) {
-            text.setFont(new Font("Agency FB", Font.BOLD, 36));
+            text.setFont(new Font("Agency FB", Font.BOLD, 34));
         }
         if(sizeSetting.equals("Extra Large")) {
-            text.setFont(new Font("Agency FB", Font.BOLD, 48));
+            text.setFont(new Font("Agency FB", Font.BOLD, 40));
         }
     }
 }

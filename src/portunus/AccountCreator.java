@@ -29,8 +29,6 @@ public class AccountCreator {
     {
         this.info = info;
     }
-    
-InterFaceTest
 public void createAccount(DefaultListModel listModel, String accountName, String username, String password, ArrayList<String> secQ, ArrayList<String> secA)
     /**
      * 

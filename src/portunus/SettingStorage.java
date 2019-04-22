@@ -89,7 +89,6 @@ public class SettingStorage {
         this.loadSettings();
         //TODO: set the colors to the default Portunus if no existing colors are found
     }
-    private void loadSettings()
     /**
      * 
      * Finds the location of the stored settings in memory and takes their 
@@ -136,7 +135,6 @@ public class SettingStorage {
      * CReates a new file in storage
      * 
      */
-    public void createNewStorageFile()
     {
         try
         {

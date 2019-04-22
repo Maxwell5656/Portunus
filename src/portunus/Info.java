@@ -67,6 +67,13 @@ public class Info {
         {
             newIdent += identValues.charAt(identMaker.nextInt(26));
         }
+        for(InfoUnit unit: infoUnits)
+        {
+            if(unit.getIdent().equals(newIdent))
+            {
+                newIdent = this.forgeIdent();
+            }
+        }
         return newIdent;
     }
     
@@ -156,8 +163,8 @@ public class Info {
        if(item != null)
            // if the item to delete exists
        {
-           this.infoUnits.remove(item);
            this.logDeleteEvent(item);
+           this.infoUnits.remove(item);
            return true;
        }
        return false;
@@ -373,7 +380,26 @@ public class Info {
         if (item != null) return item.getAllSecQuestions();
         return null;
     }
-    
+    public boolean setAllSecQuestions(ArrayList<String> secQ, String ident)
+    {
+        InfoUnit item = this.findIdent(ident);
+        if(item != null)
+        {
+            item.setAllSecQuestions(secQ);
+            return true;
+        }
+        return false;
+    }
+    public boolean setAllSecAnswers(ArrayList<String> secA, String ident)
+    {
+        InfoUnit item = this.findIdent(ident);
+        if(item != null)
+        {
+            item.setAllSecAnswers(secA);
+            return true;
+        }
+        return false;
+    }
     /**
      * 
      * Adds an observer to the list of observers.

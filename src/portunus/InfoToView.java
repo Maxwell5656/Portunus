@@ -5,6 +5,8 @@
  */
 package portunus;
 
+import javax.swing.JList;
+
 /**
  *
  * @author Maxwell
@@ -14,7 +16,11 @@ public class InfoToView implements Observer{
     private Interface view;
     private Info info;
     private InfoEvent event;
-    
+    public InfoToView(Info info, Interface view)
+    {
+        this.view = view;
+        this.info = info;
+}
     /**
      * 
      * Checks for changes in Info to update view
@@ -24,16 +30,17 @@ public class InfoToView implements Observer{
     public void logAndMakeChanges()
     {
         this.event = info.getEvent();
+        String ident = this.event.ident;
         switch(event.getEvent())
         {
             case ITEM_CREATED:
-                //view.createThing(this.event.ident....)
+                view.addInfoUnit(ident, info.getSiteName(ident), info.getUsername(ident), info.getPassword(ident), info.getAllSecQuestions(ident), info.getAllSecAnswers(ident));
                 break;
             case ITEM_CHANGED:
                 break;
             case ITEM_DELETED:
-                //view.deleteThing(this.event.ident....)
+                view.removeInfoUnit(this.event.getDeleted().getIdent());
+                break;
         }
-        
     }
 }

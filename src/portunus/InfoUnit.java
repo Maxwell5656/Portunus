@@ -236,21 +236,32 @@ public class InfoUnit {
         }
         return secQuestionCopy;
     }
+    public void setAllSecQuestions(ArrayList<String> secQ)
+    {
+        this.secQuestions = secQ;
+    }
+    public void setAllSecAnswers(ArrayList<String> secA)
+    {
+        this.secAnswers = secA;
+    }
+   
     
     /**
      * 
      * Sets all fields of InfoUnit at the same time
      * 
      * @param ident String identifier for the object
+     * @param siteName String value for the siteName field
      * @param username String value for the username field
      * @param password String value for the password field
      * @param secQuestions String ArrayList for the secQuestions field
      * @param secAnswers String ArrayList for the secAnswers field
      */
-    public void setAll(String ident, String username, String password, ArrayList<String> secQuestions, ArrayList<String> secAnswers)
+     public void setAll(String ident, String siteName, String username, String password, ArrayList<String> secQuestions, ArrayList<String> secAnswers)
     {
         this.setIdent(ident);
         this.setUsername(username);
+        this.setSiteName(siteName);
         this.setPassword(password);
         for (String question: secQuestions)
         {

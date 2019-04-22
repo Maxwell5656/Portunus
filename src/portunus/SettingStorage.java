@@ -44,9 +44,13 @@ public class SettingStorage {
     private final Path filePath;
     private boolean userExists; // this will be false if no username or password is found upon creation, or if user selects "create new account"
     private ArrayList<Observer> observers;
-    
-    
     private Cipher cipher;
+    /**
+     * 
+     * Creates a new SettingStorage path in user directory
+     * 
+     * @param newFile String name of the new file to be created
+     */
     public SettingStorage(String newFile)
         //create new SettingStorage path to
     {
@@ -85,8 +89,14 @@ public class SettingStorage {
         this.loadSettings();
         //TODO: set the colors to the default Portunus if no existing colors are found
     }
-    
     private void loadSettings()
+    /**
+     * 
+     * Finds the location of the stored settings in memory and takes their 
+     * values to use in initialization
+     * 
+     */
+    public void loadSettings()
     {
         try
         {
@@ -120,8 +130,13 @@ public class SettingStorage {
         }
         //TODO: set the colors to the default Portunus if no existing colors are found
     }
-    
     private void createNewStorageFile()
+    /**
+     * 
+     * CReates a new file in storage
+     * 
+     */
+    public void createNewStorageFile()
     {
         try
         {
@@ -134,6 +149,14 @@ public class SettingStorage {
         }
         this.saveData();
     }
+    
+    /**
+     * 
+     * Changes the user's Portunus username
+     * 
+     * @param username String input of the user's new username
+     * @param key int encryption key of for the input string
+     */
     public void setUsername(String username, int key)
     {
         if (key == this.KEYINT) 
@@ -144,11 +167,27 @@ public class SettingStorage {
         // checks to see if the user is authentic by requiring the encryption key to be entered
         // get/set for password also does this
     }
+    
+    /**
+     * 
+     * Returns the username that is in storage
+     * 
+     * @param key int encryption key to be compared to information
+     * @return String username for the associated key
+     */
     public String getUsername(int key)
     {
         if (key == this.KEYINT) return this.decryptString(this.settings.get(USERNAME_IDX));
         else return null;
     }
+    
+    /**
+     * 
+     * Changes the user's Portunus password
+     * 
+     * @param password String new password for the user
+     * @param key int encryption key for user validation
+     */
     public void setPassword(String password, int key)
     {
         if (key == this.KEYINT) 
@@ -158,11 +197,26 @@ public class SettingStorage {
         }
         // checks to see if the user is authentic by requiring the encryption key to be entered
     }
+    
+    /**
+     * 
+     * Returns the value of the password currently stored
+     * 
+     * @param key int value to check if user is valid
+     * @return String containing the stored password
+     */
     public String getPassword(int key)
     {
         if (key == this.KEYINT) return this.decryptString(this.settings.get(PASSWORD_IDX));
         else return null;
     }
+    
+    /**
+     * 
+     * Sets the GUI to the user's choice of color upon startup
+     * 
+     * @param userChoice Color that the user has chosen
+     */
     public void setColor(Color userChoice)
     {
         int argbData = userChoice.getRGB();

@@ -18,13 +18,30 @@ public class AccountCreator {
     private Info info;
     private String ident;
     private InfoToView infoToView;
-    
     public AccountCreator(Info info)
+    /**
+     * 
+     *  Links AccountCreator object to a view and an Info object
+     * 
+     * @param view Interface to be linked
+     * @param info Info object to be linked
+     */
     {
         this.info = info;
     }
     
-    public void createAccount(DefaultListModel listModel, String accountName, String username, String password, ArrayList<String> secQ, ArrayList<String> secA)
+InterFaceTest
+public void createAccount(DefaultListModel listModel, String accountName, String username, String password, ArrayList<String> secQ, ArrayList<String> secA)
+    /**
+     * 
+     * Updates the user's login information from the view
+     * 
+     * @param accountName String name for account
+     * @param username String username
+     * @param password String password
+     * @param secQ ArrayList of values to be stored
+     * @param secA ArrayList of values to be stored
+     */
     {
         
         info.createInfoUnit(username, accountName, password, secQ, secA);

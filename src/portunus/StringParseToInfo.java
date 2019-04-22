@@ -13,12 +13,25 @@ public class StringParseToInfo implements Observer{
     private StringParser parse;
     private Info info;
     private StringPEvent event;
+    
+    /**
+     * 
+     * Moves information from StringParser to Info object
+     * 
+     * @param info Info object accepting values
+     * @param parse StringParser feeding values into Info
+     */
     public StringParseToInfo(Info info, StringParser parse)
     {
         this.info = info;
         this.parse = parse;
     }
     
+    /**
+     * 
+     * Logs changes 
+     * 
+     */
     @Override
     public void logAndMakeChanges()
     {

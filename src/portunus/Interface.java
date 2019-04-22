@@ -19,7 +19,7 @@ import javax.swing.ListModel;
 public class Interface extends javax.swing.JFrame {
 
     /**
-     * Creates new form MainScreenMockUp
+     * Creates new form Interface
      */
     DefaultListModel<InfoUnit> AccountListModel = new DefaultListModel<>();
     
@@ -179,6 +179,7 @@ public class Interface extends javax.swing.JFrame {
         ChangingPanel = new javax.swing.JPanel();
         PasswordsPan = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
+        //AccountListModel = new DefaultListModel();
         AccountList = new javax.swing.JList<>();
         AccDisplayPan = new javax.swing.JPanel();
         NewAccountPnl = new javax.swing.JPanel();
@@ -215,7 +216,6 @@ public class Interface extends javax.swing.JFrame {
         SQAnswerLbl1 = new javax.swing.JLabel();
         AccSQAnswerField1 = new javax.swing.JTextField();
         SQCopyBtn1 = new javax.swing.JButton();
-        SQCopyBtn2 = new javax.swing.JButton();
         AccSQAnswerField2 = new javax.swing.JTextField();
         SQAnswerLbl2 = new javax.swing.JLabel();
         AccSQField2 = new javax.swing.JTextField();
@@ -226,6 +226,7 @@ public class Interface extends javax.swing.JFrame {
         AccSQAnswerField3 = new javax.swing.JTextField();
         SQCopyBtn3 = new javax.swing.JButton();
         AccNameHolderField = new javax.swing.JTextField();
+        SQCopyBtn2 = new javax.swing.JButton();
         ShowAccBtn = new javax.swing.JButton();
         AddNewAccBtn = new javax.swing.JButton();
         SettingsPan = new javax.swing.JPanel();
@@ -237,6 +238,7 @@ public class Interface extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new java.awt.CardLayout());
 
         LoginScreen.setBackground(new java.awt.Color(153, 153, 153));
@@ -440,7 +442,7 @@ public class Interface extends javax.swing.JFrame {
             .addGroup(NewAccountScreenLayout.createSequentialGroup()
                 .addGap(107, 107, 107)
                 .addComponent(NewAccPan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(317, Short.MAX_VALUE))
+                .addContainerGap(317, Short.MAX_VALUE);
         );
 
         getContentPane().add(NewAccountScreen, "card4");
@@ -624,7 +626,7 @@ public class Interface extends javax.swing.JFrame {
         NewAccountPnlLayout.setVerticalGroup(
             NewAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(NewAccountPnlLayout.createSequentialGroup()
-                .addGap(13, 13, 13)
+                .addGap(19, 19, 19)
                 .addGroup(NewAccountPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(NewAccountPnlLayout.createSequentialGroup()
                         .addComponent(NewAccNameLbl)
@@ -744,7 +746,6 @@ public class Interface extends javax.swing.JFrame {
                 SQCopyBtn1ActionPerformed(evt);
             }
         });
-
         SQCopyBtn2.setBackground(new java.awt.Color(204, 204, 204));
         SQCopyBtn2.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         SQCopyBtn2.setText("Copy");
@@ -754,7 +755,6 @@ public class Interface extends javax.swing.JFrame {
                 SQCopyBtn2ActionPerformed(evt);
             }
         });
-
         AccSQAnswerField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         SQAnswerLbl2.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
@@ -788,7 +788,6 @@ public class Interface extends javax.swing.JFrame {
         AccNameHolderField.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         AccNameHolderField.setText("Account Name");
         AccNameHolderField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-
         javax.swing.GroupLayout ExistingAccountPnlLayout = new javax.swing.GroupLayout(ExistingAccountPnl);
         ExistingAccountPnl.setLayout(ExistingAccountPnlLayout);
         ExistingAccountPnlLayout.setHorizontalGroup(
@@ -985,7 +984,6 @@ public class Interface extends javax.swing.JFrame {
         FontSizeSelection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Extra Small", "Small", "Normal", "Large", "Extra Large" }));
         FontSizeSelection.setSelectedItem("Normal");
         FontSizeSelection.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-
         SettingsDoneBtn.setBackground(new java.awt.Color(204, 204, 204));
         SettingsDoneBtn.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         SettingsDoneBtn.setText("Done");
@@ -1183,7 +1181,6 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_SettingsDoneBtnActionPerformed
 
     private void ShowAccBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowAccBtnActionPerformed
-
         ExistingAccountPnl.setVisible(true);
         NewAccountPnl.setVisible(false);
         this.displayAllSettings();
@@ -1274,7 +1271,6 @@ public class Interface extends javax.swing.JFrame {
         this.AccountList.getSelectedValue().setAllSecQuestions(secQ);
         this.AccountList.getSelectedValue().setAllSecAnswers(secA);
     }//GEN-LAST:event_EditAccBtnActionPerformed
-
     /**
      * @param args the command line arguments
      */

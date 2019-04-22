@@ -52,6 +52,14 @@ public class Storage {
     private ArrayList<Observer> observers;
     private StorageEvent lastEvent;
     
+     /**
+     * 
+     * Object used to store the information in the user directory
+     * 
+     * @author Maxwell Fox
+     * @param fileName String input for the name of the file generated
+     * @param key String to be used for encryption
+     */
     public Storage(String fileName, String key)
     // Note this is designed for files stored in User.dir. This location can be found in Help->About in Netbeans -Maxwell
     {
@@ -73,6 +81,13 @@ public class Storage {
         this.setKey(key);
         this.loadAllData();
     }
+    
+    /**
+     * 
+     * Generates an encryption key 
+     * 
+     * @param toKey String input to be used to generate the encryption key
+     */
     private void setKey(String toKey)
     {
         keyGen = null;
@@ -90,6 +105,13 @@ public class Storage {
             System.out.println("KEY SCREW UP");
         }
     }
+    
+    /**
+     *
+     * Adds newLine to the HashMap, then saves the file
+     * 
+     * @param newLine String to be used to update the data
+     */
     public void setData(String newLine)
     // Adds newLine to the hashmap, then saves to the file
     // 
@@ -97,10 +119,24 @@ public class Storage {
         HashingFunction.addToHash(hashTable, newLine);
         this.saveAllData();
     }
+    
+    /**
+     * 
+     * Returns a String with the associated ident
+     * 
+     * @param ident String value that identifies the stored object
+     * @return String associated with the given location
+     */
     public String getStringByIdent(String ident)
     {
         return HashingFunction.returnHash(hashTable, ident.hashCode());
     }
+    
+    /**
+     * 
+     * Retrieves all contents of the storage file
+     * 
+     */
     public void loadAllData() // gets the contents of the storage file;
     {
         try
@@ -121,6 +157,13 @@ public class Storage {
             e.printStackTrace(System.out);
         }
     }
+    
+    /**
+     * 
+     * Passes each String in the HashTable to StringParser to create corresponding 
+     * entries in Info
+     * 
+     */
     public void loadTableToInfo()
     // this will pass each string in the hashtable to StringParser to create corresponding entries in info
     {
@@ -131,12 +174,26 @@ public class Storage {
             this.logEvent(new StorageEvent(storChange.LOADING_TO_INFO, itemIdent));
         }
     }
+    
+    /**
+     * 
+     * Deletes the data associated with specified String
+     * 
+     * @param toDelete String input of identifier of object to be deleted
+     */
     public void eraseEntry(String toDelete)
             // This will be used for the delete use case
     {
         HashingFunction.removeEntry(hashTable, toDelete);
         this.saveAllData();
     }
+    
+    /**
+     * 
+     * Overwrites an entry that is stored
+     * 
+     * @param newline String input that replaces the stored data
+     */
     public void overWriteEntry(String newline)
     // this bypasses the collision detection of the hash function, ensuring that the entry is overwritten
     {
@@ -144,6 +201,12 @@ public class Storage {
         HashingFunction.removeEntry(hashTable, this.getStringByIdent(ident));
         this.setData(newline);
     }
+    
+    /**
+     * 
+     * Moves all storable data into the default storage file
+     * 
+     */
     public void saveAllData()
     {
         try
@@ -163,6 +226,14 @@ public class Storage {
             e.printStackTrace(System.out);
         }
     }
+    
+    /**
+     * 
+     * Encrypts the String that is input 
+     * 
+     * @param line String to be encrypted
+     * @return String encrypted version of the String
+     */
     private String encryptString(String line)
     // encrypts the string. Note it is private to guard against attackers -Maxwell
     {
@@ -214,6 +285,14 @@ public class Storage {
         }
         return encrypted;
     }
+    
+    /**
+     * 
+     * Takes an encrypted String and decrypts it
+     * 
+     * @param line String input to be decrypted
+     * @return String that is decrypted
+     */
     private String decryptString(String line)
     {
         //line = line.replaceAll("", "\n");
@@ -259,14 +338,32 @@ public class Storage {
         }
         return decrypted;
     }
+    
+    /**
+     * 
+     * Observer function
+     *  
+     */
     public StorageEvent getEvent()
     {
         return this.lastEvent;
     }
+    
+    /**
+     * 
+     * Observer function
+     *  
+     */
     public void addObserver(Observer O)
     {
         this.observers.add(O);
     }
+    
+    /**
+     * 
+     * Observer function
+     *  
+     */
     public void logEvent(StorageEvent event)
     {
         this.lastEvent = event;

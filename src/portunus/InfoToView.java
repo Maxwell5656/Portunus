@@ -16,13 +16,16 @@ public class InfoToView implements Observer{
     private Interface view;
     private Info info;
     private InfoEvent event;
-    
     public InfoToView(Info info, Interface view)
     {
         this.view = view;
         this.info = info;
-    }
-    
+}
+    /**
+     * 
+     * Checks for changes in Info to update view
+     * 
+     */
     @Override
     public void logAndMakeChanges()
     {

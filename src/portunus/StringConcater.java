@@ -23,6 +23,11 @@ public class StringConcater {
     private ArrayList<Observer> observers;
     private StringCEvent lastEvent;
     
+    /**
+     * 
+     * Default constructor for StringConcater object
+     * 
+     */
     public StringConcater()
     {
         ident = "";
@@ -34,6 +39,11 @@ public class StringConcater {
         observers =  new ArrayList<>();
     }
     
+    /**
+     * 
+     * Resets all storage fields in the StringConcater object
+     * 
+     */
     public void reset() // resets all inputs to empty values, so that no login info is left inside this object
     {
         ident = "";
@@ -44,6 +54,13 @@ public class StringConcater {
         secAnswers = new ArrayList<>();
     }
     
+    /**
+     * 
+     * Takes all the information stored in the StringConcater object and creates
+     * a string with special identifiers from it.
+     * 
+     * @return String that has been generated 
+     */
     public String concat()
     {
         String concatedString; 
@@ -67,70 +84,172 @@ public class StringConcater {
         return concatedString;
     }
     
+    /**
+     * 
+     * Returns the value stored in the ident field of the StringConcater object
+     * 
+     * @return String ident field of Storage object
+     */
     public String getIdent()
     {
         return ident;
     }
     
+    /**
+     * 
+     * Updates the value stored in the ident field to the input String.
+     * 
+     * @param ident String input used to update the stored value
+     */
     public void setIdent(String ident)
     {
         this.ident = ident;
     }
     
+    /**
+     * 
+     * Gets the siteName of associated Storage object
+     * 
+     * @return String siteName of associated Storage object
+     */
     public String getSiteName()
     {
         return siteName;
     }
     
+    /**
+     * 
+     * Sets the siteName of associated Storage object
+     * 
+     * @param siteName String input for what the siteName should be updated to
+     */
     public void setSiteName(String siteName)
     {
         this.siteName = siteName;
     }
+    
+    /**
+     * 
+     * Returns the value stored in the password field of the StringConcater object
+     * 
+     * @return String containing the stored value
+     */
     public String getPassword()
     {
         return password;
     }
     
+    /**
+     * 
+     * Updates the value stored in the password field
+     * 
+     * @param password String value used to update the password field
+     */
     public void setPassword(String password)
     {
         this.password = password;
     }
     
+    /**
+     * 
+     * Returns the value stored in the username field
+     * 
+     * @return String containing the value stored in the username field
+     */
     public String getUsername()
     {
         return username;
     }
     
+     /**
+     * 
+     * Updates the value stored in the username field 
+     * 
+     * @param username String input used to update the username field
+     */
     public void setUsername(String username)
     {
         this.username = username;
     }
     
+    /**
+     * 
+     * Returns the value stored at a specified index of secQuestions
+     * 
+     * @param indx int value corresponding to the index of a value
+     * @return String containing the value stored at the specified index
+     */
     public String getSecQuestion(int indx)
     {
         return secQuestions.get(indx);
     }
+    
+    /**
+     * 
+     * Adds a new value to the ArrayList in the field secQuestion
+     * 
+     * @param question String input to be added to the ArrayList
+     */
     public void addSecQuestion(String question)
     {
         secQuestions.add(question);
     }
+    
+    /**
+     * 
+     * Returns the value at a specific index in the ArrayList in secAnswers
+     * 
+     * @param indx int input used to specify the index of desired String
+     * @return String value at corresponding index
+     */
     public String getSecAnswer(int indx)
     {
         return secAnswers.get(indx);
     }
+    
+    /**
+     * 
+     * Adds another entry to the ArrayList in secAnswer.
+     *  
+     * @param question String input to be added to the ArrayList
+     */
     public void addSecAnswer(String question)
     {
         secAnswers.add(question);
     }
+    
+    /**
+     * 
+     * Adds an observer for the StringConcater object
+     * 
+     * @param Obs Observer that observes the object
+     */
     public void addObserver(Observer Obs)
             // Sets an observer to observe StringConcater. Note that the observer cannot easily be removed
     {
         observers.add(Obs);
     }
+    /**
+     * 
+     * REturns the last event 
+     * 
+     * @return StringCEvent last event 
+     */
     public StringCEvent getEvent()
     {
         return lastEvent;
     }
+    
+    /**
+     * 
+     * Updates all values in the fields of StringConcater
+     * 
+     * @param ident String input used to update the ident field
+     * @param username String input used to update the password field
+     * @param password String input used to update the username field
+     * @param secQuestions ArrayList of String type used to update the secQuestions field
+     * @param secAnswers ArrayList of String type used to update the secAnswers field
+     */
     public void setAll(String ident, String siteName, String username, String password, ArrayList<String> secQuestions, ArrayList<String> secAnswers)
     {
         this.setIdent(ident);
@@ -152,6 +271,13 @@ public class StringConcater {
         }
     //}
     }
+    
+    /**
+     * 
+     * Logs an event that happens
+     * 
+     * @param event StringCEvent that has been updated
+     */
     public void logEvent(StringCEvent event)
         // this function is public as it needs an event to be gotten from infoEvent
     {

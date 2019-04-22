@@ -109,10 +109,19 @@ public class InfoUnit {
         }
         return secQuestionCopy;
     }
-    public void setAll(String ident, String username, String password, ArrayList<String> secQuestions, ArrayList<String> secAnswers)
+    public void setAllSecQuestions(ArrayList<String> secQ)
+    {
+        this.secQuestions = secQ;
+    }
+    public void setAllSecAnswers(ArrayList<String> secA)
+    {
+        this.secAnswers = secA;
+    }
+    public void setAll(String ident, String siteName, String username, String password, ArrayList<String> secQuestions, ArrayList<String> secAnswers)
     {
         this.setIdent(ident);
         this.setUsername(username);
+        this.setSiteName(siteName);
         this.setPassword(password);
         for (String question: secQuestions)
         {

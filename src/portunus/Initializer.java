@@ -56,7 +56,9 @@ public class Initializer {
                     Interface view = new Interface();
                     view.addAccountCreator(new AccountCreator(info));
                     info.addObserver(new InfoToView(info, view));
+                    view.addAccountDeleter(new AccountDeleter(info));
                     view.addUserLogin(loginer);
+                    view.addAccountOverWriter(new AccountOverWriter(info));
                     view.setVisible(true);
                     
                 }

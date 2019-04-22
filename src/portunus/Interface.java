@@ -21,27 +21,17 @@ public class Interface extends javax.swing.JFrame {
     /**
      * Creates new form MainScreenMockUp
      */
-    DefaultListModel AccountListModel = new DefaultListModel();
+    DefaultListModel<InfoUnit> AccountListModel = new DefaultListModel<>();
     
     private AccountCreator newAcc;
+    private AccountDeleter deleter;
+    private AccountOverWriter writer;
     private Info info;
     private UserLogin login;
     public Interface() {
         initComponents();
         this.AccountList.setCellRenderer(new InfoUnitCellRenderer());
-        this.AccountList.setModel(new DefaultListModel<>());
-        DefaultListModel<InfoUnit> list = (DefaultListModel<InfoUnit>) this.AccountList.getModel();
-        ArrayList<String> secQ = new ArrayList<>();
-        secQ.add("AAAAAAAAA");
-        secQ.add("AAAAAAAAA");
-        secQ.add("AAAAAAAAA");
-        ArrayList<String> secA = new ArrayList<>();
-        secA.add("BBBBBBBBBBB");
-        secA.add("BBBBBBBBBBB");
-        secA.add("BBBBBBBBBBB");
-        list.addElement(new InfoUnit("EEEE", "Butt.Net", "Bigthing", "8294821789784", secQ, secA));
-        list.addElement(new InfoUnit("EEEE", "Butt.Net", "Bigthing", "8294821789784", new ArrayList<>(), new ArrayList<>()));
-        list.addElement(new InfoUnit("EEEE", "Butt.Net", "Bigthing", "8294821789784", new ArrayList<>(), new ArrayList<>()));
+        this.AccountList.setModel(new DefaultListModel<InfoUnit>());
     }
     public void addAccountCreator(AccountCreator newAcc)
     {
@@ -51,7 +41,15 @@ public class Interface extends javax.swing.JFrame {
     {
         this.login = login;
     }
-    public void testThis() // this is just to test the capabilities of calling a function's methods
+    public void addAccountDeleter(AccountDeleter delete)
+    {
+        this.deleter = delete;
+    }
+    public void addAccountOverWriter(AccountOverWriter writer)
+    {
+        this.writer = writer;
+    }
+    private void testThis() // this is just to test the capabilities of calling a function's methods
     {
         System.out.println("This indeeed does work!");
          this.NewAccUNField.setText("WORK");
@@ -114,7 +112,29 @@ public class Interface extends javax.swing.JFrame {
         }
     
     }
-    //public void addInfoUnit(String ident, String username, String password, ArrayList<String>
+    public void addInfoUnit(String ident, String siteName, String username, String password, ArrayList<String> secQ, ArrayList<String> secA)
+    {
+        DefaultListModel<InfoUnit> list = (DefaultListModel<InfoUnit>) this.AccountList.getModel();
+        list.addElement(new InfoUnit(ident, siteName, username, password, secQ, secA));
+    }
+    
+    public void removeInfoUnit(String ident)
+    {
+        DefaultListModel<InfoUnit> list = (DefaultListModel<InfoUnit>) this.AccountList.getModel();
+        ArrayList<InfoUnit> units = new ArrayList<>();
+        System.out.println(AccountListModel.getSize());
+        for(int i = 0; i < AccountListModel.getSize(); i++)
+        {
+            units.add(list.elementAt(i));
+        }
+        for(InfoUnit unit: units)
+        {
+            if(unit.getIdent().equals(ident))
+            {
+                list.removeElement(unit);
+            }
+        }
+    }
     /*public boolean allInit()
             // checks if there's a controller for each button
     {
@@ -207,6 +227,7 @@ public class Interface extends javax.swing.JFrame {
         SQCopyBtn3 = new javax.swing.JButton();
         AccNameHolderField = new javax.swing.JTextField();
         ShowAccBtn = new javax.swing.JButton();
+        AddNewAccBtn = new javax.swing.JButton();
         SettingsPan = new javax.swing.JPanel();
         colorPicker = new javax.swing.JColorChooser();
         ColorOptionsLbl = new javax.swing.JLabel();
@@ -502,7 +523,6 @@ public class Interface extends javax.swing.JFrame {
         AccountList.setModel(AccountListModel);
         AccountList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(AccountList);
-        AccountListModel.addElement(new InfoUnit("","New Account", "", "", null, null));
 
         AccDisplayPan.setBackground(new java.awt.Color(51, 204, 255));
         AccDisplayPan.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
@@ -694,11 +714,21 @@ public class Interface extends javax.swing.JFrame {
         DeleteAccBtn.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         DeleteAccBtn.setText("Delete");
         DeleteAccBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0), 2));
+        DeleteAccBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteAccBtnActionPerformed(evt);
+            }
+        });
 
         EditAccBtn.setBackground(new java.awt.Color(204, 204, 204));
         EditAccBtn.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         EditAccBtn.setText("Edit");
         EditAccBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        EditAccBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditAccBtnActionPerformed(evt);
+            }
+        });
 
         SQAnswerLbl1.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         SQAnswerLbl1.setText("Answer:");
@@ -896,17 +926,31 @@ public class Interface extends javax.swing.JFrame {
             }
         });
 
+        AddNewAccBtn.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        AddNewAccBtn.setText("New Account");
+        AddNewAccBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        AddNewAccBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddNewAccBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PasswordsPanLayout = new javax.swing.GroupLayout(PasswordsPan);
         PasswordsPan.setLayout(PasswordsPanLayout);
         PasswordsPanLayout.setHorizontalGroup(
             PasswordsPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PasswordsPanLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PasswordsPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ShowAccBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(PasswordsPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(AccDisplayPan, javax.swing.GroupLayout.DEFAULT_SIZE, 1007, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1)))
+                .addGroup(PasswordsPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(PasswordsPanLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(PasswordsPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(AccDisplayPan, javax.swing.GroupLayout.DEFAULT_SIZE, 1007, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1)))
+                    .addGroup(PasswordsPanLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(AddNewAccBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ShowAccBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         PasswordsPanLayout.setVerticalGroup(
@@ -914,7 +958,9 @@ public class Interface extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PasswordsPanLayout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ShowAccBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PasswordsPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ShowAccBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                    .addComponent(AddNewAccBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(AccDisplayPan, javax.swing.GroupLayout.DEFAULT_SIZE, 662, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1121,6 +1167,7 @@ public class Interface extends javax.swing.JFrame {
         alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), SQCopyBtn3);
         alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), DeleteAccBtn);
         alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), EditAccBtn);
+        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), AddNewAccBtn);
         
             //Create New User Account Page
         alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), CreateNewAccUNLbl);
@@ -1195,6 +1242,39 @@ public class Interface extends javax.swing.JFrame {
         copier.copy(AccSQAnswerField3.getText());
     }//GEN-LAST:event_SQCopyBtn3ActionPerformed
 
+    private void AddNewAccBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddNewAccBtnActionPerformed
+        NewAccountPnl.setVisible(true);
+        ExistingAccountPnl.setVisible(false);
+    }//GEN-LAST:event_AddNewAccBtnActionPerformed
+
+    private void DeleteAccBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteAccBtnActionPerformed
+        // TODO add your handling code here:
+        NewAccountPnl.setVisible(true);
+        ExistingAccountPnl.setVisible(false);
+        this.deleter.delete(this.AccountList.getSelectedValue().getIdent());
+    }//GEN-LAST:event_DeleteAccBtnActionPerformed
+
+    private void EditAccBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditAccBtnActionPerformed
+        // TODO add your handling code here:
+        ArrayList<String> secQ = new ArrayList<>();
+        ArrayList<String> secA = new ArrayList<>();
+        secQ.add(AccSQField1.getText());
+        secQ.add(AccSQField2.getText());
+        secQ.add(AccSQField3.getText());
+        secA.add(AccSQAnswerField1.getText());
+        secA.add(AccSQAnswerField2.getText());
+        secA.add(AccSQAnswerField3.getText());
+        this.writer.overWrite(this.AccountList.getSelectedValue().getIdent(), AccNameHolderField.getText(), AccUNField.getText(), AccPWField.getText(), secQ, secA);
+        
+        
+        DefaultListModel<InfoUnit> list = (DefaultListModel<InfoUnit>) this.AccountList.getModel();
+        this.AccountList.getSelectedValue().setSiteName(AccNameHolderField.getText());
+        this.AccountList.getSelectedValue().setUsername(AccUNField.getText());
+        this.AccountList.getSelectedValue().setPassword(AccPWField.getText());
+        this.AccountList.getSelectedValue().setAllSecQuestions(secQ);
+        this.AccountList.getSelectedValue().setAllSecAnswers(secA);
+    }//GEN-LAST:event_EditAccBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1258,6 +1338,7 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel AccUNLbl;
     private javax.swing.JList<InfoUnit> AccountList;
     private javax.swing.JButton AddAccountBtn;
+    private javax.swing.JButton AddNewAccBtn;
     private javax.swing.JPanel BGPanel;
     private javax.swing.JPanel ChangingPanel;
     private javax.swing.JLabel ColorOptionsLbl;

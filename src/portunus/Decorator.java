@@ -8,21 +8,47 @@ package portunus;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+
+
 
 public class Decorator {
+    private Interface view;
+    private ArrayList<Observer> observers;
+    private DecoratorEvent lastEvent;
     //Constructor
-    Decorator(){}
+    public Decorator()
+    {
+        observers = new ArrayList<>();
+    }
     
     //-------------------------------------------------------
     //colorSet(JColorChooser, JPanel)
     //uses the input from the color chooser to set the 
     //background color for the panel
     //-------------------------------------------------------
-    public void colorSet(JColorChooser colorPicker, JPanel Panel) {
-        Color interfaceColor;
-        interfaceColor = colorPicker.getColor();
+    public void colorSet(Color interfaceColor, JPanel Panel) {
+        
         Panel.setBackground(interfaceColor);
         
+    }
+    
+    public void saveColor(Color interfaceColor)
+    {
+        this.lastEvent = new DecoratorEvent(interfaceColor);
+        for(Observer observer: observers)
+        {
+            observer.logAndMakeChanges();
+        }
+    }
+    
+    public DecoratorEvent getEvent()
+    {
+        return this.lastEvent;
+    }
+    public void addObserver(Observer O)
+    {
+        observers.add(O);
     }
     
     //-------------------------------------------------------
@@ -104,6 +130,15 @@ public class Decorator {
         }
         if(sizeSetting.equals("Extra Large")) {
             text.setFont(new Font("Agency FB", Font.BOLD, 40));
+        }
+    }
+        
+    public void saveFont(String sizeSetting)
+    {
+        this.lastEvent = new DecoratorEvent(sizeSetting);
+        for(Observer observer: observers)
+        {
+            observer.logAndMakeChanges();
         }
     }
 }

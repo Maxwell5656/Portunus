@@ -33,24 +33,22 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
         
 public class SettingStorage {
-    private final int USERNAME_IDX = 0; // these are just bookkeeping variables to show what index stores what in the
-    private final int PASSWORD_IDX = 1;// array list. 
-    private final int COLOR_IDX = 2;
-    private final int TEXT_SIZE_IDX = 3;
+    public static final int USERNAME_IDX = 0; // these are just bookkeeping variables to show what index stores what in the
+    public static final int PASSWORD_IDX = 1;// array list. 
+    public static final int COLOR_IDX = 2;
+    public static final int TEXT_SIZE_IDX = 3;
     
     private final int KEYINT = 0x4EED; // this will be the keey for encrypting username and password;
     private SecretKeySpec key;
     private ArrayList<String> settings;
     private final Path filePath;
     private boolean userExists; // this will be false if no username or password is found upon creation, or if user selects "create new account"
+    
     private ArrayList<Observer> observers;
+    private SettStorEvent lastEvent;
+    
+    
     private Cipher cipher;
-    /**
-     * 
-     * Creates a new SettingStorage path in user directory
-     * 
-     * @param newFile String name of the new file to be created
-     */
     public SettingStorage(String newFile)
         //create new SettingStorage path to
     {
@@ -58,6 +56,7 @@ public class SettingStorage {
         byte[] keyGen = null;
         MessageDigest sha = null;
         settings = new ArrayList<>();
+        observers = new ArrayList<>();
         try
         {
             keyGen = ByteBuffer.allocate(4).putInt(KEYINT).array();
@@ -86,15 +85,9 @@ public class SettingStorage {
         {
             this.createNewStorageFile();
         }
-        this.loadSettings();
         //TODO: set the colors to the default Portunus if no existing colors are found
     }
-    /**
-     * 
-     * Finds the location of the stored settings in memory and takes their 
-     * values to use in initialization
-     * 
-     */
+    
     public void loadSettings()
     {
         try
@@ -112,15 +105,20 @@ public class SettingStorage {
                 this.userExists = false;
                 // TODO: Add event to send to thing or initializer to handle this.
             }
-            else this.userExists = true;
+            else 
+            {
+                this.userExists = true;
+                this.logEvent(new SettStorEvent(setStorChange.USERPASS_SET));
+            }
             if("".equals(this.settings.get(COLOR_IDX)))
             {
                 this.setColor(new Color(51, 204, 255, 255));
             }
             if("".equals(this.settings.get(TEXT_SIZE_IDX)))
             {
-                this.setFontSize("NORMAL");
+                this.setFontSize("Normal");
             }
+            this.logEvent(new SettStorEvent(setStorChange.COSMETIC_SET));
         }
         catch(Exception E)
         {
@@ -129,12 +127,8 @@ public class SettingStorage {
         }
         //TODO: set the colors to the default Portunus if no existing colors are found
     }
+    
     private void createNewStorageFile()
-    /**
-     * 
-     * CReates a new file in storage
-     * 
-     */
     {
         try
         {
@@ -147,74 +141,37 @@ public class SettingStorage {
         }
         this.saveData();
     }
-    
-    /**
-     * 
-     * Changes the user's Portunus username
-     * 
-     * @param username String input of the user's new username
-     * @param key int encryption key of for the input string
-     */
     public void setUsername(String username, int key)
     {
         if (key == this.KEYINT) 
         {
             this.settings.set(USERNAME_IDX, this.encryptString(username));
+            this.checkUserExists();
             this.saveData();
         }
         // checks to see if the user is authentic by requiring the encryption key to be entered
         // get/set for password also does this
     }
-    
-    /**
-     * 
-     * Returns the username that is in storage
-     * 
-     * @param key int encryption key to be compared to information
-     * @return String username for the associated key
-     */
     public String getUsername(int key)
     {
         if (key == this.KEYINT) return this.decryptString(this.settings.get(USERNAME_IDX));
         else return null;
     }
-    
-    /**
-     * 
-     * Changes the user's Portunus password
-     * 
-     * @param password String new password for the user
-     * @param key int encryption key for user validation
-     */
     public void setPassword(String password, int key)
     {
         if (key == this.KEYINT) 
         {
             this.settings.set(PASSWORD_IDX, this.encryptString(password));
+            this.checkUserExists();
             this.saveData();
         }
         // checks to see if the user is authentic by requiring the encryption key to be entered
     }
-    
-    /**
-     * 
-     * Returns the value of the password currently stored
-     * 
-     * @param key int value to check if user is valid
-     * @return String containing the stored password
-     */
     public String getPassword(int key)
     {
         if (key == this.KEYINT) return this.decryptString(this.settings.get(PASSWORD_IDX));
         else return null;
     }
-    
-    /**
-     * 
-     * Sets the GUI to the user's choice of color upon startup
-     * 
-     * @param userChoice Color that the user has chosen
-     */
     public void setColor(Color userChoice)
     {
         int argbData = userChoice.getRGB();
@@ -238,6 +195,31 @@ public class SettingStorage {
     public boolean userExists()
     {
         return this.userExists;
+    }
+    public void checkUserExists()
+            //checks if the user exists yet or not
+    {
+        if(("".equals(settings.get(USERNAME_IDX)))||("".equals(settings.get(PASSWORD_IDX))))
+            {
+                this.userExists = false;
+            }
+        else this.userExists = true;  
+    }
+    public void addObserver(Observer O)
+    {
+        this.observers.add(O);
+    }
+    public void logEvent(SettStorEvent event)
+    {
+        this.lastEvent = event;
+        for(Observer observer: observers)
+        {
+            observer.logAndMakeChanges();
+        }
+    }
+    public SettStorEvent getEvent()
+    {
+        return this.lastEvent;
     }
     private void saveData()
     {

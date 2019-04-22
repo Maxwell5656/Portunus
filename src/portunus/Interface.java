@@ -10,6 +10,7 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.ListModel;
 
 /**
  *
@@ -27,6 +28,12 @@ public class Interface extends javax.swing.JFrame {
     private UserLogin login;
     public Interface() {
         initComponents();
+        this.AccountList.setCellRenderer(new InfoUnitCellRenderer());
+        this.AccountList.setModel(new DefaultListModel<>());
+        DefaultListModel<InfoUnit> list = (DefaultListModel<InfoUnit>) this.AccountList.getModel();
+        list.addElement(new InfoUnit("EEEE", "Butt.Net", "Bigthing", "8294821789784", new ArrayList<>(), new ArrayList<>()));
+        list.addElement(new InfoUnit("EEEE", "Butt.Net", "Bigthing", "8294821789784", new ArrayList<>(), new ArrayList<>()));
+        list.addElement(new InfoUnit("EEEE", "Butt.Net", "Bigthing", "8294821789784", new ArrayList<>(), new ArrayList<>()));
     }
     public void addAccountCreator(AccountCreator newAcc)
     {
@@ -428,7 +435,7 @@ public class Interface extends javax.swing.JFrame {
         AccountList.setModel(AccountListModel);
         AccountList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(AccountList);
-        AccountListModel.addElement("New Account");
+        AccountListModel.addElement(new InfoUnit("","New Account", "", "", null, null));
 
         AccDisplayPan.setBackground(new java.awt.Color(51, 204, 255));
         AccDisplayPan.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
@@ -1186,7 +1193,7 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel AccSQLbl3;
     private javax.swing.JTextField AccUNField;
     private javax.swing.JLabel AccUNLbl;
-    private javax.swing.JList<String> AccountList;
+    private javax.swing.JList<InfoUnit> AccountList;
     private javax.swing.JButton AddAccountBtn;
     private javax.swing.JPanel BGPanel;
     private javax.swing.JPanel ChangingPanel;

@@ -1277,35 +1277,6 @@ public class Interface extends javax.swing.JFrame {
         ExistingAccountPnl.setVisible(false);
         this.deleter.delete(this.AccountList.getSelectedValue().getIdent());
     }//GEN-LAST:event_DeleteAccBtnActionPerformed
-    private void UNCopyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UNCopyBtnActionPerformed
-        CopyInfo copier = new CopyInfo();
-        
-        copier.copy(AccUNField.getText());
-    }//GEN-LAST:event_UNCopyBtnActionPerformed
-
-    private void PWCopyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PWCopyBtnActionPerformed
-        CopyInfo copier = new CopyInfo();
-        
-        copier.copy(AccPWField.getText());
-    }//GEN-LAST:event_PWCopyBtnActionPerformed
-
-    private void SQCopyBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SQCopyBtn1ActionPerformed
-        CopyInfo copier = new CopyInfo();
-        
-        copier.copy(AccSQAnswerField1.getText());
-    }//GEN-LAST:event_SQCopyBtn1ActionPerformed
-
-    private void SQCopyBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SQCopyBtn2ActionPerformed
-        CopyInfo copier = new CopyInfo();
-        
-        copier.copy(AccSQAnswerField2.getText());
-    }//GEN-LAST:event_SQCopyBtn2ActionPerformed
-
-    private void SQCopyBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SQCopyBtn3ActionPerformed
-        CopyInfo copier = new CopyInfo();
-        
-        copier.copy(AccSQAnswerField3.getText());
-    }//GEN-LAST:event_SQCopyBtn3ActionPerformed
     private void EditAccBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditAccBtnActionPerformed
         // TODO add your handling code here:
         ArrayList<String> secQ = new ArrayList<>();

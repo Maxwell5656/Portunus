@@ -31,7 +31,15 @@ public class Interface extends javax.swing.JFrame {
         this.AccountList.setCellRenderer(new InfoUnitCellRenderer());
         this.AccountList.setModel(new DefaultListModel<>());
         DefaultListModel<InfoUnit> list = (DefaultListModel<InfoUnit>) this.AccountList.getModel();
-        list.addElement(new InfoUnit("EEEE", "Butt.Net", "Bigthing", "8294821789784", new ArrayList<>(), new ArrayList<>()));
+        ArrayList<String> secQ = new ArrayList<>();
+        secQ.add("AAAAAAAAA");
+        secQ.add("AAAAAAAAA");
+        secQ.add("AAAAAAAAA");
+        ArrayList<String> secA = new ArrayList<>();
+        secA.add("BBBBBBBBBBB");
+        secA.add("BBBBBBBBBBB");
+        secA.add("BBBBBBBBBBB");
+        list.addElement(new InfoUnit("EEEE", "Butt.Net", "Bigthing", "8294821789784", secQ, secA));
         list.addElement(new InfoUnit("EEEE", "Butt.Net", "Bigthing", "8294821789784", new ArrayList<>(), new ArrayList<>()));
         list.addElement(new InfoUnit("EEEE", "Butt.Net", "Bigthing", "8294821789784", new ArrayList<>(), new ArrayList<>()));
     }
@@ -48,6 +56,65 @@ public class Interface extends javax.swing.JFrame {
         System.out.println("This indeeed does work!");
          this.NewAccUNField.setText("WORK");
     }
+    private void displayAllSettings()
+    {
+        InfoUnit toDisplay = AccountList.getSelectedValue();
+        this.AccNameHolderField.setText("");
+        this.AccUNField.setText("");
+        this.AccPWField.setText("");
+        this.AccSQField1.setText("");
+        this.AccSQField2.setText("");
+        this.AccSQField3.setText("");
+        this.AccSQAnswerField1.setText("");
+        this.AccSQAnswerField2.setText("");
+        this.AccSQAnswerField3.setText("");
+        
+        if(toDisplay!=null)
+        {
+            this.AccNameHolderField.setText(toDisplay.getSiteName());
+            this.AccUNField.setText(toDisplay.getUsername());
+            this.AccPWField.setText(toDisplay.getPassword());
+            ArrayList<String> secQ = toDisplay.getAllSecQuestions();
+            for(int i = 0; i < secQ.size(); i++)
+            {
+                switch(i)
+                {
+                    case 0:
+                        this.AccSQField1.setText(secQ.get(i));
+                        break;
+                    case 1:
+                        this.AccSQField2.setText(secQ.get(i));
+                        break;
+                    case 2:
+                        this.AccSQField3.setText(secQ.get(i));
+                        break;
+                    default:
+                        break;
+                }
+            }
+            ArrayList<String> secA = toDisplay.getAllSecAnswers();
+            for(int i = 0; i < secA.size(); i++)
+            {
+                switch(i)
+                {
+                    case 0:
+                        this.AccSQAnswerField1.setText(secA.get(i));
+                        break;
+                    case 1:
+                        this.AccSQAnswerField2.setText(secA.get(i));
+                        break;
+                    case 2:
+                        this.AccSQAnswerField3.setText(secA.get(i));
+                        break;
+                    default:
+                        break;
+                }
+            }
+            
+        }
+    
+    }
+    //public void addInfoUnit(String ident, String username, String password, ArrayList<String>
     /*public boolean allInit()
             // checks if there's a controller for each button
     {
@@ -1069,14 +1136,10 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_SettingsDoneBtnActionPerformed
 
     private void ShowAccBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowAccBtnActionPerformed
-        if(AccountList.getSelectedValue().equals("New Account")) {
-            NewAccountPnl.setVisible(true);
-            ExistingAccountPnl.setVisible(false);
-        }
-        if(!AccountList.getSelectedValue().equals("New Account")) {
-            ExistingAccountPnl.setVisible(true);
-            NewAccountPnl.setVisible(false);
-        }
+
+        ExistingAccountPnl.setVisible(true);
+        NewAccountPnl.setVisible(false);
+        this.displayAllSettings();
     }//GEN-LAST:event_ShowAccBtnActionPerformed
 
     private void AddAccountBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddAccountBtnActionPerformed

@@ -12,10 +12,23 @@ package portunus;
 public class StringPEvent {
     private storChange event;
     
+    /**
+     * 
+     * Waits for StringParser to change related to Storage
+     * 
+     * @param event storChange observer that is updating 
+     */
     public StringPEvent(storChange event)
     {
         this.event = event;
     }
+    
+    /**
+     * 
+     * Gets the current event
+     * 
+     * @return storChange changed storage observer event
+     */
     public storChange getEvent()
     {
         return this.event;

@@ -30,6 +30,11 @@ Collaboratiors:
     private StringPEvent lastEvent;
     private ArrayList<Observer> observers;
     
+    /**
+     * 
+     * Default constructor for object of type StingParser
+     * 
+     */
     public StringParser() // initialize everything to empty values
     {
         ident = "";
@@ -41,6 +46,13 @@ Collaboratiors:
         observers = new ArrayList<>();
     }
     
+    /**
+     * 
+     * Takes a string with special identifiers and separates it into the info 
+     * contained within those strings based on the identifiers.
+     * 
+     * @param info String to be parsed
+     */
     public void parseString(String info)
     {
         String newIdent = "";
@@ -115,6 +127,15 @@ Collaboratiors:
         this.setUsername(newUsername);
         this.logEvent(new StringPEvent(storChange.LOADING_TO_INFO));
     }
+    
+    /**
+     * 
+     * Copies information from one String to another
+     * 
+     * @param getFrom String to pull information from
+     * @param insertTo String to put information into
+     * @param idx int input marking the starting point of copy
+     */
     private void getFieldFrom(String getFrom, String insertTo, int idx)
             //TODO: Get this function working.
             //This function won't work unless we use pass by reference in the int, and we need to figure that out more
@@ -128,78 +149,190 @@ Collaboratiors:
         }
     }
     
+    /**
+     * 
+     * Returns the value stored in the ident field of StringParser
+     * 
+     * @return String value in ident
+     */
     public String getIdent()
     {
         return ident;
     }
     
+    /**
+     * 
+     * Updates the String stored in ident
+     * 
+     * @param ident String input used to update the value
+     */
     public void setIdent(String ident)
     {
         this.ident = ident;
     }
     
+    /**
+     * 
+     * Gets the siteName in the StringParser object
+     * 
+     * @return String value from siteName
+     */
     public String getSiteName()
     {
         return siteName;
     }
+    
+    /**
+     * 
+     * Sets the SiteName in the StringParser object
+     * 
+     * @param siteName String to be updated from 
+     */
     public void setSiteName(String siteName)
     {
         this.siteName = siteName;
     }
+    
+    /**
+     * 
+     * Returns the value stored in the password field
+     * 
+     * @return String value from the password field
+     */
     public String getPassword()
     {
         return password;
     }
     
+    /**
+     * 
+     * Updates the value associated with the password field
+     * 
+     * @param password String used to update the password field
+     */
     public void setPassword(String password)
     {
         this.password = password;
     }
     
+    /**
+     * 
+     * Returns the value in the username field
+     * 
+     * @return String value associated with username
+     */
     public String getUsername()
     {
         return username;
     }
     
+    /**
+     * 
+     * Updates the value associated with the username field
+     * 
+     * @param username String used to update username
+     */
     public void setUsername(String username)
     {
         this.username = username;
     }
     
+    /**
+     * 
+     * Gets the value stored in secQuestion at index indx
+     * 
+     * @param indx int index value in ArrayList
+     * @return String associated with the index value
+     */
     public String getSecQuestion(int indx)
     {
         return secQuestions.get(indx);
     }
+    
+    /**
+     * 
+     * Adds a new String to secQuestion
+     * 
+     * @param question String to be added
+     */
     public void addSecQuestion(String question)
     {
         secQuestions.add(question);
     }
+    
+    /**
+     * 
+     * Gets the value of secAnswer at index indx
+     * 
+     * @param indx int index of ArrayList
+     * @return String from associated index
+     */
     public String getSecAnswer(int indx)
     {
         return secAnswers.get(indx);
     }
+    
+    /**
+     * 
+     * Adds a new String to the ArrayList in secAnswer
+     * 
+     * @param question String input to add
+     */
     public void addSecAnswer(String question)
     {
         secAnswers.add(question);
     }
     /*Bottom two functions return entire array for Info class*/
+    /**
+     * 
+     * Returns all Strings in the ArrayList associated with secQuestions
+     * 
+     * @return 
+     */
     public ArrayList<String> getAllSecQuestions()
     {
         return secQuestions;
     }
     
+    /**
+     * 
+     * REturns all Strings in the ArrayList associated with secAnswers
+     * 
+     * @return ArrayList with all entries
+     */
     public ArrayList<String> getAllSecAnswers()
     {
         return secAnswers;
     }
+    
+    /**
+     * 
+     * Event observer
+     * 
+     * @return StringPEvent of the last event
+     */
     public StringPEvent getEvent()
     {
         return this.lastEvent;
     }
+    
+    /**
+     * 
+     * Adds an observer to the StringParser object
+     * 
+     * @param O Observer to be added
+     */
     public void addObserver(Observer O)
     {
         this.observers.add(O);
     }
+    
+    /**
+     * 
+     * Logs the events 
+     * 
+     * @param event StringPEvent that is being updated
+     */
     public void logEvent(StringPEvent event)
     {
         this.lastEvent = event;

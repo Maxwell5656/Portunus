@@ -14,6 +14,13 @@ public class StringConcatToStorage implements Observer{
     private Storage storage;
     private StringCEvent event;
     
+    /**
+     * 
+     * Sends a concatenated String to Storage to be stored
+     * 
+     * @param storage Storage object used to store data
+     * @param concat StringConcater object containing data to be stored
+     */
     public StringConcatToStorage(Storage storage, StringConcater concat)
     {
         this.concat = concat;
@@ -21,6 +28,11 @@ public class StringConcatToStorage implements Observer{
     }
     
     
+    /**
+     * 
+     * Logs changes as events
+     * 
+     */
     @Override
     public void logAndMakeChanges()
     {

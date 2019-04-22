@@ -60,10 +60,12 @@ public class Initializer {
                     Interface view = new Interface();
                     view.addAccountCreator(new AccountCreator(info));
                     info.addObserver(new InfoToView(info, view));
+                    view.addAccountDeleter(new AccountDeleter(info));
                     view.addUserLogin(loginer);
                     view.addDecorator(decor);
                     view.changeCosmetics(store.getColor(), store.getFontSize());
                     view.accountExists(store);
+                    view.addAccountOverWriter(new AccountOverWriter(info));
                     view.setVisible(true);
                     
                     

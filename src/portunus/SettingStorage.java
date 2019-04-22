@@ -33,17 +33,19 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
         
 public class SettingStorage {
-    private final int USERNAME_IDX = 0; // these are just bookkeeping variables to show what index stores what in the
-    private final int PASSWORD_IDX = 1;// array list. 
-    private final int COLOR_IDX = 2;
-    private final int TEXT_SIZE_IDX = 3;
+    public static final int USERNAME_IDX = 0; // these are just bookkeeping variables to show what index stores what in the
+    public static final int PASSWORD_IDX = 1;// array list. 
+    public static final int COLOR_IDX = 2;
+    public static final int TEXT_SIZE_IDX = 3;
     
     private final int KEYINT = 0x4EED; // this will be the keey for encrypting username and password;
     private SecretKeySpec key;
     private ArrayList<String> settings;
     private final Path filePath;
     private boolean userExists; // this will be false if no username or password is found upon creation, or if user selects "create new account"
+    
     private ArrayList<Observer> observers;
+    private SettStorEvent lastEvent;
     
     
     private Cipher cipher;
@@ -54,6 +56,7 @@ public class SettingStorage {
         byte[] keyGen = null;
         MessageDigest sha = null;
         settings = new ArrayList<>();
+        observers = new ArrayList<>();
         try
         {
             keyGen = ByteBuffer.allocate(4).putInt(KEYINT).array();
@@ -82,11 +85,10 @@ public class SettingStorage {
         {
             this.createNewStorageFile();
         }
-        this.loadSettings();
         //TODO: set the colors to the default Portunus if no existing colors are found
     }
     
-    private void loadSettings()
+    public void loadSettings()
     {
         try
         {
@@ -103,15 +105,20 @@ public class SettingStorage {
                 this.userExists = false;
                 // TODO: Add event to send to thing or initializer to handle this.
             }
-            else this.userExists = true;
+            else 
+            {
+                this.userExists = true;
+                this.logEvent(new SettStorEvent(setStorChange.USERPASS_SET));
+            }
             if("".equals(this.settings.get(COLOR_IDX)))
             {
                 this.setColor(new Color(51, 204, 255, 255));
             }
             if("".equals(this.settings.get(TEXT_SIZE_IDX)))
             {
-                this.setFontSize("NORMAL");
+                this.setFontSize("Normal");
             }
+            this.logEvent(new SettStorEvent(setStorChange.COSMETIC_SET));
         }
         catch(Exception E)
         {
@@ -139,6 +146,7 @@ public class SettingStorage {
         if (key == this.KEYINT) 
         {
             this.settings.set(USERNAME_IDX, this.encryptString(username));
+            this.checkUserExists();
             this.saveData();
         }
         // checks to see if the user is authentic by requiring the encryption key to be entered
@@ -154,6 +162,7 @@ public class SettingStorage {
         if (key == this.KEYINT) 
         {
             this.settings.set(PASSWORD_IDX, this.encryptString(password));
+            this.checkUserExists();
             this.saveData();
         }
         // checks to see if the user is authentic by requiring the encryption key to be entered
@@ -186,6 +195,31 @@ public class SettingStorage {
     public boolean userExists()
     {
         return this.userExists;
+    }
+    public void checkUserExists()
+            //checks if the user exists yet or not
+    {
+        if(("".equals(settings.get(USERNAME_IDX)))||("".equals(settings.get(PASSWORD_IDX))))
+            {
+                this.userExists = false;
+            }
+        else this.userExists = true;  
+    }
+    public void addObserver(Observer O)
+    {
+        this.observers.add(O);
+    }
+    public void logEvent(SettStorEvent event)
+    {
+        this.lastEvent = event;
+        for(Observer observer: observers)
+        {
+            observer.logAndMakeChanges();
+        }
+    }
+    public SettStorEvent getEvent()
+    {
+        return this.lastEvent;
     }
     private void saveData()
     {

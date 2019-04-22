@@ -46,11 +46,12 @@ public class Info {
         {
             newIdent += identValues.charAt(identMaker.nextInt(26));
         }
-        for(InfoUnit unit: infoUnits)
+        for(InfoUnit unit: infoUnits) // checks if the thing is unique
         {
             if(unit.getIdent().equals(newIdent))
             {
-                newIdent = this.forgeIdent();
+                newIdent = this.forgeIdent(); // recursively calls until it gets a unique ident
+                break;
             }
         }
         return newIdent;

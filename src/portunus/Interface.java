@@ -22,6 +22,8 @@ public class Interface extends javax.swing.JFrame {
     private AccountCreator newAcc;
     private Info info;
     private UserLogin login;
+    private SettingStorage store;
+    private Decorator alterer;
     public Interface() {
         initComponents();
     }
@@ -33,10 +35,88 @@ public class Interface extends javax.swing.JFrame {
     {
         this.login = login;
     }
+    public void addDecorator(Decorator alterer)
+    {
+        this.alterer = alterer;
+    }
     public void testThis() // this is just to test the capabilities of calling a function's methods
     {
         System.out.println("This indeeed does work!");
          this.NewAccUNField.setText("WORK");
+    }
+    public void accountExists(SettingStorage store)
+    {
+        if(!store.userExists()) 
+        {
+            this.LoginScreen.setVisible(false);
+            this.NewAccountScreen.setVisible(true);
+        }
+        else
+        {
+            this.LoginScreen.setVisible(true);
+            this.NewAccountScreen.setVisible(false);
+        }
+    }
+    public void changeCosmetics(Color colorChoice, String FontSelect)
+    {
+        alterer.colorSet(colorChoice, NavMenu1);
+        alterer.colorSet(colorChoice, NewAccountPnl);
+        alterer.colorSet(colorChoice, ExistingAccountPnl);
+        alterer.colorSet(colorChoice, LoginAccPan);
+        alterer.colorSet(colorChoice, NewAccPan);
+        alterer.saveColor(colorChoice);
+        
+        //changing the font size
+            //Navigation Panel
+        alterer.fontSizeSet(FontSelect, PasswordsBtn);
+        alterer.fontSizeSet(FontSelect, SettingsBtn);
+        alterer.fontSizeSet(FontSelect, LoginOutBtn);
+        
+            //Settings Page
+        alterer.fontSizeSet(FontSelect, ColorOptionsLbl);
+        alterer.fontSizeSet(FontSelect, FontSizeLbl);
+        
+            //Passwords Page
+        alterer.fontSizeSet(FontSelect, AccountList);
+        alterer.fontSizeSet(FontSelect, ShowAccBtn);
+        alterer.fontSizeSet(FontSelect, AccNameHolderField);
+        alterer.fontSizeSet(FontSelect, NewAccNameLbl);
+        alterer.fontSizeSet(FontSelect, ShowAccBtn);
+        alterer.fontSizeSet(FontSelect, NewAccUNLbl);
+        alterer.fontSizeSet(FontSelect, NewAccPWLbl);
+        alterer.fontSizeSet(FontSelect, NewAccSQLbl1);
+        alterer.fontSizeSet(FontSelect, NewAccSQLbl2);
+        alterer.fontSizeSet(FontSelect, NewAccSQLbl3);
+        alterer.fontSizeSet(FontSelect, NewSQAnswerLbl1);
+        alterer.fontSizeSet(FontSelect, NewSQAnswerLbl2);
+        alterer.fontSizeSet(FontSelect, NewSQAnswerLbl3);
+        alterer.fontSizeSet(FontSelect, AddAccountBtn);
+        alterer.fontSizeSet(FontSelect, AccUNLbl);
+        alterer.fontSizeSet(FontSelect, AccPWLbl);
+        alterer.fontSizeSet(FontSelect, AccSQLbl1);
+        alterer.fontSizeSet(FontSelect, AccSQLbl2);
+        alterer.fontSizeSet(FontSelect, AccSQLbl3);
+        alterer.fontSizeSet(FontSelect, SQAnswerLbl1);
+        alterer.fontSizeSet(FontSelect, SQAnswerLbl2);
+        alterer.fontSizeSet(FontSelect, SQAnswerLbl3);
+        alterer.fontSizeSet(FontSelect, UNCopyBtn);
+        alterer.fontSizeSet(FontSelect, PWCopyBtn);
+        alterer.fontSizeSet(FontSelect, SQCopyBtn1);
+        alterer.fontSizeSet(FontSelect, SQCopyBtn2);
+        alterer.fontSizeSet(FontSelect, SQCopyBtn3);
+        alterer.fontSizeSet(FontSelect, DeleteAccBtn);
+        alterer.fontSizeSet(FontSelect, EditAccBtn);
+        
+            //Create New User Account Page
+        alterer.fontSizeSet(FontSelect, CreateNewAccUNLbl);
+        alterer.fontSizeSet(FontSelect, CreateNewAccPWLbl);
+        alterer.fontSizeSet(FontSelect, CreateUserAccBtn);
+        
+            //Login to User Account Page
+        alterer.fontSizeSet(FontSelect, LoginUNLbl);
+        alterer.fontSizeSet(FontSelect, LoginPWLbl);
+        alterer.fontSizeSet(FontSelect, LoginPgBtn);
+        alterer.fontSizeSet(FontSelect, CreateNewAccBtn);
     }
     /*public boolean allInit()
             // checks if there's a controller for each button
@@ -1042,66 +1122,12 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_CreateNewAccBtnActionPerformed
 
     private void SettingsDoneBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsDoneBtnActionPerformed
-        // changing the color
-        Decorator alterer = new Decorator();
-        alterer.colorSet(colorPicker, NavMenu1);
-        alterer.colorSet(colorPicker, NewAccountPnl);
-        alterer.colorSet(colorPicker, ExistingAccountPnl);
-        alterer.colorSet(colorPicker, LoginAccPan);
-        alterer.colorSet(colorPicker, NewAccPan);
-        
-        //changing the font size
-            //Navigation Panel
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), PasswordsBtn);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), SettingsBtn);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), LoginOutBtn);
-        
-            //Settings Page
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), ColorOptionsLbl);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), FontSizeLbl);
-        
-            //Passwords Page
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), AccountList);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), ShowAccBtn);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), AccNameHolderField);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), NewAccNameLbl);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), ShowAccBtn);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), NewAccUNLbl);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), NewAccPWLbl);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), NewAccSQLbl1);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), NewAccSQLbl2);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), NewAccSQLbl3);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), NewSQAnswerLbl1);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), NewSQAnswerLbl2);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), NewSQAnswerLbl3);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), AddAccountBtn);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), AccUNLbl);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), AccPWLbl);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), AccSQLbl1);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), AccSQLbl2);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), AccSQLbl3);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), SQAnswerLbl1);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), SQAnswerLbl2);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), SQAnswerLbl3);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), UNCopyBtn);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), PWCopyBtn);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), SQCopyBtn1);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), SQCopyBtn2);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), SQCopyBtn3);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), DeleteAccBtn);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), EditAccBtn);
-        
-            //Create New User Account Page
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), CreateNewAccUNLbl);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), CreateNewAccPWLbl);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), CreateUserAccBtn);
-        
-            //Login to User Account Page
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), LoginUNLbl);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), LoginPWLbl);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), LoginPgBtn);
-        alterer.fontSizeSet(FontSizeSelection.getSelectedItem().toString(), CreateNewAccBtn);
-        
+        Color interfaceColor;
+        interfaceColor = colorPicker.getColor();
+        String newFont = FontSizeSelection.getSelectedItem().toString();
+        this.changeCosmetics(interfaceColor, newFont);
+        alterer.saveColor(interfaceColor);
+        alterer.saveFont(newFont);
     }//GEN-LAST:event_SettingsDoneBtnActionPerformed
 
     private void ShowAccBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowAccBtnActionPerformed

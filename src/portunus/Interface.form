@@ -1140,10 +1140,7 @@
                                               <Component id="SQAnswerLbl1" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="AccSQAnswerField1" min="-2" pref="35" max="-2" attributes="0"/>
-                                                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                                  </Group>
+                                                  <Component id="AccSQAnswerField1" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
                                                   <Component id="SQCopyBtn1" min="-2" pref="45" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
@@ -1175,10 +1172,7 @@
                                               <Component id="SQAnswerLbl2" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="AccSQAnswerField2" min="-2" pref="35" max="-2" attributes="0"/>
-                                                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                                  </Group>
+                                                  <Component id="AccSQAnswerField2" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
                                                   <Component id="SQCopyBtn2" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>

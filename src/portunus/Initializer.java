@@ -5,7 +5,6 @@
  */
 package portunus;
 
-import java.awt.Color;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
@@ -23,8 +22,13 @@ public class Initializer {
         // TODO code application logic here
         Info info = new Info();
         UserLogin loginer = new UserLogin();
-        loginer.setLoginInfo("pi", "x");
-        
+        SettingStorage store = new SettingStorage("SettingsStorage.txt");
+        loginer.addObserver(new ULogToSetStore(loginer, store));
+        store.addObserver(new SettStorToULog(store, loginer));
+        Decorator decor = new Decorator();
+        decor.addObserver(new DecToSettStorage(decor, store));
+        store.loadSettings();
+        //loginer.setLoginInfo("pi", "x");
         
         
         // in this code, the interface is created
@@ -57,7 +61,11 @@ public class Initializer {
                     view.addAccountCreator(new AccountCreator(info));
                     info.addObserver(new InfoToView(info, view));
                     view.addUserLogin(loginer);
+                    view.addDecorator(decor);
+                    view.changeCosmetics(store.getColor(), store.getFontSize());
+                    view.accountExists(store);
                     view.setVisible(true);
+                    
                     
                 }
             });

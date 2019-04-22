@@ -31,8 +31,8 @@ public class InfoToView implements Observer{
         {
             case ITEM_CREATED:
                 //view.createThing(this.event.ident....)
-                //System.out.println("This seems to work?");
-                view.testThis();
+                System.out.println("This seems to work?");
+                //view.testThis();
                 break;
             case ITEM_CHANGED:
                 break;

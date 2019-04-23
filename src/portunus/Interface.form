@@ -996,74 +996,78 @@
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="DeleteAccBtn" min="-2" pref="144" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                                      <Component id="EditAccBtn" min="-2" pref="151" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="AccNameHolderField" pref="0" max="32767" attributes="0"/>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="AccSQLbl2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="AccSQLbl3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
                                               <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="SQCopyBtn3" min="-2" pref="96" max="-2" attributes="0"/>
+                                              <Component id="DeleteAccBtn" min="-2" pref="144" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                              <Component id="EditAccBtn" min="-2" pref="151" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" alignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="AccSQLbl1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="AccNameHolderField" pref="0" max="32767" attributes="0"/>
                                                   <Group type="102" attributes="0">
-                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                          <Component id="AccUNLbl" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="AccUNField" pref="0" max="32767" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="AccSQLbl2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="AccSQLbl3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                  <Component id="AccSQLbl1" min="-2" max="-2" attributes="0"/>
+                                                                  <Group type="102" alignment="1" attributes="0">
+                                                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                                          <Group type="102" attributes="0">
+                                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                                  <Component id="AccUNLbl" min="-2" max="-2" attributes="0"/>
+                                                                                  <Component id="AccUNField" min="-2" pref="208" max="-2" attributes="0"/>
+                                                                              </Group>
+                                                                              <EmptySpace max="32767" attributes="0"/>
+                                                                              <Component id="UNCopyBtn" min="-2" pref="95" max="-2" attributes="0"/>
+                                                                          </Group>
+                                                                          <Component id="AccSQField2" alignment="1" min="-2" pref="341" max="-2" attributes="0"/>
+                                                                          <Component id="AccSQField1" min="-2" pref="341" max="-2" attributes="0"/>
+                                                                          <Component id="AccSQField3" alignment="1" min="-2" pref="341" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                              </Group>
+                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                  <Group type="102" alignment="0" attributes="0">
+                                                                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                                          <Component id="AccPWLbl" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="AccPWField" min="-2" pref="228" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                  </Group>
+                                                                  <Group type="102" alignment="0" attributes="0">
+                                                                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                                          <Component id="AccSQAnswerField1" min="-2" pref="227" max="-2" attributes="0"/>
+                                                                          <Component id="SQAnswerLbl1" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="SQAnswerLbl2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="AccSQAnswerField2" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
+                                                                          <Component id="SQAnswerLbl3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                          <Component id="AccSQAnswerField3" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
+                                                                      </Group>
+                                                                  </Group>
+                                                              </Group>
+                                                          </Group>
                                                       </Group>
-                                                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                                                      <Component id="UNCopyBtn" min="-2" pref="95" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Component id="AccSQField2" alignment="1" min="-2" pref="341" max="-2" attributes="0"/>
-                                                          <Component id="AccSQField1" min="-2" pref="341" max="-2" attributes="0"/>
-                                                          <Component id="AccSQField3" alignment="1" min="-2" pref="341" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                                      <EmptySpace min="0" pref="62" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
+                                              <EmptySpace pref="70" max="32767" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="AccPWLbl" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="AccPWField" min="-2" pref="228" max="-2" attributes="0"/>
-                                                      </Group>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="SQCopyBtn1" alignment="1" min="-2" pref="94" max="-2" attributes="0"/>
+                                                      <Component id="PWCopyBtn" alignment="1" min="-2" pref="94" max="-2" attributes="0"/>
+                                                      <Component id="SQCopyBtn2" alignment="1" min="-2" pref="94" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="AccSQAnswerField1" min="-2" pref="227" max="-2" attributes="0"/>
-                                                          <Component id="SQAnswerLbl1" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="SQAnswerLbl2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="AccSQAnswerField2" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
-                                                          <Component id="SQAnswerLbl3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="AccSQAnswerField3" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
+                                                  <Component id="SQCopyBtn3" min="-2" pref="96" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="PWCopyBtn" alignment="1" min="-2" pref="66" max="-2" attributes="0"/>
-                                          <Component id="SQCopyBtn1" alignment="1" min="-2" pref="66" max="-2" attributes="0"/>
-                                          <Component id="SQCopyBtn2" alignment="0" min="-2" pref="66" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -1075,10 +1079,8 @@
                                               <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
                                               <Component id="AccUNLbl" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="AccUNField" min="-2" pref="35" max="-2" attributes="0"/>
-                                                  <Component id="UNCopyBtn" min="-2" pref="45" max="-2" attributes="0"/>
-                                              </Group>
+                                              <Component id="AccUNField" min="-2" pref="35" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
@@ -1089,67 +1091,61 @@
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="AccPWField" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
                                                   <Component id="PWCopyBtn" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                                  <Component id="UNCopyBtn" min="-2" pref="45" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                              <Component id="SQAnswerLbl1" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                                      <Component id="SQAnswerLbl1" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="AccSQAnswerField1" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
-                                                          <Component id="SQCopyBtn1" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
-                                                      <Component id="SQCopyBtn3" min="-2" pref="45" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="AccSQLbl1" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="AccSQField1" min="-2" pref="35" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Group type="102" attributes="0">
-                                                              <Component id="AccSQLbl2" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace max="-2" attributes="0"/>
-                                                              <Component id="AccSQField2" min="-2" pref="35" max="-2" attributes="0"/>
-                                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                              <Component id="AccSQLbl3" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace max="-2" attributes="0"/>
-                                                              <Component id="AccSQField3" min="-2" pref="35" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <Component id="SQAnswerLbl2" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace max="-2" attributes="0"/>
-                                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                                  <Component id="SQCopyBtn2" min="-2" pref="45" max="-2" attributes="0"/>
-                                                                  <Group type="102" attributes="0">
-                                                                      <Component id="AccSQAnswerField2" min="-2" pref="35" max="-2" attributes="0"/>
-                                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                                      <Component id="SQAnswerLbl3" min="-2" max="-2" attributes="0"/>
-                                                                      <EmptySpace max="-2" attributes="0"/>
-                                                                      <Component id="AccSQAnswerField3" min="-2" pref="35" max="-2" attributes="0"/>
-                                                                  </Group>
-                                                              </Group>
-                                                          </Group>
-                                                      </Group>
-                                                  </Group>
+                                                  <Component id="AccSQAnswerField1" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
+                                                  <Component id="SQCopyBtn1" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="EditAccBtn" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                                                  <Component id="DeleteAccBtn" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="AccSQLbl1" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="AccSQField1" min="-2" pref="35" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="AccSQLbl2" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="AccSQField2" min="-2" pref="35" max="-2" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="AccSQLbl3" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="AccSQField3" min="-2" pref="35" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="SQAnswerLbl2" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="AccSQAnswerField2" min="-2" pref="35" max="-2" attributes="0"/>
+                                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                              <Component id="SQAnswerLbl3" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Component id="SQCopyBtn2" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="SQCopyBtn3" min="-2" pref="45" max="-2" attributes="0"/>
+                                                          <Component id="AccSQAnswerField3" min="-2" pref="35" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                                      <EmptySpace pref="70" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="EditAccBtn" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                                          <Component id="DeleteAccBtn" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>

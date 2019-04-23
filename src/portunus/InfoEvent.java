@@ -12,7 +12,7 @@ package portunus;
 enum InfoChange //TODO: check this against java naming conventions
     // These are the possible changes to Info, add more as needed -Maxwell
 {
-    ITEM_CREATED, ITEM_CHANGED, ITEM_DELETED
+    ITEM_CREATED, ITEM_CHANGED, ITEM_DELETED, ITEM_LOADED
 }
 public class InfoEvent {
     private final InfoChange change;

@@ -21,13 +21,22 @@ public class Initializer {
     public static void main(String[] args) {
         // TODO code application logic here
         Info info = new Info();
+        StringConcater concat =  new StringConcater();
+        StringParser parse = new StringParser();
+        Storage storage = new Storage("StorageFile.txt", Integer.toString(0x4EEDE));
+        
+        info.addObserver(new InfoToStringConcat(concat, info));
+        concat.addObserver(new StringConcatToStorage(storage, concat));
+        storage.addObserver(new StorageToStringParse(storage, parse));
+        parse.addObserver(new StringParseToInfo(info, parse));
+        
         UserLogin loginer = new UserLogin();
-        SettingStorage store = new SettingStorage("SettingsStorage.txt");
-        loginer.addObserver(new ULogToSetStore(loginer, store));
-        store.addObserver(new SettStorToULog(store, loginer));
+        SettingStorage setStore = new SettingStorage("SettingsStorage.txt");
+        loginer.addObserver(new ULogToSetStore(loginer, setStore));
+        setStore.addObserver(new SettStorToULog(setStore, loginer));
         Decorator decor = new Decorator();
-        decor.addObserver(new DecToSettStorage(decor, store));
-        store.loadSettings();
+        decor.addObserver(new DecToSettStorage(decor, setStore));
+        setStore.loadSettings();
         //loginer.setLoginInfo("pi", "x");
         
         
@@ -63,9 +72,10 @@ public class Initializer {
                     view.addAccountDeleter(new AccountDeleter(info));
                     view.addUserLogin(loginer);
                     view.addDecorator(decor);
-                    view.changeCosmetics(store.getColor(), store.getFontSize());
-                    view.accountExists(store);
+                    view.changeCosmetics(setStore.getColor(), setStore.getFontSize());
+                    view.accountExists(setStore);
                     view.addAccountOverWriter(new AccountOverWriter(info));
+                    storage.loadTableToInfo();
                     view.setVisible(true);
                     
                     

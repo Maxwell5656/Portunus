@@ -147,6 +147,7 @@ public class Info {
     {
         InfoUnit newUnit = new InfoUnit(ident, siteName, username, password, secQuestions, secAnswers);
         infoUnits.add(newUnit);
+        this.logEvent(InfoChange.ITEM_LOADED, ident);
     }
     
     /**

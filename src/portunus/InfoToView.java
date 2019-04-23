@@ -33,6 +33,9 @@ public class InfoToView implements Observer{
         String ident = this.event.ident;
         switch(event.getEvent())
         {
+            case ITEM_LOADED:
+                view.addInfoUnit(ident, info.getSiteName(ident), info.getUsername(ident), info.getPassword(ident), info.getAllSecQuestions(ident), info.getAllSecAnswers(ident));
+                break;
             case ITEM_CREATED:
                 view.addInfoUnit(ident, info.getSiteName(ident), info.getUsername(ident), info.getPassword(ident), info.getAllSecQuestions(ident), info.getAllSecAnswers(ident));
                 break;

@@ -8,7 +8,7 @@ package portunus;
 import javax.swing.JList;
 
 /**
- *
+ *Observer class that notifies the view of changes to Info
  * @author Maxwell
  */
 public class InfoToView implements Observer{
@@ -16,6 +16,11 @@ public class InfoToView implements Observer{
     private Interface view;
     private Info info;
     private InfoEvent event;
+    /**
+     * Constructor that specifies an Info to observe and a View to notify
+     * @param info instance of Info to be observed
+     * @param view instance of Interface to notify of changes
+     */
     public InfoToView(Info info, Interface view)
     {
         this.view = view;

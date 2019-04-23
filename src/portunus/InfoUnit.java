@@ -8,7 +8,7 @@ package portunus;
 import java.util.ArrayList;
 
 /**
- *
+ * Set of fields and methods to log a set of account credentials
  * @author Maxwell
  */
 public class InfoUnit {
@@ -57,6 +57,7 @@ public class InfoUnit {
      * 
      * @param ident String identifier for the object
      * @param username String value to be put into the "username" location
+     * @param siteName String value to be put into the "siteName" location
      * @param password String value to be put into the "password" location
      * @param secQuestions String ArrayList to be stored by secQuentions
      * @param secAnswers String ArrayList to be stored by secAnswers
@@ -236,10 +237,22 @@ public class InfoUnit {
         }
         return secQuestionCopy;
     }
+    /**
+     * 
+     * sets this InfoUnit's secQuestions field to a new String ArrayList
+     * 
+     * @param secQ the new string ArrayList of security questions
+     */
     public void setAllSecQuestions(ArrayList<String> secQ)
     {
         this.secQuestions = secQ;
     }
+    /**
+     * 
+     * sets this InfoUnit's secAnswers field to a new String ArrayList
+     * 
+     * @param secQ the new string ArrayList of security answers
+     */
     public void setAllSecAnswers(ArrayList<String> secA)
     {
         this.secAnswers = secA;

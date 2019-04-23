@@ -10,7 +10,7 @@ import static portunus.InfoChange.ITEM_CHANGED;
 import static portunus.InfoChange.ITEM_DELETED;
 
 /**
- *
+ * Observer class that notifies a StringConcater of changes of an observed Info.
  * @author Maxwell
  */
 public class InfoToStringConcat implements Observer {
@@ -21,8 +21,7 @@ public class InfoToStringConcat implements Observer {
     
     /**
      * 
-     * Takes an instance of Info and concatenates all its stored info into a 
-     * specialized String
+     * Constructor that specifies the concat to notify and the info to observe.
      * 
      * @param concat StringConcater to be updated with information
      * @param info Info object to be used as the source of info
@@ -72,7 +71,7 @@ public class InfoToStringConcat implements Observer {
     
     /**
      * 
-     * Sends all the information from a deleted InfoUnit object to be concatenated into a string
+     * Sends all the information from a given InfoUnit object to be concatenated into a string
      * 
      */
     private void sendToConcat()

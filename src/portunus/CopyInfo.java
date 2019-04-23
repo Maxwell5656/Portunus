@@ -6,14 +6,15 @@ package portunus;
 import java.awt.*;
 import java.awt.datatransfer.*;
 import javafx.scene.input.ClipboardContent;
-
+/**
+ * Provides the methods by which account info will be copied to the clipboard
+ * @author Sarah
+ */
 public class CopyInfo {
+    /**
+     * Instantiates an instance of CopyInfo. No fields required.
+     */
     public void copy() {}
-    
-    //-----------------------------------------------------------
-    //CopyInfo.copy(String)
-    //copies the passed string to the system clipboard
-    //-----------------------------------------------------------
     
     /**
      * 

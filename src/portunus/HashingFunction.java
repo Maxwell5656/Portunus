@@ -83,10 +83,10 @@ public class HashingFunction
     //function that takes a concurrent hash map and spits out a collection/arraylist
     /**
      * 
-     * Takes a ConcurrentHashMap and generates an array of strings from it.
+     * Takes a ConcurrentHashMap and generates an ArrayList<String> of strings from it.
      * 
      * @param name ConcurentHashMap that is the basis of the array that will be made
-     * @return String[] that contains all the entries of the base ConcurrentHashMap
+     * @return ArrayList<String> that contains all the entries of the base ConcurrentHashMap
      */
     public static ArrayList<String> toArray(ConcurrentHashMap<Integer, String> name)
     {
@@ -97,7 +97,7 @@ public class HashingFunction
     
     /**
      * 
-     * Returns an integer value to use as the hash key
+     * Returns an integer value to use as the hash key, based on the first four identifying charaters of StringConcater strings
      * 
      * @param info String identifier that is converted into the integer key
      * @return int value that is the key for hashing

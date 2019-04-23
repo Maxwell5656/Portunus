@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- *
+ * Class that aggregates a set of InfoUnits making up all the user's logged account information
  * @author Maxwell
  */
 public class Info {
@@ -79,7 +79,7 @@ public class Info {
     
     /**
      * 
-     * Dynamically creates new InfoUnit object t be added into the list of 
+     * Dynamically creates new InfoUnit object to be added into the list of 
      * InfoUnits.
      * 
      */
@@ -111,11 +111,12 @@ public class Info {
     
     /**
      * 
-     * Creates an InfoUnit object that stores a username String, password String,
+     * Creates an InfoUnit object that stores a siteName String,username String, password String,
      * String ArrayList of security questions, and String ArrayList of answers 
      * to those questions.
      * 
      * @param username String input to be stored
+     * @param siteName name of website associated with the account
      * @param password String input to be stored
      * @param secQuestions String ArrayList to be stored
      * @param secAnswers String ArrayList to be stored
@@ -136,7 +137,7 @@ public class Info {
      * 
      * @param ident String input to be stored
      * @param username String input to be stored
-     * @param siteName
+     * @param siteName name of website associated with the account
      * @param password String input to be stored
      * @param secQuestions String ArrayList to be stored
      * @param secAnswers String ArrayList to be stored
@@ -152,7 +153,7 @@ public class Info {
     
     /**
      * 
-     * Removes an InfoUnit from the list and deletes it
+     * Removes an InfoUnit from the list and notifies observers of its deletion
      * 
      * @param ident String identifier for the InfoUnit to be deleted
      * @return boolean whether the delete was successful or not
@@ -339,7 +340,7 @@ public class Info {
     /**
      * 
      * unused function
-     * 
+     * @deprecated 
      * @param idx
      * @param ident
      * @return null
@@ -381,6 +382,12 @@ public class Info {
         if (item != null) return item.getAllSecQuestions();
         return null;
     }
+    /**
+     * Sets an InfoUnit's list of security questions to another ArrayList<String>
+     * @param secQ new ArrayList of security question strings
+     * @param ident identifier of the instance to change
+     * @return boolean that's true if the action was successful
+     */
     public boolean setAllSecQuestions(ArrayList<String> secQ, String ident)
     {
         InfoUnit item = this.findIdent(ident);
@@ -391,6 +398,13 @@ public class Info {
         }
         return false;
     }
+    
+    /**
+     * Sets an InfoUnit's list of security answers to another ArrayList<String>
+     * @param secA new ArrayList of security answers strings
+     * @param ident identifier of the instance to change
+     * @return boolean that's true if the action was successful
+     */ 
     public boolean setAllSecAnswers(ArrayList<String> secA, String ident)
     {
         InfoUnit item = this.findIdent(ident);

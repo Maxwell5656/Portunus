@@ -12,10 +12,19 @@ import javax.swing.JList;
 import javax.swing.ListCellRenderer;
 
 /**
- *
+ * Custom CellRenderer, Subclass of JLabel to graphically represent the view's list of InfoUnits
  * @author Maxwell
  */
 public class InfoUnitCellRenderer extends JLabel implements ListCellRenderer<InfoUnit> {
+    /**
+     * Specifies the methods by which a JList of InfoUnits shall be represented
+     * @param list JList of InfoUnits
+     * @param value specific InfoUnit
+     * @param index integer index
+     * @param isSelected boolean determining if object is selected
+     * @param cellHasFocus boolean
+     * @return the JLabel to be used as graphical representation
+     */
     @Override
     public Component getListCellRendererComponent(JList<? extends InfoUnit> list, InfoUnit value, int index, boolean isSelected, boolean cellHasFocus)
     {

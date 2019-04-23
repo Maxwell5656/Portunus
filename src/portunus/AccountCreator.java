@@ -9,11 +9,15 @@ import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 
+
 /**
- *
- * @author Maxwell
+ * This class serves as part of the controller, allowing a user to create new InfoUnit logs
+ * from the view.
+ * 
  */
-public class AccountCreator {
+public class AccountCreator 
+
+{
     // This controller class acts as intermediary between view (interface) and model (info), creating account on button press
     private Info info;
     private String ident;
@@ -32,7 +36,7 @@ public class AccountCreator {
 public void createAccount(DefaultListModel listModel, String accountName, String username, String password, ArrayList<String> secQ, ArrayList<String> secA)
     /**
      * 
-     * Updates the user's login information from the view
+     * Updates the user's login information from the view, adding data to be placed within Info
      * 
      * @param accountName String name for account
      * @param username String username

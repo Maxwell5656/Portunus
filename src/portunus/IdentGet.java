@@ -6,7 +6,7 @@
 package portunus;
 
 /**
- *
+ * Contains one static method to get the first four characters of a StringConcater string.
  * @author Maxwell
  */
 public class IdentGet {

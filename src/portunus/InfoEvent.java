@@ -6,14 +6,18 @@
 package portunus;
 
 /**
- *
+ *Set of ENUMS that determine which type of change occured
  * @author Maxwell
  */
-enum InfoChange //TODO: check this against java naming conventions
+enum InfoChange
     // These are the possible changes to Info, add more as needed -Maxwell
 {
     ITEM_CREATED, ITEM_CHANGED, ITEM_DELETED, ITEM_LOADED
 }
+/**
+ * Logs the important changes of an instance of Info
+ * @author Maxwell
+ */
 public class InfoEvent {
     private final InfoChange change;
     // all three events shouldn't happen concurrently, so I'll just have one variable for now
@@ -25,7 +29,7 @@ public class InfoEvent {
    
     /**
      * 
-     * Updates InfoEvent object parameters
+     * Constructor that logs identifier of InfoUnit that changed
      * 
      * @param change InfoChange flags that a change occurs
      * @param ident String identifier to update to
@@ -53,7 +57,7 @@ public class InfoEvent {
     
     /**
      * 
-     * Checks to see if an event has happened
+     * Gets the type of event that occured.
      * 
      * @return InfoChange object specifying the event
      */
@@ -64,7 +68,7 @@ public class InfoEvent {
     
     /**
      * 
-     * Returns the event of an InfoUnit being deleted
+     * Returns the instance of InfoUnit that is being deleted
      * 
      * @return InfoUnit that is being deleted
      */
